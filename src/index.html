@@ -21,7 +21,22 @@
     <nav></nav>
 
     <div class="website-content">
-      <section class="home">#HOME</section>
+      <section class="home">
+        <div class="portrait">
+          <img class="portrait__image" src="<%= require('./img/avatar.png') %>" />
+          <div class="portrait__filter"></div>
+        </div>
+        <h1>John Doe</h1>
+        <div class="home__job-title">Javascript fullstack developper</div>
+        <div class="social-icons">
+          <img inline src="src/img/github-alt.svg">
+          <img inline src="src/img/stack-overflow.svg">
+          <img inline src="src/img/facebook-f.svg">
+        </div>
+        <div class="home__scroll-icon home__scroll-icon--bounce-animation">
+          <img inline src="src/img/chevron-circle-down.svg">
+        </div>
+      </section>
       <section class="about-me">#ABOUT ME</section>
       <section class="my-work">#MY WORK</section>
       <section class="contact">#CONTACT</section>

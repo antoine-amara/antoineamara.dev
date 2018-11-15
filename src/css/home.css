@@ -1,0 +1,70 @@
+@keyframes bounce {
+  0% { transform: translateY(0); }
+  20% { transform: translateY(-10px); }
+  40% { transform: translateY(0px); }
+  100% { transform: translateY(0px); }
+}
+
+.home {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  color: var(--colorspace-light-color);
+}
+
+.portrait {
+  position: relative;
+}
+
+.portrait__image {
+  width: 250px;
+  height: 250px;
+  border-radius: 50%; 
+  border: 5px solid var(--colorspace-light-color);
+}
+
+.portrait__filter {
+  width: 250px;
+  height: 250px;
+  border-radius: 50%;
+  position: absolute;
+  left: 0;
+  top: 0;
+  background-color: var(--colorspace-white-transparent-color);
+}
+
+.home h1 {
+  font-size: var(--colorspace-h1-title);
+}
+
+.home__job-title {
+  font-size: var(--colorspace-job-title);
+  margin-bottom: var(--colorspace-block-margin);
+}
+
+.social-icons {
+  background-color: var(--colorspace-white-transparent-color);
+  border-radius: 10px;
+}
+
+.social-icons svg {
+  fill: var(--colorspace-light-color);
+  width: var(--colorspace-social-icons);
+  height: var(--colorspace-social-icons);
+  margin: var(--colorspace-block-margin);
+}
+
+.home__scroll-icon {
+  fill: var(--colorspace-light-color);
+  width: 50px;
+  height: 50px;
+  position: absolute;
+  bottom: 0;
+  margin-bottom: var(--colorspace-block-margin);
+}
+
+.home__scroll-icon--bounce-animation {
+  animation: bounce 3s ease infinite alternate;
+}
