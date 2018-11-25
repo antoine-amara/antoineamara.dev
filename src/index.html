@@ -18,7 +18,24 @@
     <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="https://browsehappy.com/">upgrade your browser</a> to improve your experience and security.</p>
     <![endif]-->
 
-    <nav></nav>
+    <nav>
+      <div class="mobile-menu">
+        <div class="mobile-menu__bars">
+          <span class="mobile-menu__bar mobile-menu__bar--open-transition"></span>
+          <span class="mobile-menu__bar mobile-menu__bar--open-transition"></span>
+          <span class="mobile-menu__bar mobile-menu__bar--open-transition"></span>
+        </div>
+      </div>
+    </nav>
+
+    <div class="mobile-menu__overlay">
+      <div class="mobile-menu__content">
+        <li class="mobile-menu__element mobile-menu__element--active">Home</li>
+        <li class="mobile-menu__element mobile-menu__element--blur">About Me</li>
+        <li class="mobile-menu__element mobile-menu__element--blur">My Work</li>
+        <li class="mobile-menu__element mobile-menu__element--blur">Contact</li>
+      </div>
+    </div>
 
     <div class="website-content">
       <section class="home">
