@@ -37,13 +37,14 @@ body {
   background: var(--colorspace-gradient-color);
 }
 
+h2 {
+  color: var(--colorspace-light-color);
+  text-align: center;
+}
+
 .website-content {
   min-width: 100vw;
   min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: space-between;
 }
 
 .website-content::before {
@@ -61,3 +62,4 @@ body {
 @import './bootstrap-reboot.css';
 @import './home.css';
 @import './menu.css';
+@import './about-me.css';

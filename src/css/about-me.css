@@ -1,0 +1,13 @@
+.about-me {
+  background-color: var(--colorspace-white-transparent-color);
+  color: var(--colorspace-light-color);
+}
+
+.about-me__content {
+  padding: var(--colorspace-block-spacing-md);
+}
+
+.about-me__illustration {
+  max-width: 100%;
+  margin-bottom: var(--colorspace-block-margin);
+}
