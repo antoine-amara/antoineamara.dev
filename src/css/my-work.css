@@ -1,0 +1,47 @@
+.my-work {
+  padding: var(--colorspace-block-spacing-md);
+}
+
+.project-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: var(--colorspace-light-color);
+  min-height: 300px;
+  border-radius: 10px;
+  padding: var(--colorspace-block-spacing-md);
+  margin-bottom: var(--colorspace-block-spacing-md);
+}
+
+.project-card > svg {
+  width: 50%;
+  height: inherit;
+  margin-bottom: var(--colorspace-block-margin);
+}
+
+.project-card__description {
+  max-height: 200px;
+  overflow-y: auto;
+}
+
+.project-card__badges {
+  align-self: flex-start;
+}
+
+.badge {
+  display: inline-block;
+  background-color: var(--colorspace-purple-color);
+  border-radius: 32px;
+  padding: 0 var(--colorspace-block-margin);
+  font-size: 14px;
+  font-weight: var(--colorspace-md-weight);
+  color: var(--colorspace-light-color);
+}
+
+.badge--green {
+  background-color: var(--colorspace-green-color);
+}
+
+.badge--yellow {
+  background-color: var(--colorspace-green-yellow);
+}

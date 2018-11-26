@@ -8,8 +8,12 @@
   --colorspace-light-color: #F3F9FF;
   --colorspace-blue-color: #1976D2;
   --colorspace-purple-color: #8169bb;
+  --colorspace-green-color: #009688;
+  --colorspace-green-yellow: #FFC107;
   --colorspace-gradient-color: linear-gradient(to right, #1976d2, #4773ce, #606fc8, #726cc2, #8169bb);
   --colorspace-white-transparent-color: rgba(243,249,255, 0.3);
+
+  --colorspace-md-weight: 500;
 
   --colorspace-block-margin: 0.5rem;
 
@@ -63,3 +67,4 @@ h2 {
 @import './home.css';
 @import './menu.css';
 @import './about-me.css';
+@import './my-work.css';
