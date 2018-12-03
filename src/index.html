@@ -37,48 +37,37 @@
       </div>
     </div>
 
-  <div class="website-content">
-    <section class="home">
-      <div class="portrait">
-        <img class="portrait__image" src="<%= require('./img/avatar.png') %>" />
-        <div class="portrait__filter"></div>
-      </div>
-      <h1>John Doe</h1>
-      <div class="home__job-title">Javascript fullstack developper</div>
-      <div class="social-icons">
-        <img inline src="src/img/github-alt.svg">
-        <img inline src="src/img/stack-overflow.svg">
-        <img inline src="src/img/facebook-f.svg">
-      </div>
-      <div class="home__scroll-icon home__scroll-icon--bounce-animation">
-        <img inline src="src/img/chevron-circle-down.svg">
-      </div>
-    </section>
-    <section class="about-me">
-      <h2>About Me</h2>
-      <div class="about-me__content">
-        <img class="about-me__illustration" src="<%= require('./img/about-me-placeholder.png') %>">
-        <p class="about-me__text">
-          Lorem, ipsum dolor sit amet consectetur adipisicing elit. Ut beatae officia rem exercitationem eveniet nesciunt doloremque, delectus itaque velit, consequatur praesentium, iure maxime ipsum ipsam sed possimus earum dignissimos minima.
-
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugit, libero? Porro error sit dolorum explicabo? Excepturi aspernatur quidem, neque, commodi, aut quia provident minus officia incidunt sit qui ad modi.
-        </p>
-      </div>
-    </section>
-    <section class="my-work">
-      <h2>My Work</h2>
-      <div class="project-card">
-        <img inline src="src/img/node-logo.svg">
-        <p class="project-card__description">
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Corporis dolores soluta cum placeat molestiae quod culpa, delectus impedit magni qui beatae. Deleniti illum odit velit, corporis enim architecto nisi quidem!
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Nihil inventore praesentium, omnis illo placeat saepe, a veritatis, sunt qui nam repellendus totam perspiciatis ducimus ipsum doloribus obcaecati recusandae fugiat dicta?
-        </p>
-        <div class="project-card__badges">
-          <div class="badge badge--green">open source</div>
-          <div class="badge badge--yellow">javascript</div>
+    <div class="website-content">
+      <section class="home">
+        <div class="portrait">
+          <img class="portrait__image" src="<%= require('./img/avatar.png') %>" />
+          <div class="portrait__filter"></div>
         </div>
-      </div>
-      <div class="project-card">
+        <h1>John Doe</h1>
+        <div class="home__job-title">Javascript fullstack developper</div>
+        <div class="social-icons">
+          <img inline src="src/img/github-alt.svg">
+          <img inline src="src/img/stack-overflow.svg">
+          <img inline src="src/img/facebook-f.svg">
+        </div>
+        <div class="home__scroll-icon home__scroll-icon--bounce-animation">
+          <img inline src="src/img/chevron-circle-down.svg">
+        </div>
+      </section>
+      <section class="about-me">
+        <h2>About Me</h2>
+        <div class="about-me__content">
+          <img class="about-me__illustration" src="<%= require('./img/about-me-placeholder.png') %>">
+          <p class="about-me__text">
+            Lorem, ipsum dolor sit amet consectetur adipisicing elit. Ut beatae officia rem exercitationem eveniet nesciunt doloremque, delectus itaque velit, consequatur praesentium, iure maxime ipsum ipsam sed possimus earum dignissimos minima.
+
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugit, libero? Porro error sit dolorum explicabo? Excepturi aspernatur quidem, neque, commodi, aut quia provident minus officia incidunt sit qui ad modi.
+          </p>
+        </div>
+      </section>
+      <section class="my-work">
+        <h2>My Work</h2>
+        <div class="project-card">
           <img inline src="src/img/node-logo.svg">
           <p class="project-card__description">
             Lorem ipsum dolor sit amet consectetur adipisicing elit. Corporis dolores soluta cum placeat molestiae quod culpa, delectus impedit magni qui beatae. Deleniti illum odit velit, corporis enim architecto nisi quidem!
@@ -100,27 +89,38 @@
               <div class="badge badge--yellow">javascript</div>
             </div>
           </div>
-    </section>
-    <section class="contact">
-      <h2>Contact Me</h2>
-      <form class="form">
-        <input class="form__input" type="text" placeholder="Name" />
-        <input class="form__input" type="email" placeholder="Email" />
-        <div class="select">
-          <div class="select--container">
-            <select>
-              <option class="select--option" value="question">Ask me a question</option>
-              <option value="job">Job proposal</option>
-              <option value="open-source">Question about my open source contribution</option>
-            </select>
+          <div class="project-card">
+              <img inline src="src/img/node-logo.svg">
+              <p class="project-card__description">
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Corporis dolores soluta cum placeat molestiae quod culpa, delectus impedit magni qui beatae. Deleniti illum odit velit, corporis enim architecto nisi quidem!
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Nihil inventore praesentium, omnis illo placeat saepe, a veritatis, sunt qui nam repellendus totam perspiciatis ducimus ipsum doloribus obcaecati recusandae fugiat dicta?
+              </p>
+              <div class="project-card__badges">
+                <div class="badge badge--green">open source</div>
+                <div class="badge badge--yellow">javascript</div>
+              </div>
+            </div>
+      </section>
+      <section class="contact">
+        <h2>Contact Me</h2>
+        <form class="form">
+          <input class="form__input" type="text" placeholder="Name" />
+          <input class="form__input" type="email" placeholder="Email" />
+          <div class="select">
+            <div class="select--container">
+              <select>
+                <option class="select--option" value="question">Ask me a question</option>
+                <option value="job">Job proposal</option>
+                <option value="open-source">Question about my open source contribution</option>
+              </select>
+            </div>
           </div>
-        </div>
-        <textarea class="form__textarea" placeholder="Enter your message" cols="30" rows="8"></textarea>
-        <button class="button"><span class="button__content">Send</span></button>
-      </form>
-    </section>
+          <textarea class="form__textarea" placeholder="Enter your message" cols="30" rows="8"></textarea>
+          <button class="button"><span class="button__content">Send</span></button>
+        </form>
+      </section>
 
-      <footer>This template is hosted with love by Github.</footer>
+      <footer class="footer">This template is <img inline src="src/img/code.svg"> with <img inline src="src/img/heart.svg"> by <img inline src="src/img/github.svg"></footer>
     </div>
 
   </body>

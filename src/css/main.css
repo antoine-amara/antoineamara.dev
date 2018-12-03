@@ -65,6 +65,22 @@ h2 {
   filter: var(--colorspace-background-blur);
 }
 
+.footer {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--colorspace-light-color);
+  background-color: var(--colorspace-white-transparent-color);
+  padding: var(--colorspace-block-spacing-md);
+}
+
+.footer > svg {
+  width: 25px;
+  height: 25px;
+  margin: var(--colorspace-block-margin);
+  fill: var(--colorspace-purple-color);
+}
+
 @import './bootstrap-reboot.css';
 @import './home.css';
 @import './menu.css';
