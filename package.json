@@ -16,7 +16,7 @@
     "lint": "yarn lint:js && yarn lint:css",
     "lint:js": "eslint --fix ./src/js/*.js",
     "lint:css": "stylelint --fix 'src/css/*.css'",
-    "test": "echo \"test NOT IMPLEMENTED\"",
+    "test": "jest",
     "analyze-bundle": "yarn --silent build --profile --json > stats.json && webpack-bundle-analyzer stats.json ./dist/ -O -h 0.0.0.0 -p 9042"
   },
   "devDependencies": {
@@ -40,6 +40,7 @@
     "html-webpack-inline-svg-plugin": "^2.3.0",
     "html-webpack-plugin": "^5.3.1",
     "http-server": "^0.12.3",
+    "jest": "^26.6.3",
     "mini-css-extract-plugin": "^1.4.1",
     "optimize-css-assets-webpack-plugin": "^5.0.4",
     "postcss": "^8.2.10",
