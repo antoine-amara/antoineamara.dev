@@ -19,13 +19,6 @@
   margin-top: auto;
 }
 
-.header {
-  display: flex;
-  color: var(--colorspace-light-color);
-  background-color: var(--colorspace-white-transparent-color);
-  padding: var(--colorspace-block-spacing-md);
-}
-
 .fake-console {
   margin: var(--colorspace-block-spacing-md);
   background: var(--colorspace-white-transparent-color);

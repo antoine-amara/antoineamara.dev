@@ -11,7 +11,8 @@ const HtmlWebpackInlineSVGPlugin = require('html-webpack-inline-svg-plugin')
 module.exports = {
   entry: {
     main: './src/js/index.js',
-    page404: './src/js/404.js'
+    page404: './src/js/404.js',
+    pageLegalNotice: './src/js/legal-notice.js'
   },
   output: {
     path: path.resolve(process.cwd(), 'dist'),
@@ -72,6 +73,11 @@ module.exports = {
       template: './src/404.html',
       filename: '404.html',
       chunks: ['page404']
+    }),
+    new HtmlWebpackPlugin({
+      template: './src/legal-notice.html',
+      filename: 'legal-notice.html',
+      chunks: ['pageLegalNotice']
     }),
     new HtmlWebpackInlineSVGPlugin({
       runPreEmit: true

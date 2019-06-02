@@ -48,6 +48,25 @@ h2 {
   text-align: center;
 }
 
+h3 {
+  color: var(--colorspace-blue-color);
+}
+
+h4 {
+  color: var(--colorspace-purple-color);
+}
+
+.header {
+  display: flex;
+  color: var(--colorspace-light-color);
+  background-color: var(--colorspace-white-transparent-color);
+  padding: var(--colorspace-block-spacing-md);
+}
+
+.header h4 {
+  margin: 0;
+}
+
 .website-content {
   min-width: 100vw;
   min-height: 100vh;
@@ -88,3 +107,4 @@ h2 {
 @import './my-work.css';
 @import './contact.css';
 @import './404.css';
+@import './legal-notice.css';

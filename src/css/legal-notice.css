@@ -1,0 +1,9 @@
+.legal-notice h2 {
+  padding: var(--colorspace-block-spacing-md);
+}
+
+.legal-notice section {
+  padding: var(--colorspace-block-spacing-md);
+  background-color: var(--colorspace-white-transparent-color);
+  margin-bottom: var(--colorspace-block-spacing-md);
+}
