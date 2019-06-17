@@ -17,3 +17,6 @@ const textFor404Page = [
 ]
 
 write404ErrorToFakeConsole('fake-console', textFor404Page)
+
+const header = document.getElementsByClassName('header')[0]
+header.addEventListener('click', () => { window.location.href = './index.html' })

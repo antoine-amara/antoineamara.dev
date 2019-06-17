@@ -10,6 +10,10 @@
   }
 }
 
+.not-found .header {
+  cursor: pointer;
+}
+
 .not-found {
   display: flex;
   flex-direction: column;

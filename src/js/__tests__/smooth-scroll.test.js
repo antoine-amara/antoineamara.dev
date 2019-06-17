@@ -1,6 +1,6 @@
 /* eslint-disable */
 
-import { _getCurrentPosition, _exractTargetFromEvent, _getTargetPosition, smoothScroll } from '../smooth-scroll'
+import { _exractTargetFromEvent, _getTargetPosition, smoothScroll } from '../smooth-scroll'
 
 describe('SmoothScroll module: smooth scroll from your position to a target anchor', () => {
   let currentPosition = 100
@@ -23,38 +23,6 @@ describe('SmoothScroll module: smooth scroll from your position to a target anch
     // fake scroll to final target element because the virtual DOM don't work properly
     const targetElement = document.getElementById('target')
     targetElement.pageYOffset = 0
-  })
-  
-  describe('_getCurrentPosition', () => {
-    test('it should be defined', () => expect(_getCurrentPosition).toBeDefined())
-    test('it should be a function', () => expect(typeof _getCurrentPosition).toBe('function'))
-    test('it should throw an error if none of the javascript function return a result', () => {
-
-      expect(() => _getCurrentPosition()).not.toThrow()
-
-      window.pageYOffset = undefined
-      document.documentElement.scrollTop = undefined
-      document.body.scrollTop = undefined
-
-      expect(() => _getCurrentPosition()).toThrow()
-    })
-    test('it should return the current scroll position and find it with all possible javascript functions', () => {
-      expect(_getCurrentPosition()).toBe(currentPosition)
-
-      window.pageYOffset = undefined
-
-      expect(_getCurrentPosition()).toBe(currentPosition)
-
-      document.documentElement.scrollTop = undefined
-
-      expect(_getCurrentPosition()).toBe(currentPosition)
-    })
-
-    test('it should return the value even if the scroll is at the top (current position to 0)', () => {
-      window.scrollTo(0, 0)
-
-      expect(_getCurrentPosition()).toBe(0)
-    })
   })
 
   describe('_extractTargetIdFromEvent', () => {

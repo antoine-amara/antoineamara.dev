@@ -43,6 +43,10 @@ body {
   background: var(--colorspace-gradient-color);
 }
 
+.body--no-scroll {
+  overflow: hidden;
+}
+
 h2 {
   color: var(--colorspace-light-color);
   text-align: center;

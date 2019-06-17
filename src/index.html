@@ -30,16 +30,16 @@
 
     <div class="mobile-menu__overlay">
       <div class="mobile-menu__content">
-        <li class="mobile-menu__element mobile-menu__element--active">Home</li>
-        <li class="mobile-menu__element mobile-menu__element--blur">About Me</li>
-        <li class="mobile-menu__element mobile-menu__element--blur">My Work</li>
-        <li class="mobile-menu__element mobile-menu__element--blur">Contact</li>
-        <li class="mobile-menu__element mobile-menu__element--blur">Legal Notice</li>
+        <a class="mobile-menu__element mobile-menu__element--active" href="#home">Home</a>
+        <a class="mobile-menu__element mobile-menu__element--blur" href="#aboutme">About Me</a>
+        <a class="mobile-menu__element mobile-menu__element--blur" href="#mywork">My Work</a>
+        <a class="mobile-menu__element mobile-menu__element--blur" href="#contact">Contact</a>
+        <a class="mobile-menu__element mobile-menu__element--blur" href="./legal-notice.html">Legal Notice</a>
       </div>
     </div>
 
     <div class="website-content">
-      <section class="home">
+      <section class="home" id="home">
         <div class="portrait">
           <img class="portrait__image" src="<%= require('./img/avatar.png') %>" />
           <div class="portrait__filter"></div>
@@ -55,7 +55,7 @@
           <img inline src="src/img/chevron-circle-down.svg">
         </div>
       </section>
-      <section class="about-me">
+      <section class="about-me" id="aboutme">
         <h2>About Me</h2>
         <div class="about-me__content">
           <img class="about-me__illustration" src="<%= require('./img/about-me-placeholder.png') %>">
@@ -66,7 +66,7 @@
           </p>
         </div>
       </section>
-      <section class="my-work">
+      <section class="my-work" id="mywork">
         <h2>My Work</h2>
         <div class="project-card">
           <img inline src="src/img/node-logo.svg">
@@ -102,7 +102,7 @@
               </div>
             </div>
       </section>
-      <section class="contact">
+      <section class="contact" id="contact">
         <h2>Contact Me</h2>
         <form class="form">
           <input class="form__input" type="text" placeholder="Name" />

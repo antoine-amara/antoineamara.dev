@@ -1,3 +1,7 @@
+.legal-notice .header {
+  cursor: pointer;
+}
+
 .legal-notice h2 {
   padding: var(--colorspace-block-spacing-md);
 }

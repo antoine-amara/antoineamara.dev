@@ -1,28 +1,15 @@
+import { getCurrentScrollPosition, extractTargetIdFromElementHref } from './utils'
+
 const Event = window.Event
 const body = document.body
 
-export function _getCurrentPosition () {
-  if (!isNaN(window.pageYOffset)) {
-    return window.pageYOffset
-  }
-
-  if (document.documentElement && !isNaN(document.documentElement.scrollTop)) {
-    return document.documentElement.scrollTop
-  }
-
-  if (document.body && !isNaN(document.body.scrollTop)) {
-    return document.body.scrollTop
-  }
-
-  throw new Error('[_getCurrentPosition] cannot determine your current scroll position into the DOM')
-}
-
 export function _exractTargetFromEvent (event) {
+  const { target } = event
   if (!(event instanceof Event)) {
     throw new Error(`[_exractTargetFromEvent] the parameter is not an instance of an Event, got ${event}`)
   }
 
-  const extractedTarget = event.target.hash.substr(1)
+  const extractedTarget = extractTargetIdFromElementHref(target)
 
   if (!extractedTarget) {
     throw new Error('[_exractTargetFromEvent] cannot retrieve the target from the event')
@@ -50,7 +37,7 @@ export function smoothScroll (event, animationType, animationDuration) {
     throw new Error(`[smoothScroll] wrong parameter, one of your parameter is undefined, got event=${event}, animationType=${animationType}, animationDuration=${animationDuration}`)
   }
 
-  const currentPositionInTheDOM = _getCurrentPosition()
+  const currentPositionInTheDOM = getCurrentScrollPosition()
   const targetElementId = _exractTargetFromEvent(event)
   const targetElementPosition = _getTargetPosition(targetElementId)
 
