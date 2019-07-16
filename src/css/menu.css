@@ -129,3 +129,39 @@ nav {
 .mobile-menu__element--active {
   margin-left: 0.62rem;
 }
+
+/* Large devices (desktops, 992px and up) */
+@media (min-width: 992px) {
+  nav .mobile-menu {
+    visibility: hidden
+  }
+  .desktop-menu {
+    visibility: visible;
+    position: fixed;
+    top: 50vh;
+    z-index: 1002;
+  }
+  .desktop-menu__item {
+    display: flex;
+    align-items: center;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    margin-bottom: 20px;
+    padding-left: 4px;
+  }
+  .desktop-menu__item::after {
+    width: 10px;
+    height: 10px;
+    background: var(--colorspace-light-color);
+    border-radius: 50%;
+    content: '';
+  }
+  .desktop-menu__item:hover {
+    cursor: pointer;
+    transform: scale(1.2);
+  }
+  .desktop-menu__item--active {
+    border: 1px solid var(--colorspace-light-color);
+  }
+}

@@ -18,6 +18,7 @@ class Menu {
     if (!this.overlay) throw new Error(`[menu] the overlay element is not found, got ${this.overlay}`)
 
     this.setEventListener = this.setEventListener.bind(this)
+    this.destroyListeners = this.destroyListeners.bind(this)
     this._toogleMenu = this._toogleMenu.bind(this)
     this._determineMenuElementClickEvent = this._determineMenuElementClickEvent.bind(this)
     this._scrollChangeActiveElement = this._scrollChangeActiveElement.bind(this)
@@ -40,6 +41,10 @@ class Menu {
       const onCLickCallback = this._determineMenuElementClickEvent(element)
       element.addEventListener('click', onCLickCallback)
     })
+  }
+
+  destroyListeners () {
+    this.menu.removeEventListener('click', this._toogleMenu)
   }
 
   _toogleMenu () {
