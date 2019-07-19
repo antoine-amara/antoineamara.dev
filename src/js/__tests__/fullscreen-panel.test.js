@@ -4,6 +4,12 @@ import FullscreenPanels from '../fullscreen-panel'
 
 describe('Fullscreen panel module: each section is transformed to a panel and each scroll action pass to the next/previous panel', () => {
   let websitePanels = null
+  const fakeScrollTo = (coordX, coordY) => {
+    window.pageXOffset = coordX
+    window.pageYOffset = coordY
+    document.documentElement.scrollTop = coordY
+    document.body.scrollTop = coordY
+  }
   beforeEach(() => {
     document.body.innerHTML = `
       <nav>
@@ -14,8 +20,14 @@ describe('Fullscreen panel module: each section is transformed to a panel and ea
         <section name="first">first panel</section>
         <section name="second">second panel</section>
         <section name="third">third panel</section>
-      </div>`
+      </div>
+      
+      <footer class="footer">
+        <div>This template is <img inline src="src/img/code.svg"> with <img inline src="src/img/heart.svg"> by <img inline src="src/img/github.svg"></div>
+        <a href="./legal-notice.html">Legal Notice</a>
+      </footer>`
 
+    window.scrollTo = jest.fn(fakeScrollTo)    
     websitePanels = new FullscreenPanels('website-content')
   })
   describe('FullscreenPanel constructor', () => {

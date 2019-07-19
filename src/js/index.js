@@ -18,7 +18,10 @@ function _onMediaChange (desktopMediaQuery) {
 }
 
 function _initMobileScripts () {
-  if (panels) panels.destroyListeners()
+  if (panels) {
+    panels.destroyListeners()
+    panels = null
+  }
 
   /* init menu */
   menu = new Menu()
@@ -30,12 +33,13 @@ function _initMobileScripts () {
 }
 
 function _initDesktopScripts () {
-  if (menu) menu.destroyListeners()
-
-  if (!panels) {
-    panels = new FullscreenPanel('website-content')
-    panels.createAndInsertMenu('desktop-menu')
+  if (menu) {
+    menu.destroyListeners()
+    menu = null
   }
+
+  panels = new FullscreenPanel('website-content')
+  panels.createAndInsertMenu('desktop-menu')
 
   /* manage contact form submission */
   const contactSubmitButton = document.getElementsByClassName('button')[0]

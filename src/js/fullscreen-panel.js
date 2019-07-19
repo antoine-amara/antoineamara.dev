@@ -1,5 +1,3 @@
-import { throttle } from './utils'
-
 export default class FullscreenPanel {
   constructor (containerClassname) {
     this.SCROLL_DIRECTIONS = {
@@ -11,6 +9,8 @@ export default class FullscreenPanel {
 
     this.containerClassname = containerClassname
     const container = document.getElementsByClassName(containerClassname)[0]
+    // the setTimeout is a trick to avoid chrome to automatically scroll on an element at page refresh.
+    setTimeout(() => window.scrollTo(0, 0), 0)
     container.style.transform = 'translateY(0)'
     document.body.style.overflow = 'hidden'
     const footer = document.getElementsByClassName('footer')[0]
@@ -27,12 +27,13 @@ export default class FullscreenPanel {
     this._scroll = this._scroll.bind(this)
     this.destroyListeners = this.destroyListeners.bind(this)
 
-    container.addEventListener('wheel', throttle(this._onScroll, 1000))
+    container.addEventListener('wheel', this._onScroll)
   }
 
   createAndInsertMenu (menuClassName) {
     const sections = Array.from(document.querySelectorAll('section'))
     const menuContainer = document.getElementsByClassName(menuClassName)[0]
+    this.menuClassName = menuClassName
 
     if (!sections.length) throw new Error('[createAndInsertMenu] cannot find website sections, cannot create the menu')
     if (!menuContainer) throw new Error(`[createAndInsertMenu] cannot find the menu container element, try to retrieve element with classname: ${menuClassName}`)
@@ -150,5 +151,11 @@ export default class FullscreenPanel {
   destroyListeners () {
     const container = document.getElementsByClassName(this.containerClassname)[0]
     container.removeEventListener('wheel', this._onScroll)
+    container.style.transform = 'translateY(0)'
+    const menu = document.getElementsByClassName(this.menuClassName)[0]
+    while (menu.firstChild) {
+      menu.removeChild(menu.firstChild)
+    }
+    document.body.style.overflow = 'auto'
   }
 }

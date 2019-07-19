@@ -22,6 +22,7 @@ class Menu {
     this._toogleMenu = this._toogleMenu.bind(this)
     this._determineMenuElementClickEvent = this._determineMenuElementClickEvent.bind(this)
     this._scrollChangeActiveElement = this._scrollChangeActiveElement.bind(this)
+    this._throttledScrollChangeActiveElement = throttle(this._scrollChangeActiveElement, 500, false, true)
     this._onMobileMenuElementPageClickEvent = this._onMobileMenuElementPageClickEvent.bind(this)
     this._onMobileMenuElementAnchorClickEvent = this._onMobileMenuElementAnchorClickEvent.bind(this)
     this._extractAndUpdateActiveElement = this._extractAndUpdateActiveElement.bind(this)
@@ -35,7 +36,7 @@ class Menu {
 
     // click event to open the menu and display the content.
     this.menu.addEventListener('click', this._toogleMenu)
-    if (scrollUpdate) document.addEventListener('scroll', throttle(this._scrollChangeActiveElement, 500, false, true))
+    if (scrollUpdate) document.addEventListener('scroll', this._throttledScrollChangeActiveElement)
     // click event to change the active element from the menu.
     this.menuItems.map(element => {
       const onCLickCallback = this._determineMenuElementClickEvent(element)
@@ -44,7 +45,12 @@ class Menu {
   }
 
   destroyListeners () {
+    document.removeEventListener('scroll', this._throttledScrollChangeActiveElement)
     this.menu.removeEventListener('click', this._toogleMenu)
+    this.menuItems.map(item => {
+      item.removeEventListener('click', this._onMobileMenuElementAnchorClickEvent)
+      item.removeEventListener('click', this._onMobileMenuElementPageClickEvent)
+    })
   }
 
   _toogleMenu () {
