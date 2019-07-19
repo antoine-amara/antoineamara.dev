@@ -11,3 +11,15 @@
   background-color: var(--colorspace-white-transparent-color);
   margin-bottom: var(--colorspace-block-spacing-md);
 }
+
+/* Large devices (desktops, 992px and up) */
+@media (min-width: 992px) {
+  .legal-notice section {
+    height: auto;
+  }
+
+  .legal-notice-text--desktop {
+    max-width: var(--colorspace-desktop-maxwidth);
+    margin: auto;
+  }
+}

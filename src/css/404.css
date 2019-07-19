@@ -51,3 +51,12 @@
 .fake-console__blink {
   animation: blink 1s infinite;
 }
+
+/* Large devices (desktops, 992px and up) */
+@media (min-width: 992px) {
+  .fake-console {
+    width: 600px;
+    height: 400px;
+    margin: auto;
+  }
+}

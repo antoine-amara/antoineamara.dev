@@ -12,6 +12,7 @@
   justify-content: center;
   height: 100vh;
   color: var(--colorspace-light-color);
+  position: relative;
 }
 
 .portrait {
@@ -67,4 +68,28 @@
 
 .home__scroll-icon--bounce-animation {
   animation: bounce 3s ease infinite alternate;
+}
+
+/* Large devices (desktops, 992px and up) */
+@media (min-width: 992px) {
+  .home h1 {
+    font-size: var(--colorspace-h1-title-desktop);
+  }
+
+  .home__job-title {
+    font-size: var(--colorspace-job-title-desktop);
+  }
+
+  .social-icons {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    margin: var(--colorspace-block-spacing-md);
+    border-radius: 10px;
+  }
+
+  .social-icons > svg:hover {
+    cursor: pointer;
+    fill: var(--colorspace-blue-color);
+  }
 }

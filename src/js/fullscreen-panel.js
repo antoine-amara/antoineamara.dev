@@ -12,6 +12,9 @@ export default class FullscreenPanel {
     this.containerClassname = containerClassname
     const container = document.getElementsByClassName(containerClassname)[0]
     container.style.transform = 'translateY(0)'
+    document.body.style.overflow = 'hidden'
+    const footer = document.getElementsByClassName('footer')[0]
+    footer.classList.toggle('footer--panels')
 
     this.totalNumberOfPanels = document.querySelectorAll('section').length
     this.hasMenu = false

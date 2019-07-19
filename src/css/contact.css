@@ -4,6 +4,10 @@
   flex-direction: column;
 }
 
+.contact h2 {
+  margin-top: auto;
+}
+
 input:focus,
 textarea:focus,
 select:focus,
@@ -135,4 +139,13 @@ option {
 .button__content {
   color: var(--colorspace-light-color);
   z-index: 1;
+}
+
+/* Large devices (desktops, 992px and up) */
+@media (min-width: 992px) {
+  .form {
+    padding: 0;
+    margin: 0 auto;
+    width: var(--colorspace-desktop-maxwidth);
+  }
 }
