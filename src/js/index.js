@@ -38,6 +38,10 @@ function _initDesktopScripts () {
     menu = null
   }
 
+  // stop wheel event when scrolling the project card content.
+  const cards = document.getElementsByClassName('project-card__description')
+  Array.from(cards).forEach(card => card.addEventListener('wheel', event => event.stopPropagation()))
+
   panels = new FullscreenPanel('website-content')
   panels.createAndInsertMenu('desktop-menu')
 

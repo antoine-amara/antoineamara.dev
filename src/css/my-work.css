@@ -1,5 +1,24 @@
 .my-work {
   padding: var(--colorspace-block-spacing-md);
+  z-index: 0;
+}
+
+.projects {
+  display: flex;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+}
+
+.projects .project-card {
+  margin-right: var(--colorspace-block-margin);
+  flex-grow: 1;
+  flex-shrink: 0;
+  flex-basis: 300px;
+  scroll-snap-align: start;
+}
+
+.projects .project-card:last-of-type {
+  scroll-snap-align: end;
 }
 
 .project-card {
@@ -44,4 +63,21 @@
 
 .badge--yellow {
   background-color: var(--colorspace-green-yellow);
+}
+
+/* Large devices (desktops, 992px and up) */
+@media (min-width: 992px) {
+  .my-work {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+  
+  .projects {
+    margin-right: var(--colorspace-desktop-menu-margin);
+  }
+
+  .projects .project-card {
+    flex-basis: 400px;
+  }
 }
