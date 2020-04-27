@@ -1,6 +1,5 @@
 import '../css/main.css'
-import '../fonts/TrueLies.ttf'
 
-console.info('*************************')
-console.info('* Welcome to Staticpack *')
-console.info('*************************')
+console.info('**********************************************')
+console.info('* Welcome to ColorSpace Developer Portfolio *')
+console.info('**********************************************')

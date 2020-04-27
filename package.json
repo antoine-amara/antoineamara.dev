@@ -1,6 +1,6 @@
 {
-  "name": "staticpack",
-  "description": "A reusable development environment for a 100% static website or template.",
+  "name": "colorspace-developer-portfolio",
+  "description": "An elegant and reusable free template made for my portfolio. It used a mobile-first approach, a rich colorspace style and is powered by staticpack.",
   "repository": "https://github.com/antoine-amara/staticpack",
   "version": "0.6.0",
   "author": "Antoine Amara <amara.antoine@gmail.com>",

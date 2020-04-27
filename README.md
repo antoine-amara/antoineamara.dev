@@ -1,6 +1,4 @@
-<p align="center">
-  <img width="371" height="127" src="./logo.png">
-</p>
+# ColorSpace Developer Portfolio
 
 ![Licence Badge](https://badgen.net/badge/License/GPLv3.0/green)
 ![JS Style](https://badgen.net/badge/JS/Standard/yellow)
@@ -8,10 +6,12 @@
 ![Webpack](https://badgen.net/badge/webpack/v4/blue)
 ![Docker](https://badgen.net/badge/icon/docker-compose?icon=docker&label)
 
-A reusable development environment for a 100% static website or template.
+An elegant and reusable free template made for my portfolio. It used a mobile-first approach and a rich colorspace style.
 
 The website is just pure HTML5/CSS3 and Javascript. The final build is managed and created with Webpack 5.
 This repo gives a complete development environment for developers who want to construct a static website. All this stuff runs with makefiles command inside Docker containers. Moreover, we use webpack to bundle the website and webpack-dev-server to run a development server.
+
+This website development environment is based on [Staticpack](https://github.com/antoine-amara/staticpack).
 
 ## Run the development environment
 
