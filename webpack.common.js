@@ -9,7 +9,10 @@ const { CleanWebpackPlugin } = require('clean-webpack-plugin')
 const HtmlWebpackInlineSVGPlugin = require('html-webpack-inline-svg-plugin')
 
 module.exports = {
-  entry: { main: './src/js/index.js' },
+  entry: {
+    main: './src/js/index.js',
+    page404: './src/js/404.js'
+  },
   output: {
     path: path.resolve(process.cwd(), 'dist'),
     filename: '[name].[contenthash].js'
@@ -64,6 +67,11 @@ module.exports = {
       filename: 'index.html',
       template: 'src/index.html',
       chunks: ['main']
+    }),
+    new HtmlWebpackPlugin({
+      template: './src/404.html',
+      filename: '404.html',
+      chunks: ['page404']
     }),
     new HtmlWebpackInlineSVGPlugin({
       runPreEmit: true

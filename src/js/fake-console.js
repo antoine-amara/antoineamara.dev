@@ -1,5 +1,8 @@
 const HTMLElement = window.HTMLElement
 
+// Module to manage a fake console
+// write404ErrorToFakeConsole is a dedicated function to manage the fake console on 404.html
+
 export function write404ErrorToFakeConsole (selector, elementToDisplay, options = {}) {
   const fakeConsoleElement = document.getElementsByClassName(selector)[0]
 

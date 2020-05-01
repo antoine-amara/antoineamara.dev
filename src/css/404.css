@@ -1,0 +1,56 @@
+@keyframes blink {
+  0% {opacity: 0}
+	49%{opacity: 0}
+	50% {opacity: 1}
+}
+
+@keyframes type {
+  to {
+    width: 17em;
+  }
+}
+
+.not-found {
+  display: flex;
+  flex-direction: column;
+}
+
+.not-found__footer {
+  margin-top: auto;
+}
+
+.header {
+  display: flex;
+  color: var(--colorspace-light-color);
+  background-color: var(--colorspace-white-transparent-color);
+  padding: var(--colorspace-block-spacing-md);
+}
+
+.fake-console {
+  margin: var(--colorspace-block-spacing-md);
+  background: var(--colorspace-white-transparent-color);
+  border-radius: 5px;
+  min-height: 300px;
+}
+
+.fake-console__line {
+  padding: var(--colorspace-block-margin);
+  color: var(--colorspace-white-color);
+}
+
+.fake-console--no-margin {
+  margin: 0;
+}
+
+.fake-console--cursor {
+  display: inline-block;
+  color: var(--colorspace-light-color);
+  padding: 0;
+  margin: 0;
+  font-family: inherit;
+  font-size: inherit;
+}
+
+.fake-console__blink {
+  animation: blink 1s infinite;
+}
