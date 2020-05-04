@@ -25,22 +25,22 @@
           <span class="mobile-menu__bar mobile-menu__bar--open-transition"></span>
           <span class="mobile-menu__bar mobile-menu__bar--open-transition"></span>
         </div>
-        <div class="desktop-menu"></div>
       </div>
+      <div class="desktop-menu"></div>
     </nav>
 
-    <div class="mobile-menu__overlay">
-      <div class="mobile-menu__content">
-        <a class="mobile-menu__element mobile-menu__element--active" href="#home">Home</a>
-        <a class="mobile-menu__element mobile-menu__element--blur" href="#aboutme">About Me</a>
-        <a class="mobile-menu__element mobile-menu__element--blur" href="#mywork">My Work</a>
-        <a class="mobile-menu__element mobile-menu__element--blur" href="#contact">Contact</a>
-        <a class="mobile-menu__element mobile-menu__element--blur" href="./legal-notice.html">Legal Notice</a>
+    <div class="mobile-menu-overlay">
+      <div class="mobile-menu-overlay__content">
+        <a class="mobile-menu-overlay__element mobile-menu-overlay__element--active" href="#home">Home</a>
+        <a class="mobile-menu-overlay__element mobile-menu-overlay__element--blur" href="#aboutme">About Me</a>
+        <a class="mobile-menu-overlay__element mobile-menu-overlay__element--blur" href="#mywork">My Work</a>
+        <a class="mobile-menu-overlay__element mobile-menu-overlay__element--blur" href="#contact">Contact</a>
+        <a class="mobile-menu-overlay__element mobile-menu-overlay__element--blur" href="./legal-notice.html">Legal Notice</a>
       </div>
     </div>
 
-    <div class="website-content">
-      <section name="Home" class="home" id="home">
+    <div class="website-content website-content--panel-transition">
+      <section name="Home" class="home section--desktop-panel" id="home">
         <div class="portrait">
           <img class="portrait__image" src="<%= require('./img/avatar.png') %>" />
           <div class="portrait__filter"></div>
@@ -56,7 +56,7 @@
           <img inline src="src/img/chevron-circle-down.svg">
         </div>
       </section>
-      <section name="About Me" class="about-me" id="aboutme">
+      <section name="About Me" class="about-me section--desktop-panel" id="aboutme">
         <h2>About Me</h2>
         <div class="about-me__content">
           <img class="about-me__illustration" src="<%= require('./img/about-me-placeholder.png') %>">
@@ -67,7 +67,7 @@
           </p>
         </div>
       </section>
-      <section name="My Work" class="my-work" id="mywork">
+      <section name="My Work" class="my-work section--desktop-panel" id="mywork">
         <h2>My Work</h2>
         <div class="projects">
           <div class="project-card">
@@ -105,13 +105,13 @@
           </div>
         </div>
       </section>
-      <section name="Contact" class="contact" id="contact">
+      <section name="Contact" class="contact section--desktop-panel" id="contact">
         <h2>Contact Me</h2>
         <form class="form">
           <input class="form__input" type="text" placeholder="Name" />
           <input class="form__input" type="email" placeholder="Email" />
           <div class="select">
-            <div class="select--container">
+            <div class="select__container">
               <select>
                 <option class="select--option" value="question">Ask me a question</option>
                 <option value="job">Job proposal</option>

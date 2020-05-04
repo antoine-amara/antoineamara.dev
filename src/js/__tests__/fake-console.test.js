@@ -53,7 +53,7 @@ describe('FakeConsole module: display fake UNIX like commands into the screen', 
             if(index !== fakeConsoleHtmlElements.length - 1) {
               expect(htmlElement.innerHTML).toEqual(`&gt; ${validTextToDisplay[index]} <br>`)              
             } else {
-            expect(htmlElement.innerHTML).toEqual(`&gt; ${validTextToDisplay[index]} <div class="fake-console--cursor fake-console__blink">█</div> <br>`)
+            expect(htmlElement.innerHTML).toEqual(`&gt; ${validTextToDisplay[index]} <div class="fake-console__cursor fake-console--blink">█</div> <br>`)
             }
           })
         })
@@ -99,8 +99,8 @@ describe('FakeConsole module: display fake UNIX like commands into the screen', 
           const cursor = `${stringArrayElement[stringArrayElement.length - 4]} ${stringArrayElement[stringArrayElement.length - 3]} ${stringArrayElement[stringArrayElement.length - 2]}`
 
           expect(stringArrayElement[0]).toEqual('&gt;')
-          expect(fakeConsoleHtml).toEqual('&gt; Hello there ! <div class="fake-console--cursor fake-console__blink">█</div> <br>')
-          expect(cursor).toEqual('<div class="fake-console--cursor fake-console__blink">█</div>')
+          expect(fakeConsoleHtml).toEqual('&gt; Hello there ! <div class="fake-console__cursor fake-console--blink">█</div> <br>')
+          expect(cursor).toEqual('<div class="fake-console__cursor fake-console--blink">█</div>')
           expect(stringArrayElement[stringArrayElement.length - 1]).toEqual('<br>')
         })
     })

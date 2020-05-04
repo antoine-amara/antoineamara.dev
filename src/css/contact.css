@@ -47,7 +47,7 @@ button:focus {
   width: 100%;
 }
 
-.select--container {
+.select__container {
   position: relative;
   background-color: var(--colorspace-white-transparent-color);
   margin: 0 0 var(--colorspace-block-margin) 0;
@@ -55,7 +55,7 @@ button:focus {
   border-radius: 10px;
 }
 
-.select--container::after {
+.select__container::after {
   content: '';
   position: absolute;
   top: 50%;

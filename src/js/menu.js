@@ -6,13 +6,13 @@ const HTMLElement = window.HTMLElement
 class Menu {
   constructor () {
     this.menu = document.getElementsByClassName('mobile-menu__bars')[0]
-    this.overlay = document.getElementsByClassName('mobile-menu__overlay')[0]
+    this.overlay = document.getElementsByClassName('mobile-menu-overlay')[0]
     this.menuItems = Array.from(
-      document.getElementsByClassName('mobile-menu__element')
+      document.getElementsByClassName('mobile-menu-overlay__element')
     )
-    this.activeClassModifier = 'mobile-menu__element--active'
+    this.activeClassModifier = 'mobile-menu-overlay__element--active'
     // the inactive elements have a blur effect
-    this.inactiveClassModifier = 'mobile-menu__element--blur'
+    this.inactiveClassModifier = 'mobile-menu-overlay__element--blur'
 
     if (!this.menu) throw new Error(`[menu] the menu element is not found, got ${this.menu}`)
     if (!this.overlay) throw new Error(`[menu] the overlay element is not found, got ${this.overlay}`)
@@ -55,7 +55,7 @@ class Menu {
 
   _toogleMenu () {
     this.menu.classList.toggle('mobile-menu__bars--open')
-    this.overlay.classList.toggle('mobile-menu__overlay--open')
+    this.overlay.classList.toggle('mobile-menu-overlay--open')
     document.body.classList.toggle('body--no-scroll')
   }
 

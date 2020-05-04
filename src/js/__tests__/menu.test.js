@@ -17,11 +17,11 @@ describe('Menu module: manage an hamburger menu', () => {
     </div>
     </nav>
 
-    <div class="mobile-menu__overlay">
-      <div class="mobile-menu__content">
-        <a class="mobile-menu__element mobile-menu__element--active" href="#home" id="anchor-element">Home</a>
-        <a class="mobile-menu__element mobile-menu__element--blur" href="index.html#aboutme" id="anchorandfile-element">About Me</a>
-        <a class="mobile-menu__element mobile-menu__element--blur" href="./legal-notice.html" id="file-element">Legal Notice</a>
+    <div class="mobile-menu-overlay">
+      <div class="mobile-menu-overlay__content">
+        <a class="mobile-menu-overlay__element mobile-menu-overlay__element--active" href="#home" id="anchor-element">Home</a>
+        <a class="mobile-menu-overlay__element mobile-menu-overlay__element--blur" href="index.html#aboutme" id="anchorandfile-element">About Me</a>
+        <a class="mobile-menu-overlay__element mobile-menu-overlay__element--blur" href="./legal-notice.html" id="file-element">Legal Notice</a>
       </div>
     </div>
     `
@@ -41,11 +41,11 @@ describe('Menu module: manage an hamburger menu', () => {
         </div>
         </nav>
 
-        <div class="mobile-menu__overlay">
-          <div class="mobile-menu__content">
-            <a class="mobile-menu__element mobile-menu__element--active" href="#home" id="anchor-element">Home</a>
-            <a class="mobile-menu__element mobile-menu__element--blur" href="index.html#aboutme" id="anchorandfile-element">About Me</a>
-            <a class="mobile-menu__element mobile-menu__element--blur" href="./legal-notice.html" id="file-element">Legal Notice</a>
+        <div class="mobile-menu-overlay">
+          <div class="mobile-menu-overlay__content">
+            <a class="mobile-menu-overlay__element mobile-menu-overlay__element--active" href="#home" id="anchor-element">Home</a>
+            <a class="mobile-menu-overlay__element mobile-menu-overlay__element--blur" href="index.html#aboutme" id="anchorandfile-element">About Me</a>
+            <a class="mobile-menu-overlay__element mobile-menu-overlay__element--blur" href="./legal-notice.html" id="file-element">Legal Notice</a>
           </div>
         </div>
       `
@@ -88,8 +88,8 @@ describe('Menu module: manage an hamburger menu', () => {
           </div>
         </nav>
 
-        <div class="mobile-menu__overlay">
-          <div class="mobile-menu__content">
+        <div class="mobile-menu-overlay">
+          <div class="mobile-menu-overlay__content">
           </div>
         </div>
       `
@@ -147,7 +147,7 @@ describe('Menu module: manage an hamburger menu', () => {
       jest.useFakeTimers()
 
       // the menu is closed
-      let menuisOpen = document.getElementsByClassName('mobile-menu__overlay--open')[0]      
+      let menuisOpen = document.getElementsByClassName('mobile-menu-overlay--open')[0]      
       expect(menuisOpen).toBeFalsy()
 
       // open the menu
@@ -158,7 +158,7 @@ describe('Menu module: manage an hamburger menu', () => {
       await Promise.resolve()
 
       // check the menu is now open
-      menuisOpen = document.getElementsByClassName('mobile-menu__overlay--open')[0]
+      menuisOpen = document.getElementsByClassName('mobile-menu-overlay--open')[0]
       expect(menuisOpen).toBeTruthy()
 
       // close the menu and wait the animation is finish
@@ -169,7 +169,7 @@ describe('Menu module: manage an hamburger menu', () => {
       await Promise.resolve()
 
       // check the menu is now closed
-      menuisOpen = document.getElementsByClassName('mobile-menu__overlay--open')[0]      
+      menuisOpen = document.getElementsByClassName('mobile-menu-overlay--open')[0]      
       expect(menuisOpen).toBeFalsy()
 
       jest.useRealTimers()
@@ -192,9 +192,9 @@ describe('Menu module: manage an hamburger menu', () => {
         </div>
       </nav>
 
-      <div class="mobile-menu__overlay">
-        <div class="mobile-menu__content">
-          <a class="mobile-menu__element mobile-menu__element--blur" href="hackerman" id="invalid">FAKE!</a>
+      <div class="mobile-menu-overlay">
+        <div class="mobile-menu-overlay__content">
+          <a class="mobile-menu-overlay__element mobile-menu-overlay__element--blur" href="hackerman" id="invalid">FAKE!</a>
         </div>
       </div>
     `
@@ -244,16 +244,16 @@ describe('Menu module: manage an hamburger menu', () => {
       const aboutMeInactiveElement = document.getElementById('anchorandfile-element')
       const homeActiveElement = document.getElementById('anchor-element')
 
-      expect(aboutMeInactiveElement.classList.contains('mobile-menu__element--active')).toBeFalsy()
-      expect(homeActiveElement.classList.contains('mobile-menu__element--active')).toBeTruthy()
+      expect(aboutMeInactiveElement.classList.contains('mobile-menu-overlay__element--active')).toBeFalsy()
+      expect(homeActiveElement.classList.contains('mobile-menu-overlay__element--active')).toBeTruthy()
 
       _updateActiveElement(aboutMeInactiveElement)
 
       const activeAboutMeElement = document.getElementById('anchorandfile-element')
       const homeInactiveElement = document.getElementById('anchor-element')
 
-      expect(activeAboutMeElement.classList.contains('mobile-menu__element--active')).toBeTruthy()
-      expect(homeInactiveElement.classList.contains('mobile-menu__element--active')).toBeFalsy()
+      expect(activeAboutMeElement.classList.contains('mobile-menu-overlay__element--active')).toBeTruthy()
+      expect(homeInactiveElement.classList.contains('mobile-menu-overlay__element--active')).toBeFalsy()
     })
   })
 })

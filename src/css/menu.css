@@ -74,7 +74,7 @@ nav {
 /* MOBILE MENU CONTENT           */
 /* ***************************** */
 
-.mobile-menu__overlay {
+.mobile-menu-overlay {
   position: fixed;
   width: 100%;
   height: 100%;
@@ -89,17 +89,17 @@ nav {
   opacity: 0;
 }
 
-.mobile-menu__overlay--open {
+.mobile-menu-overlay--open {
   visibility: visible;
   opacity: 1;
 }
 
-.mobile-menu__content {
+.mobile-menu-overlay__content {
   display: flex;
   flex-direction: column;
 }
 
-.mobile-menu__element {
+.mobile-menu-overlay__element {
   font-size: var(--colorspace-mobile-menu-font-size);
   text-transform: uppercase;
   letter-spacing: 1px;
@@ -112,21 +112,21 @@ nav {
   text-decoration: none;
 }
 
-.mobile-menu__element:visited,
-.mobile-menu__element:focus,
-.mobile-menu__element:active {
+.mobile-menu-overlay__element:visited,
+.mobile-menu-overlay__element:focus,
+.mobile-menu-overlay__element:active {
   color: var(--colorspace-purple-color);
 }
 
-.mobile-menu__element:hover {
+.mobile-menu-overlay__element:hover {
   text-decoration: none;
 }
 
-.mobile-menu__element--blur {
+.mobile-menu-overlay__element--blur {
   filter: blur(1.7px);
 }
 
-.mobile-menu__element--active {
+.mobile-menu-overlay__element--active {
   margin-left: 0.62rem;
 }
 

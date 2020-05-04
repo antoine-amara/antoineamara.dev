@@ -44,7 +44,7 @@ export function _pushPhraseToFakeConsole (fakeConsoleElement, phrase, addCursor 
     )
       .then(_ => {
         if (addCursor) {
-          return _pushCharacterToFakeConsole(phraseContainer, ' <div class="fake-console--cursor fake-console__blink">&#x2588;</div>')
+          return _pushCharacterToFakeConsole(phraseContainer, ' <div class="fake-console__cursor fake-console--blink">&#x2588;</div>')
         }
       })
       .then(_ => _pushCharacterToFakeConsole(phraseContainer, ' <br/>'))

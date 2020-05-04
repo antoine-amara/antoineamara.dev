@@ -1,12 +1,8 @@
-.legal-notice .header {
-  cursor: pointer;
-}
-
-.legal-notice h2 {
+.legal-notice__title {
   padding: var(--colorspace-block-spacing-md);
 }
 
-.legal-notice section {
+.legal-notice__section {
   padding: var(--colorspace-block-spacing-md);
   background-color: var(--colorspace-white-transparent-color);
   margin-bottom: var(--colorspace-block-spacing-md);
@@ -14,11 +10,7 @@
 
 /* Large devices (desktops, 992px and up) */
 @media (min-width: 992px) {
-  .legal-notice section {
-    height: auto;
-  }
-
-  .legal-notice-text--desktop {
+  .legal-notice__text {
     max-width: var(--colorspace-desktop-maxwidth);
     margin: auto;
   }
