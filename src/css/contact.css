@@ -1,3 +1,37 @@
+/* ******************************************************
+name:        contact.css
+description: css rules for contact section in index.html.
+-- 
+this project uses the BEM method, see http://getbem.com/.
+all rules are documented by Block.
+****************************************************** */
+
+/* 
+  useful inputs global rules for the contact form.
+*/
+option {
+  background-color: var(--colorspace-white-transparent-color);
+  color: var(--colorspace-purple-color);
+  width: 100%;
+}
+
+input:focus,
+textarea:focus,
+select:focus,
+button:focus {
+  outline: none;
+}
+
+::placeholder {
+  color: var(--colorspace-light-color);
+  opacity: 1;
+}
+/* /globals */
+
+/* 
+  contact: global section rules.
+  contact section contains a title and a form.
+*/
 .contact {
   display: flex;
   justify-content: center;
@@ -7,13 +41,11 @@
 .contact h2 {
   margin-top: auto;
 }
+/* /contact */
 
-input:focus,
-textarea:focus,
-select:focus,
-button:focus {
-  outline: none;
-}
+/* 
+  form: rules for the form element and inputs.
+*/
 
 .form {
   display: flex;
@@ -37,11 +69,12 @@ button:focus {
   height: 2em;
 }
 
-::placeholder {
-  color: var(--colorspace-light-color);
-  padding-left: 10px;
-}
+/* /form */
 
+/* 
+  select: a custom select input.
+  this element is here to overcharge select input styles.
+*/
 .select {
   position: relative;
   width: 100%;
@@ -84,12 +117,12 @@ button:focus {
   color: #fff;
 }
 
-option {
-  background-color: var(--colorspace-white-transparent-color);
-  color: var(--colorspace-purple-color);
-  width: 100%;
-}
+/* /select */
 
+/* 
+  button: a custom button element.
+  some styling for websites buttons.
+*/
 .button {
   position: relative;
   background: currentColor;
@@ -140,12 +173,17 @@ option {
   color: var(--colorspace-light-color);
   z-index: 1;
 }
+/* /button */
 
 /* Large devices (desktops, 992px and up) */
 @media (min-width: 992px) {
+  /* 
+    form: rules for the form element and inputs.
+  */
   .form {
     padding: 0;
     margin: 0 auto;
     width: var(--colorspace-desktop-maxwidth);
   }
+  /* /form */
 }

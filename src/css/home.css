@@ -1,3 +1,20 @@
+/* *******************************************************
+name:        home.css
+description: css rules for home section in index.html.
+-- 
+this project uses the BEM method, see http://getbem.com/.
+all rules are documented by Block.
+******************************************************* */
+
+/*
+  home: the container of the section.
+  display name, job title and the scroll icon.
+  it contains the portrait and the social icon blocks.
+*/
+
+/*
+  bounce: animation for the scroll icon.
+*/
 @keyframes bounce {
   0% { transform: translateY(0); }
   20% { transform: translateY(-10px); }
@@ -15,6 +32,32 @@
   position: relative;
 }
 
+.home h1 {
+  font-size: var(--colorspace-h1-title);
+}
+
+.home__job-title {
+  font-size: var(--colorspace-job-title);
+  margin-bottom: var(--colorspace-block-margin);
+}
+
+.home__scroll-icon {
+  fill: var(--colorspace-light-color);
+  width: 50px;
+  height: 50px;
+  position: absolute;
+  bottom: 0;
+  margin-bottom: var(--colorspace-block-margin);
+}
+
+.home__scroll-icon--bounce-animation {
+  animation: bounce 3s ease infinite alternate;
+}
+/* /home */
+
+/*
+  portrait: display a rounded portrait and a color filter.
+*/
 .portrait {
   position: relative;
 }
@@ -35,16 +78,11 @@
   top: 0;
   background-color: var(--colorspace-white-transparent-color);
 }
+/* /portrait */
 
-.home h1 {
-  font-size: var(--colorspace-h1-title);
-}
-
-.home__job-title {
-  font-size: var(--colorspace-job-title);
-  margin-bottom: var(--colorspace-block-margin);
-}
-
+/*
+  social-icons: social svg icons container.
+*/
 .social-icons {
   background-color: var(--colorspace-white-transparent-color);
   border-radius: 10px;
@@ -56,22 +94,14 @@
   height: var(--colorspace-social-icons);
   margin: var(--colorspace-block-margin);
 }
-
-.home__scroll-icon {
-  fill: var(--colorspace-light-color);
-  width: 50px;
-  height: 50px;
-  position: absolute;
-  bottom: 0;
-  margin-bottom: var(--colorspace-block-margin);
-}
-
-.home__scroll-icon--bounce-animation {
-  animation: bounce 3s ease infinite alternate;
-}
+/* /social-icons */
 
 /* Small devices (landscape phones, 576px and up) */
 @media (min-width: 576px) and (max-width: 767.98px) {
+
+  /*
+    portrait: display a rounded portrait and a color filter.
+  */
   .portrait__image {
     width: 150px;
     height: 150px;
@@ -81,7 +111,11 @@
     width: 150px;
     height: 150px;
   }
+  /* /portrait */
 
+  /*
+    social-icons: social svg icons container.
+  */
   .social-icons {
     position: absolute;
     bottom: 0;
@@ -89,10 +123,16 @@
     margin: var(--colorspace-block-spacing-md);
     border-radius: 10px;
   }
+  /* /social-icons */
 }
 
 /* Large devices (desktops, 992px and up) */
 @media (min-width: 992px) {
+  /*
+    home: the container of the section.
+    display name, job title and the scroll icon.
+    it contains the portrait and the social icon blocks.
+  */
   .home h1 {
     font-size: var(--colorspace-h1-title-desktop);
   }
@@ -100,7 +140,11 @@
   .home__job-title {
     font-size: var(--colorspace-job-title-desktop);
   }
+  /* /home */
 
+  /*
+    social-icons: social svg icons container.
+  */
   .social-icons {
     position: absolute;
     bottom: 0;
@@ -113,4 +157,5 @@
     cursor: pointer;
     fill: var(--colorspace-blue-color);
   }
+  /* /social-icons */
 }

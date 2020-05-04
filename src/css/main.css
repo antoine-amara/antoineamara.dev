@@ -1,7 +1,21 @@
+/* ******************************************************************
+name:        main.css
+description: css main entry and global rules.
+             define some mutual rules between all components
+             and pages.
+             it defines main css variables.
+             finaly, it imports all css files (and bootstrap-reboot).
+-- 
+this project uses the BEM method, see http://getbem.com/.
+all rules are documented by Block.
+****************************************************************** */
+
 /* Variables */
 
 :root {
   /* GLOBAL AND REUSABLE VARIABLES */
+
+  /* COLORS */
 
   /* for now white color is useless */
   --colorspace-white-color: #fff;
@@ -15,14 +29,17 @@
   --colorspace-white-transparent-color: rgba(243,249,255, 0.3);
   --colorspace-white-transparent-md-color: rgba(243,249,255, 0.6);
 
+  /* FONT VARIABLES */
   --colorspace-md-weight: 500;
 
+  /* SPACING VARIABLE */
   --colorspace-block-margin: 0.5rem;
 
   --colorspace-block-spacing-md: 1.25rem;
 
   --colorspace-desktop-menu-margin: 3.75rem;
   
+  /* CSS EFFECT VARIABLES */
   --colorspace-background-blur: blur(2px);
 
   /* HOME SECTION VARIABLES */
@@ -31,6 +48,7 @@
   --colorspace-job-title: 1.3rem;
   --colorspace-job-title-desktop: 1.8rem;
   
+  /* ICONS VARIABLES */
   --colorspace-social-icons: 32px;
 
   /* MENU VARIABLES */
@@ -40,12 +58,9 @@
   --colorspace-desktop-maxwidth: 800px;
 }
 
-.browserupgrade {
-  margin: 0.2em 0;
-  background: var(--colorspace-light-color);
-  padding: 0.2em 0;
-}
-
+/*
+  global html elements and title rules.
+*/
 body {
   background: var(--colorspace-gradient-color);
 }
@@ -66,7 +81,21 @@ h3 {
 h4 {
   color: var(--colorspace-purple-color);
 }
+/* /globals */
 
+/*
+  browseruprade: headband to inform the user his browser is deprecated.
+*/
+.browserupgrade {
+  margin: 0.2em 0;
+  background: var(--colorspace-light-color);
+  padding: 0.2em 0;
+}
+/* /browseruprade */
+
+/*
+  header: header block for 404 and about-me pages.
+*/
 .header {
   display: flex;
   color: var(--colorspace-light-color);
@@ -78,7 +107,11 @@ h4 {
 .header h4 {
   margin: 0;
 }
+/* /header */
 
+/*
+  website-content: website main container.
+*/
 .website-content {
   display: flex;
   flex-direction: column;
@@ -97,7 +130,11 @@ h4 {
   opacity: 0.2;
   filter: var(--colorspace-background-blur);
 }
+/* /website-content */
 
+/*
+  footer: website footer block.
+*/
 .footer {
   color: var(--colorspace-light-color);
   background-color: var(--colorspace-white-transparent-color);
@@ -121,29 +158,40 @@ h4 {
 .footer a {
   display: none;
 }
+/* /footer */
 
 /* Large devices (desktops, 992px and up) */
 @media (min-width: 992px) {
+  /*
+    global html elements and title rules.
+  */
+  h2 {
+    margin-bottom: var(--colorspace-block-spacing-md);
+  }
+  /* /globals */
+
+  /* specific modifier for desktop fullscreen panel. */
   .section--desktop-panel {
     height: 100vh;
     overflow: hidden;
     position: relative;
   }
 
-  h2 {
-    margin-bottom: var(--colorspace-block-spacing-md);
-  }
-
   .website-content--panel-transition {
     transition: 1s cubic-bezier(0.5, 0, 0.5, 1);
   }
+  /* /panels */
 
+  /*
+    footer: website footer block.
+  */
   .footer a {
     display: block;
     text-align: center;
     font-size: 0.7rem;
     color: var(--colorspace-blue-color);
   }
+  /* /footer */
 }
 
 @import './bootstrap-reboot.css';

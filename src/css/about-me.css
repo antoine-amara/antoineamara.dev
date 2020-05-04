@@ -1,3 +1,16 @@
+/* *******************************************************
+name:        about-me.css
+description: css rules for about-me section in index.html.
+-- 
+this project uses the BEM method, see http://getbem.com/.
+all rules are documented by Block.
+******************************************************* */
+
+/*
+  about-me: the container of the section.
+  contain the title and the content. the content has an
+  illustration and some text.
+*/
 .about-me {
   display: flex;
   flex-direction: column;
@@ -17,9 +30,15 @@
   max-width: 100%;
   margin-bottom: var(--colorspace-block-margin);
 }
+/* /about-me */
 
 /* Large devices (desktops, 992px and up) */
 @media (min-width: 992px) {
+  /*
+    about-me: the container of the section.
+    contain the title and the content. the content has an
+    illustration and some text.
+  */
   .about-me {
     display: flex;
     flex-direction: column;
@@ -43,4 +62,5 @@
     flex-shrink: 0;
     margin-right: var(--colorspace-desktop-menu-margin);
   }
+  /* /about-me */
 }

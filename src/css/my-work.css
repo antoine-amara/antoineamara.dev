@@ -1,8 +1,23 @@
+/* *******************************************************
+name:        my-work.css
+description: css rules for my-work section in index.html.
+--
+this project uses the BEM method, see http://getbem.com/.
+all rules are documented by Block.
+******************************************************* */
+
+/*
+  my-work: section container, it contains the title and project cards.
+*/
 .my-work {
   padding: var(--colorspace-block-spacing-md);
   z-index: 0;
 }
+/* /my-work */
 
+/*
+  projects: block containing all project cards with scroll snap on x axis.
+*/
 .projects {
   display: flex;
   overflow-x: auto;
@@ -20,7 +35,9 @@
 .projects .project-card:last-of-type {
   scroll-snap-align: end;
 }
+/* /projects */
 
+/* project-card: reusable project card with a shadow. */
 .project-card {
   display: flex;
   flex-direction: column;
@@ -46,7 +63,11 @@
 .project-card__badges {
   align-self: flex-start;
 }
+/* /project-card */
 
+/*
+  badge: reusable little badge.
+*/
 .badge {
   display: inline-block;
   background-color: var(--colorspace-purple-color);
@@ -64,15 +85,23 @@
 .badge--yellow {
   background-color: var(--colorspace-green-yellow);
 }
+/* /badges */
 
 /* Large devices (desktops, 992px and up) */
 @media (min-width: 992px) {
+  /*
+    my-work: section container, it contains the title and project cards.
+  */
   .my-work {
     display: flex;
     flex-direction: column;
     justify-content: center;
   }
+  /* /my-work */
   
+  /*
+    projects: block containing all project card with scroll snap on x axis.
+  */
   .projects {
     margin-right: var(--colorspace-desktop-menu-margin);
   }
@@ -80,4 +109,5 @@
   .projects .project-card {
     flex-basis: 400px;
   }
+  /* /projects */
 }

@@ -1,3 +1,16 @@
+/* *******************************************************
+name:        legal-notice.css
+description: css rules for legal-notice.html page.
+-- 
+this project uses the BEM method, see http://getbem.com/.
+all rules are documented by Block.
+******************************************************* */
+
+/*
+  legal-notice: rules for sub-elements of the container.
+  rules for the global title, the sections and the section paragraph/text.
+*/
+
 .legal-notice__title {
   padding: var(--colorspace-block-spacing-md);
 }
@@ -15,3 +28,4 @@
     margin: auto;
   }
 }
+/* /legal-notice */
