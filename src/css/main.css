@@ -31,6 +31,7 @@ all rules are documented by Block.
 
   /* FONT VARIABLES */
   --colorspace-md-weight: 500;
+  --colorspace-xl-weight: 800;
 
   /* SPACING VARIABLE */
   --colorspace-block-margin: 0.5rem;
@@ -87,9 +88,25 @@ h4 {
   browseruprade: headband to inform the user his browser is deprecated.
 */
 .browserupgrade {
-  margin: 0.2em 0;
+  position: absolute;
+  width: 100%;
   background: var(--colorspace-light-color);
-  padding: 0.2em 0;
+  padding: var(--colorspace-block-spacing-md);
+  text-align: center;
+  z-index: 1003;
+}
+
+.browserupgrade a {
+  color: var(--colorspace-blue-color);
+  margin-left: 5px;
+  margin-right: 5px;
+}
+
+.browserupgrade--strong {
+  display: inline;
+  font-weight: var(--colorspace-xl-weight);
+  margin-left: 5px;
+  margin-right: 5px;
 }
 /* /browseruprade */
 
