@@ -14,10 +14,13 @@
   </head>
 
   <body>
+    <!-- ## browserupgrade: headband to inform the user his browser is deprecated. ## -->
     <!--[if lte IE 9]>
     <div class="browserupgrade">You are using an <div class="browserupgrade--strong">outdated</div> browser. Please <a href="https://browsehappy.com/">upgrade your browser</a> to improve your experience and security.</div>
     <![endif]-->
+    <!-- ## /browserupgrade ## -->
 
+    <!-- ## Menu: containers for mobile and desktop menu. see css/menu.css for more. ## -->
     <nav>
       <div class="mobile-menu">
         <div class="mobile-menu__bars">
@@ -38,8 +41,12 @@
         <a class="mobile-menu-overlay__element mobile-menu-overlay__element--blur" href="./legal-notice.html">Legal Notice</a>
       </div>
     </div>
+    <!-- ## /Menu ## -->
 
+    <!-- ## Website content: main website container. ## -->
     <div class="website-content website-content--panel-transition">
+
+      <!-- ## Home: home section, contain portrait, title and socials. see css/home.css for more. ## -->
       <section name="Home" class="home section--desktop-panel" id="home">
         <div class="portrait">
           <img class="portrait__image" src="<%= require('./img/avatar.png') %>" />
@@ -47,15 +54,20 @@
         </div>
         <h1>John Doe</h1>
         <div class="home__job-title">Javascript fullstack developper</div>
+        <!--## social-icons: reusable container to display social networks ## -->
         <div class="social-icons">
           <img inline src="src/img/github-alt.svg">
           <img inline src="src/img/stack-overflow.svg">
           <img inline src="src/img/facebook-f.svg">
         </div>
+        <!--## /social-icons ## -->
         <div class="home__scroll-icon home__scroll-icon--bounce-animation">
           <img inline src="src/img/chevron-circle-down.svg">
         </div>
       </section>
+      <!-- ## /Home ## -->
+
+      <!-- ## About me: about-me section, contain illustration and text. see css/about-me.css. ## -->
       <section name="About Me" class="about-me section--desktop-panel" id="aboutme">
         <h2>About Me</h2>
         <div class="about-me__content">
@@ -67,9 +79,13 @@
           </p>
         </div>
       </section>
+      <!-- ## /About me ## -->
+
+      <!-- ## My work: contain projects into some cards. see css/my-work.css for more. ## -->
       <section name="My Work" class="my-work section--desktop-panel" id="mywork">
         <h2>My Work</h2>
         <div class="projects">
+          <!-- ## project-card: reusable card to describe a project ## -->
           <div class="project-card">
             <img inline src="src/img/node-logo.svg">
             <p class="project-card__description">
@@ -81,6 +97,7 @@
               <div class="badge badge--yellow">javascript</div>
             </div>
           </div>
+          <!-- ## project-card ## -->
           <div class="project-card">
             <img inline src="src/img/node-logo.svg">
             <p class="project-card__description">
@@ -105,6 +122,9 @@
           </div>
         </div>
       </section>
+      <!-- ## /My work ##-->
+
+      <!-- ## Contact: section with the contact form. see css/contact.css for more. ## -->
       <section name="Contact" class="contact section--desktop-panel" id="contact">
         <h2>Contact Me</h2>
         <form class="form">
@@ -128,7 +148,9 @@
           <a href="./legal-notice.html">Legal Notice</a>
         </footer>
       </section>
+      <!-- ## /Contact ## -->
     </div>
+    <!-- ## /Website content ## -->
 
   </body>
 </html>

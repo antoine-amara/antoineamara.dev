@@ -14,10 +14,13 @@
 </head>
 
 <body>
+  <!-- ## browserupgrade: headband to inform the user his browser is deprecated. ## -->
   <!--[if lte IE 9]>
     <div class="browserupgrade">You are using an <div class="browserupgrade--strong">outdated</div> browser. Please <a href="https://browsehappy.com/">upgrade your browser</a> to improve your experience and security.</div>
   <![endif]-->
+  <!-- ## /browserupgrade ## -->
 
+  <!-- ## Menu: containers for mobile and desktop menu. see css/menu.css for more. ## -->
   <nav>
     <div class="mobile-menu">
       <div class="mobile-menu__bars">
@@ -34,7 +37,9 @@
       <a class="mobile-menu-overlay__element mobile-menu-overlay__element--active" href="./legal-notice.html">Legal Notice</a>
     </div>
   </div>
+  <!-- ## /Menu ## -->
 
+  <!-- ## Website content: main website container. see css/legal-notice.css for more. ## -->
   <div class="website-content legal-notice">
     <header class="header">
       <h4>John Doe - Personnal Website</h4>
@@ -42,6 +47,7 @@
 
     <h2 class="legal-notice__title">Legal Notice</h2>
 
+    <!-- ## legal-notice__section: element representing one paragraph with an h3 title. ## -->
     <section class="legal-notice__section">
       <div class="legal-notice__text">
         <h3>Publisher</h3>
@@ -55,6 +61,7 @@
         <div>Publication Co-director: Octocat</div>
       </div>
     </section>
+    <!-- ## /legal-notice__section ## -->
 
     <section class="legal-notice__section">
       <div class="legal-notice__text">
@@ -101,6 +108,7 @@
       <div>This template is <img inline src="src/img/code.svg"> with <img inline src="src/img/heart.svg"> by <img inline src="src/img/github.svg"></div>
     </footer>
   </div>
+  <!-- ## /Website ## -->
 </body>
 
 </html>
