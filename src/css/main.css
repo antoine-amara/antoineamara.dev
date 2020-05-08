@@ -84,6 +84,70 @@ h4 {
 }
 /* /globals */
 
+/* 
+  button: a custom button element.
+  some styling for websites buttons.
+*/
+.button {
+  position: relative;
+  background: currentColor;
+  border: 1px solid currentColor;
+  font-size: 1.1rem;
+  border-radius: 30px;
+  color: var(--colorspace-white-transparent-color);
+  padding: 0.75rem 3rem;
+  cursor: pointer;
+  transition: background-color 0.28s ease, color 0.28s ease,
+    box-shadow 0.28s ease;
+  overflow: hidden;
+  box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.14), 0 3px 1px -2px rgba(0, 0, 0, 0.2),
+    0 1px 5px 0 rgba(0, 0, 0, 0.12);
+}
+
+.button::before {
+  content: '';
+  position: absolute;
+  background: var(--colorspace-white-transparent-color);
+  border: 50vh solid var(--colorspace-white-transparent-md-color);
+  width: 30vh;
+  height: 30vh;
+  border-radius: 50%;
+  display: block;
+  top: 50%;
+  left: 50%;
+  z-index: 0;
+  opacity: 1;
+  transform: translate(-50%, -50%) scale(0);
+}
+
+.button:hover {
+  color: var(--colorspace-white-transparent-md-color);
+  box-shadow: 0 6px 10px 0 rgba(0, 0, 0, 0.14), 0 1px 18px 0 rgba(0, 0, 0, 0.12),
+    0 3px 5px -1px rgba(0, 0, 0, 0.2);
+}
+
+.button:active::before,
+.button:focus::before {
+  transition: opacity 0.28s ease 0.364s, transform 1.12s ease;
+  transition: transform 1.12s ease, opacity 0.28s ease 0.364s;
+  transform: translate(-50%, -50%) scale(1);
+  opacity: 0;
+}
+
+.button__content {
+  color: var(--colorspace-light-color);
+  z-index: 1;
+}
+
+.button--blue {
+  background-color: var(--colorspace-blue-color);
+}
+
+.button--xs {
+  padding: var(--colorspace-block-margin) var(--colorspace-block-spacing-md);
+}
+/* /button */
+
 /*
   browseruprade: headband to inform the user his browser is deprecated.
 */
@@ -109,6 +173,24 @@ h4 {
   margin-right: 5px;
 }
 /* /browseruprade */
+
+/* info-headband: a fixed headband on the bottom of the website to display an important message for the user. */
+.info-headband {
+  position: fixed;
+  bottom: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 20px;
+  z-index: 1003;
+  background-color: var(--colorspace-light-color);
+  width: 100%;
+}
+
+.info-headband__message {
+  margin-bottom: var(--colorspace-block-margin);
+}
+/* /info-headband */
 
 /*
   header: header block for 404 and about-me pages.
