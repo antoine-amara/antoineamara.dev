@@ -1,7 +1,7 @@
 /* *******************************************************
 name:        menu.css
 description: css rules for mobile and desktop menus.
--- 
+--
 this project uses the BEM method, see http://getbem.com/.
 all rules are documented by Block.
 ******************************************************* */
@@ -18,6 +18,7 @@ nav {
   margin: var(--colorspace-block-spacing-md);
   z-index: 1002;
 }
+
 /* /nav */
 
 /*
@@ -64,21 +65,24 @@ nav {
   opacity: 1;
   transform: rotate(0);
   left: 0;
-  transition: .25s ease-in-out;
+  transition: 0.25s ease-in-out;
 }
 
 .mobile-menu__bars--open .mobile-menu__bar:nth-child(1) {
   transform: rotate(135deg);
   top: 10px;
 }
+
 .mobile-menu__bars--open .mobile-menu__bar:nth-child(2) {
   opacity: 0;
   left: -60px;
 }
+
 .mobile-menu__bars--open .mobile-menu__bar:nth-child(3) {
   transform: rotate(-135deg);
   top: 10px;
 }
+
 /* /mobile-menu */
 
 /*
@@ -139,6 +143,7 @@ nav {
 .mobile-menu-overlay__element--active {
   margin-left: 0.62rem;
 }
+
 /* /mobile-menu-overlay */
 
 /* Large devices (desktops, 992px and up) */
@@ -150,9 +155,11 @@ nav {
   nav {
     margin: 0;
   }
+
   nav .mobile-menu {
-    visibility: hidden
+    visibility: hidden;
   }
+
   /* /nav */
 
   /*
@@ -166,6 +173,7 @@ nav {
     top: 50vh;
     z-index: 1002;
   }
+
   .desktop-menu__item {
     display: flex;
     align-items: center;
@@ -175,6 +183,7 @@ nav {
     margin-bottom: var(--colorspace-block-spacing-md);
     padding-left: 4px;
   }
+
   .desktop-menu__item::after {
     width: 10px;
     height: 10px;
@@ -182,12 +191,15 @@ nav {
     border-radius: 50%;
     content: '';
   }
+
   .desktop-menu__item:hover {
     cursor: pointer;
     transform: scale(1.2);
   }
+
   .desktop-menu__item--active {
     border: 1px solid var(--colorspace-light-color);
   }
+
   /* /desktop-menu */
 }

@@ -1,12 +1,12 @@
 /* ******************************************************
 name:        contact.css
 description: css rules for contact section in index.html.
--- 
+--
 this project uses the BEM method, see http://getbem.com/.
 all rules are documented by Block.
 ****************************************************** */
 
-/* 
+/*
   useful inputs global rules for the contact form.
 */
 option {
@@ -26,9 +26,10 @@ button:focus {
   color: var(--colorspace-light-color);
   opacity: 1;
 }
+
 /* /globals */
 
-/* 
+/*
   contact: global section rules.
   contact section contains a title and a form.
 */
@@ -41,9 +42,10 @@ button:focus {
 .contact h2 {
   margin-top: auto;
 }
+
 /* /contact */
 
-/* 
+/*
   form: rules for the form element and inputs.
 */
 
@@ -71,7 +73,7 @@ button:focus {
 
 /* /form */
 
-/* 
+/*
   select: a custom select input.
   this element is here to overcharge select input styles.
 */
@@ -93,7 +95,7 @@ button:focus {
   position: absolute;
   top: 50%;
   margin-top: -3px;
-  right: .75em;
+  right: 0.75em;
   display: block;
   width: 0;
   height: 0;
@@ -121,7 +123,7 @@ button:focus {
 
 /* Large devices (desktops, 992px and up) */
 @media (min-width: 992px) {
-  /* 
+  /*
     form: rules for the form element and inputs.
   */
   .form {
@@ -129,5 +131,6 @@ button:focus {
     margin: 0 auto;
     width: var(--colorspace-desktop-maxwidth);
   }
+
   /* /form */
 }

@@ -1,7 +1,7 @@
 /* *******************************************************
 name:        about-me.css
 description: css rules for about-me section in index.html.
--- 
+--
 this project uses the BEM method, see http://getbem.com/.
 all rules are documented by Block.
 ******************************************************* */
@@ -30,6 +30,7 @@ all rules are documented by Block.
   max-width: 100%;
   margin-bottom: var(--colorspace-block-margin);
 }
+
 /* /about-me */
 
 /* Large devices (desktops, 992px and up) */
@@ -48,7 +49,7 @@ all rules are documented by Block.
   .about-me h2 {
     margin-top: auto;
   }
-  
+
   .about-me__content {
     flex-direction: row;
     max-width: 1100px;
@@ -62,5 +63,6 @@ all rules are documented by Block.
     flex-shrink: 0;
     margin-right: var(--colorspace-desktop-menu-margin);
   }
+
   /* /about-me */
 }

@@ -1,7 +1,7 @@
 /* *******************************************************
 name:        home.css
 description: css rules for home section in index.html.
--- 
+--
 this project uses the BEM method, see http://getbem.com/.
 all rules are documented by Block.
 ******************************************************* */
@@ -18,8 +18,8 @@ all rules are documented by Block.
 @keyframes bounce {
   0% { transform: translateY(0); }
   20% { transform: translateY(-10px); }
-  40% { transform: translateY(0px); }
-  100% { transform: translateY(0px); }
+  40% { transform: translateY(0); }
+  100% { transform: translateY(0); }
 }
 
 .home {
@@ -53,6 +53,7 @@ all rules are documented by Block.
 .home__scroll-icon--bounce-animation {
   animation: bounce 3s ease infinite alternate;
 }
+
 /* /home */
 
 /*
@@ -65,7 +66,7 @@ all rules are documented by Block.
 .portrait__image {
   width: 250px;
   height: 250px;
-  border-radius: 50%; 
+  border-radius: 50%;
   border: 5px solid var(--colorspace-light-color);
 }
 
@@ -78,6 +79,7 @@ all rules are documented by Block.
   top: 0;
   background-color: var(--colorspace-white-transparent-color);
 }
+
 /* /portrait */
 
 /*
@@ -94,11 +96,11 @@ all rules are documented by Block.
   height: var(--colorspace-social-icons);
   margin: var(--colorspace-block-margin);
 }
+
 /* /social-icons */
 
 /* Small devices (landscape phones, 576px and up) */
 @media (min-width: 576px) and (max-width: 767.98px) {
-
   /*
     portrait: display a rounded portrait and a color filter.
   */
@@ -106,11 +108,12 @@ all rules are documented by Block.
     width: 150px;
     height: 150px;
   }
-  
+
   .portrait__filter {
     width: 150px;
     height: 150px;
   }
+
   /* /portrait */
 
   /*
@@ -123,6 +126,7 @@ all rules are documented by Block.
     margin: var(--colorspace-block-spacing-md);
     border-radius: 10px;
   }
+
   /* /social-icons */
 }
 
@@ -140,6 +144,7 @@ all rules are documented by Block.
   .home__job-title {
     font-size: var(--colorspace-job-title-desktop);
   }
+
   /* /home */
 
   /*
@@ -157,5 +162,6 @@ all rules are documented by Block.
     cursor: pointer;
     fill: var(--colorspace-blue-color);
   }
+
   /* /social-icons */
 }

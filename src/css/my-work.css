@@ -13,6 +13,7 @@ all rules are documented by Block.
   padding: var(--colorspace-block-spacing-md);
   z-index: 0;
 }
+
 /* /my-work */
 
 /*
@@ -24,17 +25,6 @@ all rules are documented by Block.
   scroll-snap-type: x mandatory;
 }
 
-.projects .project-card {
-  margin-right: var(--colorspace-block-margin);
-  flex-grow: 1;
-  flex-shrink: 0;
-  flex-basis: 300px;
-  scroll-snap-align: start;
-}
-
-.projects .project-card:last-of-type {
-  scroll-snap-align: end;
-}
 /* /projects */
 
 /* project-card: reusable project card with a shadow. */
@@ -63,7 +53,20 @@ all rules are documented by Block.
 .project-card__badges {
   align-self: flex-start;
 }
+
 /* /project-card */
+
+.projects .project-card {
+  margin-right: var(--colorspace-block-margin);
+  flex-grow: 1;
+  flex-shrink: 0;
+  flex-basis: 300px;
+  scroll-snap-align: start;
+}
+
+.projects .project-card:last-of-type {
+  scroll-snap-align: end;
+}
 
 /*
   badge: reusable little badge.
@@ -85,6 +88,7 @@ all rules are documented by Block.
 .badge--yellow {
   background-color: var(--colorspace-green-yellow);
 }
+
 /* /badges */
 
 /* Large devices (desktops, 992px and up) */
@@ -97,8 +101,9 @@ all rules are documented by Block.
     flex-direction: column;
     justify-content: center;
   }
+
   /* /my-work */
-  
+
   /*
     projects: block containing all project card with scroll snap on x axis.
   */
@@ -109,5 +114,6 @@ all rules are documented by Block.
   .projects .project-card {
     flex-basis: 400px;
   }
+
   /* /projects */
 }

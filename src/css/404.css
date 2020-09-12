@@ -1,14 +1,14 @@
 /* ******************************************************
 name:        404.css
 description: css rules for 404.html page.
--- 
+--
 this project uses the BEM method, see http://getbem.com/.
 all rules are documented by Block.
 ****************************************************** */
 
 
 
-/* 
+/*
   fake-console: the container for the fake terminal.
   note fake-console js module manages the content and the css classes.
 */
@@ -17,9 +17,9 @@ all rules are documented by Block.
   blink: animation for the fake-console cursor.
 */
 @keyframes blink {
-  0% {opacity: 0}
-	49%{opacity: 0}
-	50% {opacity: 1}
+  0% { opacity: 0; }
+  49% { opacity: 0; }
+  50% { opacity: 1; }
 }
 
 .fake-console {
@@ -50,11 +50,12 @@ all rules are documented by Block.
 .fake-console--blink {
   animation: blink 1s infinite;
 }
+
 /* /fake-console */
 
 /* Large devices (desktops, 992px and up) */
 @media (min-width: 992px) {
-  /* 
+  /*
     fake-console: the container for the fake terminal.
     note fake-console js module manages the content and the css classes.
   */
@@ -63,5 +64,6 @@ all rules are documented by Block.
     height: 600px;
     margin: auto;
   }
+
   /* /fake-console */
 }

@@ -1,7 +1,7 @@
 /* *******************************************************
 name:        legal-notice.css
 description: css rules for legal-notice.html page.
--- 
+--
 this project uses the BEM method, see http://getbem.com/.
 all rules are documented by Block.
 ******************************************************* */
@@ -28,4 +28,5 @@ all rules are documented by Block.
     margin: auto;
   }
 }
+
 /* /legal-notice */
