@@ -28,7 +28,7 @@ all rules are documented by Block.
   align-items: center;
   justify-content: center;
   height: 100vh;
-  color: var(--colorspace-light-color);
+  color: var(--colorspace-light-green-color);
   position: relative;
 }
 
@@ -160,7 +160,7 @@ all rules are documented by Block.
 
   .social-icons > svg:hover {
     cursor: pointer;
-    fill: var(--colorspace-blue-color);
+    fill: var(--colorspace-indigo-color);
   }
 
   /* /social-icons */

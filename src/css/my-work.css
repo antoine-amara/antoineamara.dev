@@ -73,7 +73,7 @@ all rules are documented by Block.
 */
 .badge {
   display: inline-block;
-  background-color: var(--colorspace-purple-color);
+  background-color: var(--colorspace-light-green-color);
   border-radius: 32px;
   padding: 0 var(--colorspace-block-margin);
   font-size: 14px;

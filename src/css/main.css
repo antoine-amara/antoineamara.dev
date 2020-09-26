@@ -20,12 +20,13 @@ all rules are documented by Block.
   /* for now white color is useless */
   --colorspace-white-color: #fff;
   --colorspace-black-color: #212529;
-  --colorspace-light-color: #f3f9ff;
-  --colorspace-blue-color: #1976d2;
-  --colorspace-purple-color: #8169bb;
-  --colorspace-green-color: #009688;
-  --colorspace-green-yellow: #ffc107;
-  --colorspace-gradient-color: linear-gradient(to right, #1976d2, #4773ce, #606fc8, #726cc2, #8169bb);
+  --colorspace-accent-grey: #aeb9bd;
+  --colorspace-light-color: #fcfffd;
+  --colorspace-indigo-color: #2b4162;
+  --colorspace-light-green-color: #daffef;
+  --colorspace-green-color: #7bd389;
+  --colorspace-green-yellow: #ffc857;
+  --colorspace-gradient-color: linear-gradient(to right bottom, #2b4162, #244161, #1c4160, #13415e, #08415c);
   --colorspace-white-transparent-color: rgba(243, 249, 255, 0.3);
   --colorspace-white-transparent-md-color: rgba(243, 249, 255, 0.6);
 
@@ -74,11 +75,19 @@ h2 {
 }
 
 h3 {
-  color: var(--colorspace-blue-color);
+  color: var(--colorspace-light-green-color);
 }
 
 h4 {
-  color: var(--colorspace-purple-color);
+  color: var(--colorspace-light-color);
+}
+
+a {
+  color: var(--colorspace-indigo-color);
+}
+
+a:hover {
+  color: var(--colorspace-light-green-color);
 }
 
 /* /globals */
@@ -145,7 +154,7 @@ h4 {
 }
 
 .button--blue {
-  background-color: var(--colorspace-blue-color);
+  background-color: var(--colorspace-indigo-color);
 }
 
 .button--xs {
@@ -167,7 +176,7 @@ h4 {
 }
 
 .browserupgrade a {
-  color: var(--colorspace-blue-color);
+  color: var(--colorspace-indigo-color);
   margin-left: 5px;
   margin-right: 5px;
 }
@@ -205,13 +214,13 @@ h4 {
 */
 .header {
   display: flex;
-  color: var(--colorspace-light-color);
   background-color: var(--colorspace-white-transparent-color);
   padding: var(--colorspace-block-spacing-md);
   cursor: pointer;
 }
 
 .header h4 {
+  color: var(--colorspace-light-green-color);
   margin: 0;
 }
 
@@ -261,7 +270,7 @@ h4 {
   width: 25px;
   height: 25px;
   margin: var(--colorspace-block-margin);
-  fill: var(--colorspace-purple-color);
+  fill: var(--colorspace-light-green-color);
 }
 
 .footer a {
@@ -301,7 +310,7 @@ h4 {
     display: block;
     text-align: center;
     font-size: 0.7rem;
-    color: var(--colorspace-blue-color);
+    color: var(--colorspace-indigo-color);
   }
 
   /* /footer */

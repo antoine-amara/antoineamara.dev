@@ -11,7 +11,7 @@ all rules are documented by Block.
 */
 option {
   background-color: var(--colorspace-white-transparent-color);
-  color: var(--colorspace-purple-color);
+  color: var(--colorspace-light-green-color);
   width: 100%;
 }
 
@@ -100,7 +100,7 @@ button:focus {
   width: 0;
   height: 0;
   border-color: transparent;
-  border-top-color: var(--colorspace-purple-color);
+  border-top-color: var(--colorspace-light-green-color);
   border-width: 6px;
   border-style: solid;
   pointer-events: none;
