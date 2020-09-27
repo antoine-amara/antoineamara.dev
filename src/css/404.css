@@ -27,6 +27,7 @@ all rules are documented by Block.
   background: var(--colorspace-white-transparent-color);
   border-radius: 5px;
   min-height: 300px;
+  font-family: 'Ubuntu Mono', monospace;
 }
 
 .fake-console__line {

@@ -58,15 +58,25 @@ all rules are documented by Block.
   --colorspace-desktop-maxwidth: 800px;
 }
 
+@import "https://fonts.googleapis.com/css2?family=Open+Sans&family=Roboto+Slab&Ubuntu+Mono&display=swap";
+
 /*
   global html elements and title rules.
 */
 body {
   background: var(--colorspace-gradient-color);
+  font-family: 'Open Sans', sans-serif;
 }
 
 .body--no-scroll {
   overflow: hidden;
+}
+
+h1,
+h2,
+h3,
+h4 {
+  font-family: 'Roboto Slab', serif;
 }
 
 h2 {
