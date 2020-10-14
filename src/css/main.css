@@ -102,6 +102,55 @@ a:hover {
 
 /* /globals */
 
+/* 
+  icon-loader: reusable classes to transform
+  an icon to a loader with a message. 
+*/
+@keyframes icon-loader-animation {
+  0%{
+      opacity: 0.08;
+      }
+  100%{
+        opacity: 1;
+      }
+}
+
+.icon-loader {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.icon-loader__container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  animation: icon-loader-animation 1.5s infinite 0s ease-in-out;
+  animation-direction: alternate;
+  color: var(--colorspace-light-color);
+  width: 100%;
+  min-height: 300px;
+}
+
+.icon-loader__container > svg {
+  width: 40px;
+  height: 40px;
+  fill: var(--colorspace-light-color);
+}
+
+.icon-loader__message {
+  font-size: 12px;
+}
+
+.icon-loader__container--green > svg {
+  fill: var(--colorspace-light-green-color);
+}
+/* /icon-loader */
+
 /*
   button: a custom button element.
   some styling for websites buttons.
