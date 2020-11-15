@@ -58,19 +58,50 @@
     <!-- ## Website content: main website container. ## -->
     <div class="website-content website-content--panel-transition">
 
-      <!-- ## Home: home section, contain rounded-box, title and socials. see css/home.css for more. ## -->
+      <!-- ## Home: home section, contain portrait, title, stack tech and socials. see css/home.css for more. ## -->
       <section name="Home" class="home section--desktop-panel" id="home">
         <div class="rounded-box">
           <img class="rounded-box__image" src="<%= require('./img/avatar.png') %>" />
           <div class="rounded-box__filter"></div>
         </div>
-        <h1>John Doe</h1>
+        <h1>Antoine AMARA</h1>
         <div class="home__job-title">Javascript fullstack developper</div>
+        <div class="fullstack">
+          <div class="fullstack__tech rounded-box">
+            <div class="rounded-box__image">
+              <img inline src="src/img/react-brands.svg">
+              <div class="fullstack-tech__name">React</div>
+            </div>
+            <div class="rounded-box__filter"></div>
+          </div>
+          <div class="fullstack__tech rounded-box">
+            <div class="rounded-box__image">
+              <img inline src="src/img/node-js-brands.svg">
+              <div class="fullstack-tech__name">NodeJS</div>
+            </div>
+            <div class="rounded-box__filter"></div>
+          </div>
+          <div class="fullstack__tech rounded-box">
+            <div class="rounded-box__image">
+              <img inline src="src/img/graphql.svg">
+              <div class="fullstack-tech__name">GraphQL</div>
+            </div>
+            <div class="rounded-box__filter"></div>
+          </div>
+          <div class="fullstack__tech rounded-box">
+            <div class="rounded-box__image">
+              <img inline src="src/img/database-solid.svg">
+              <div class="fullstack-tech__name">SQL</div>
+            </div>
+            <div class="rounded-box__filter"></div>
+          </div>
+        </div>
         <!--## social-icons: reusable container to display social networks ## -->
         <div class="social-icons">
-          <img inline src="src/img/github-alt.svg">
-          <img inline src="src/img/stack-overflow.svg">
-          <img inline src="src/img/facebook-f.svg">
+          <a href="https://github.com/antoine-amara"><img inline src="src/img/github-alt.svg"></a>
+          <a href="https://stackoverflow.com/users/7729726/antoine-amara?tab=profile"><img inline src="src/img/stack-overflow.svg"></a>
+          <a href="https://dev.to/"><img inline src="src/img/dev-brands.svg"></a>
+          <a href="https://twitter.com/antoine_amara"><img inline src="src/img/twitter-brands.svg"></a>
         </div>
         <!--## /social-icons ## -->
         <div class="home__scroll-icon home__scroll-icon--bounce-animation">

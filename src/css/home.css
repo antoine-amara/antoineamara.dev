@@ -83,11 +83,27 @@ all rules are documented by Block.
 /* /rounded-box */
 
 /*
+    fullstack: rounded elements to represent main techs.
+    display main tech I used to develop web applications.
+    one element by tech, with an icon and the name.
+    Note this element is displayed only on the desktop.
+*/
+.fullstack {
+  display: none;
+}
+
+/* /fullstack */
+
+/*
   social-icons: social svg icons container.
 */
 .social-icons {
   background-color: var(--colorspace-white-transparent-color);
   border-radius: 10px;
+}
+
+.social-icons a {
+  color: var(--colorspace-light-color);
 }
 
 .social-icons svg {
@@ -143,9 +159,49 @@ all rules are documented by Block.
 
   .home__job-title {
     font-size: var(--colorspace-job-title-desktop);
+    margin-bottom: var(--colorspace-desktop-menu-margin);
   }
 
   /* /home */
+
+  /*
+    fullstack: rounded elements to represent main techs.
+    display main tech I used to develop web applications.
+    one element by tech, with an icon and the name.
+    Note this element is displayed only on the desktop.
+  */
+  .fullstack {
+    display: flex;
+  }
+
+  .fullstack__tech.rounded-box {
+    margin: var(--colorspace-block-margin);
+  }
+
+  .fullstack__tech .rounded-box__image {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    font-size: 0.75rem;
+    font-weight: var(--colorspace-xl-weight) !important;
+  }
+
+  .fullstack__tech.rounded-box,
+  .fullstack__tech .rounded-box__filter,
+  .fullstack__tech .rounded-box__image {
+    width: 100px;
+    height: 100px;
+  }
+
+  .fullstack__tech .rounded-box__image svg {
+    width: 50px;
+    height: 50px;
+    fill: var(--colorspace-light-green-color);
+    color: var(--colorspace-light-green-color);
+  }
+
+  /* /fullstack */
 
   /*
     social-icons: social svg icons container.
@@ -158,7 +214,11 @@ all rules are documented by Block.
     border-radius: 10px;
   }
 
-  .social-icons > svg:hover {
+  .social-icons a:hover {
+    color: var(--colorspace-indigo-color);
+  }
+
+  .social-icons svg:hover {
     cursor: pointer;
     fill: var(--colorspace-indigo-color);
   }
