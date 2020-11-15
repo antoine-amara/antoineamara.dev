@@ -9,7 +9,7 @@ all rules are documented by Block.
 /*
   home: the container of the section.
   display name, job title and the scroll icon.
-  it contains the portrait and the social icon blocks.
+  it contains the rounded-box and the social icon blocks.
 */
 
 /*
@@ -57,20 +57,20 @@ all rules are documented by Block.
 /* /home */
 
 /*
-  portrait: display a rounded portrait and a color filter.
+  rounded-box: display a rounded rounded-box and a color filter.
 */
-.portrait {
+.rounded-box {
   position: relative;
 }
 
-.portrait__image {
+.rounded-box__image {
   width: 250px;
   height: 250px;
   border-radius: 50%;
   border: 5px solid var(--colorspace-light-color);
 }
 
-.portrait__filter {
+.rounded-box__filter {
   width: 250px;
   height: 250px;
   border-radius: 50%;
@@ -80,7 +80,7 @@ all rules are documented by Block.
   background-color: var(--colorspace-white-transparent-color);
 }
 
-/* /portrait */
+/* /rounded-box */
 
 /*
   social-icons: social svg icons container.
@@ -102,19 +102,19 @@ all rules are documented by Block.
 /* Small devices (landscape phones, 576px and up) */
 @media (min-width: 576px) and (max-width: 767.98px) {
   /*
-    portrait: display a rounded portrait and a color filter.
+    rounded-box: display a rounded rounded-box and a color filter.
   */
-  .portrait__image {
+  .rounded-box__image {
     width: 150px;
     height: 150px;
   }
 
-  .portrait__filter {
+  .rounded-box__filter {
     width: 150px;
     height: 150px;
   }
 
-  /* /portrait */
+  /* /rounded-box */
 
   /*
     social-icons: social svg icons container.
@@ -135,7 +135,7 @@ all rules are documented by Block.
   /*
     home: the container of the section.
     display name, job title and the scroll icon.
-    it contains the portrait and the social icon blocks.
+    it contains the rounded-box and the social icon blocks.
   */
   .home h1 {
     font-size: var(--colorspace-h1-title-desktop);
