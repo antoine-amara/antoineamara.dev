@@ -64,3 +64,53 @@ export function throttle (func, wait, leading, trailing, context) {
     return result
   }
 }
+
+export function iconLoader (selector, loaderOptions, fetchOptions) {
+  const DEFAULT_MESSAGE = 'loading...'
+  const DEFAULT_ERROR_MESSAGE = 'an error occured when loading content'
+
+  const { render, message, errorMessage, errorOnClick } = loaderOptions
+  const { fetcher, apiUrl, fetchBody } = fetchOptions
+
+  if (!selector || selector === '') {
+    throw new Error('[iconLoader] the selector/class name is not defined')
+  }
+
+  const element = document.querySelector(`.${selector} .icon-loader__container`)
+
+  if (!(element instanceof HTMLElement)) {
+    throw new Error(`[iconLoader] cannot find the DOM element with class ${selector}`)
+  }
+
+  if (typeof render !== 'function') {
+    throw new Error(`[iconLoader] render is not a function got ${typeof render}`)
+  }
+
+  if (!apiUrl || apiUrl === '') {
+    throw new Error('[iconLoader] apiUrl is not defined, need one to fetch api')
+  }
+
+  if (typeof fetcher !== 'function') {
+    throw new Error(`[iconLoader] fetcher is not a function, got ${typeof fetcher}`)
+  }
+
+  // Note: children[1] corresponding to message container
+  element.style.display = 'flex'
+  element.children[1].innerHTML = message || DEFAULT_MESSAGE
+
+  return fetcher(apiUrl, fetchBody)
+    .then(fetchResult => {
+      const elementsToRender = render(fetchResult)
+      element.style.display = 'none'
+      element.children[1].innerHTML = ''
+      document.querySelector(`.${selector}`).appendChild(elementsToRender)
+    }).catch(() => {
+      element.children[1].innerHTML = errorMessage || DEFAULT_ERROR_MESSAGE
+      element.classList.toggle('icon-loader__container--error')
+
+      if (errorOnClick) {
+        document.querySelector(`.${selector} svg`).classList.toggle('icon-loader__container--clickable')
+        element.addEventListener('click', errorOnClick)
+      }
+    })
+}

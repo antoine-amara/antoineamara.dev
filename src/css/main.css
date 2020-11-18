@@ -102,17 +102,18 @@ a:hover {
 
 /* /globals */
 
-/* 
+/*
   icon-loader: reusable classes to transform
-  an icon to a loader with a message. 
+  an icon to a loader with a message.
 */
 @keyframes icon-loader-animation {
-  0%{
-      opacity: 0.08;
-      }
-  100%{
-        opacity: 1;
-      }
+  0% {
+    opacity: 0.08;
+  }
+
+  100% {
+    opacity: 1;
+  }
 }
 
 .icon-loader {
@@ -125,7 +126,7 @@ a:hover {
 }
 
 .icon-loader__container {
-  display: flex;
+  display: none;
   align-items: center;
   justify-content: center;
   flex-direction: column;
@@ -136,10 +137,23 @@ a:hover {
   min-height: 300px;
 }
 
+.icon-loader__container--error {
+  animation: none;
+}
+
 .icon-loader__container > svg {
   width: 40px;
   height: 40px;
   fill: var(--colorspace-light-color);
+}
+
+.icon-loader__container--error > svg {
+  width: 80px;
+  height: 80px;
+}
+
+.icon-loader__container--clickable {
+  cursor: pointer;
 }
 
 .icon-loader__message {
@@ -149,6 +163,7 @@ a:hover {
 .icon-loader__container--green > svg {
   fill: var(--colorspace-light-green-color);
 }
+
 /* /icon-loader */
 
 /*

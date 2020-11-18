@@ -1,4 +1,6 @@
-import { getCurrentScrollPosition, extractTargetIdFromElementHref, throttle } from '../utils'
+/* eslint-disable */
+
+import { getCurrentScrollPosition, extractTargetIdFromElementHref, throttle, iconLoader } from '../utils'
 
 describe('Utils module: reusable and generic function for javascript modules', () => {
   describe('getCurrentScrollPosition', () => {
@@ -96,6 +98,98 @@ describe('Utils module: reusable and generic function for javascript modules', (
         .then(() => {
           fakeThrottledFunction()
           expect(fakeMockFunction.mock.calls.length).toEqual(1)
+        })
+    })
+  })
+
+  describe('iconLoader', () => {
+    beforeEach(() => {
+      document.body.innerHTML = `<div class="elements-to-load icon-loader">
+        <div class="icon-loader__container">
+          <img inline src="src/img/github.svg">
+          <div class="icon-loader__message"></div>
+        </div>
+      </div>`
+    })
+
+    afterEach(() => {
+      jest.clearAllMocks()
+    })
+
+    const fakeRender = jest.fn(() => {
+      const fakeContent = document.createElement('P');
+      fakeContent.innerHTML = 'HELLO THERE!!!'
+
+      return fakeContent
+    })
+
+    const fakeFetcher = jest.fn(() => new Promise((resolve) => setTimeout(() => resolve(), 100)))
+
+    const defaultMessage = 'loading...'
+    test('it should be defined', () => expect(iconLoader).toBeDefined())
+    test('it should be a function', () => expect(typeof iconLoader).toBe('function'))
+    test('it should throw an error if the selector parameter is undefined or an empty string', (done) => {
+      expect(() => iconLoader(undefined)).toThrow()
+      expect(() => iconLoader('')).toThrow()
+      expect(() => iconLoader('elements-to-load', { render: fakeRender }, { fetcher: fakeFetcher, apiUrl: 'https://antoine.dev' }).then(() => done())).not.toThrow()
+    })
+    test('it should throw an error if the element to use to append the loader is not found into the DOM', (done) => {
+      expect(() => iconLoader('fake-element')).toThrow()
+      expect(() => iconLoader('elements-to-load', { render: fakeRender }, { fetcher: fakeFetcher, apiUrl: 'https://antoine.dev' }).then(() => done())).not.toThrow()
+    })
+    test('it should throw an error if the loaderOptions.render is not a function', (done) => {
+      expect(() => iconLoader('elements-to-load', { render: undefined })).toThrow()
+      expect(() => iconLoader('elements-to-load', { render: '42' })).toThrow()
+      expect(() => iconLoader('elements-to-load', { render: 42 })).toThrow()
+      expect(() => iconLoader('elements-to-load', { render: fakeRender }, { fetcher: fakeFetcher, apiUrl: 'https://antoine.dev' }).then(() => done())).not.toThrow()
+    })
+    test('it should throw an error if fetchOption.fetcher is not a function', (done) => {
+      expect(() => iconLoader('elements-to-load', { render: fakeRender }, { fetcher: undefined })).toThrow()
+      expect(() => iconLoader('elements-to-load', { render: fakeRender }, { fetcher: 42 })).toThrow()
+      expect(() => iconLoader('elements-to-load', { render: fakeRender }, { fetcher: '42' })).toThrow()
+      expect(() => iconLoader('elements-to-load', { render: fakeRender }, { fetcher: fakeFetcher, apiUrl: 'https://antoine.dev' }).then(() => done())).not.toThrow()
+    })
+    test('it should throw an error if fetchOption.apiUrl is not defined or empty string', (done) => {
+      expect(() => iconLoader('elements-to-load', { render: fakeRender }, { fetcher: fakeFetcher, apiUrl: undefined })).toThrow()
+      expect(() => iconLoader('elements-to-load', { render: fakeRender }, { fetcher: fakeFetcher, apiUrl: '' })).toThrow()
+      expect(() => iconLoader('elements-to-load', { render: fakeRender }, { fetcher: fakeFetcher, apiUrl: 'https://antoine.dev' }).then(() => done())).not.toThrow()
+    })
+    test('it should display loaders element in the selected element, call the fetcher function, call render and delete hide the element if it resolve', () => {
+      const loaderContainer = document.querySelector('.elements-to-load .icon-loader__container')
+
+      const fetchPromise = iconLoader('elements-to-load', { render: fakeRender }, { fetcher: fakeFetcher, apiUrl: 'https://antoine.dev' })
+
+      expect(loaderContainer.style.display).toEqual('flex')
+      expect(document.getElementsByClassName('icon-loader__message')[0].innerHTML).toEqual(defaultMessage)
+
+      return fetchPromise
+        .then(() => {
+
+          expect(loaderContainer.style.display).toEqual('none')
+          expect(document.getElementsByClassName('icon-loader__message')[0].innerHTML).not.toEqual(defaultMessage)
+          expect(fakeFetcher).toHaveBeenCalledTimes(1);
+          // the second parameter is undefined because we don't pass any fetchBody to our fetcher
+          expect(fakeFetcher).toHaveBeenCalledWith('https://antoine.dev', undefined);
+        })
+    })
+    test('it should display an error message if the fetcher reject', () => {
+      const loaderContainer = document.querySelector('.elements-to-load .icon-loader__container')
+
+      const fakeErrorFetcher = jest.fn(() => Promise.reject())
+
+      const fetchPromise = iconLoader('elements-to-load', { render: fakeRender }, { fetcher: fakeErrorFetcher, apiUrl: 'https://antoine.dev' })
+
+      expect(loaderContainer.style.display).toEqual('flex')
+      expect(document.getElementsByClassName('icon-loader__message')[0].innerHTML).toEqual(defaultMessage)
+
+      return fetchPromise
+        .then(() => {
+
+          expect(loaderContainer.style.display).toEqual('flex')
+          expect(document.getElementsByClassName('icon-loader__message')[0].innerHTML).toEqual('an error occured when loading content')
+          expect(fakeErrorFetcher).toHaveBeenCalledTimes(1);
+          // the second parameter is undefined because we don't pass any fetchBody to our fetcher
+          expect(fakeErrorFetcher).toHaveBeenCalledWith('https://antoine.dev', undefined);
         })
     })
   })
