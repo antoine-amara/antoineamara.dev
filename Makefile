@@ -52,6 +52,9 @@ logs:	## display logs from the development server. This command can be used only
 destroy:	## switch off and destroy the development server instance. This command can be used only on watch mode.
 	${DC} down
 
+ssl:	## generate self signed ssl certficate for website
+	mkdir -p ./Docker/traefik/ssl && openssl req -x509 -nodes -days 365 -newkey rsa:2048 -keyout ./Docker/traefik/ssl/antoinedev-selfsigned.key -out ./Docker/traefik/ssl/antoinedev-selfsigned.crt
+
 release-github:	## create a release push on master and create a github release with the git meta-data. example to release a minor: 'make github-release gh-token="<token>" target="minor"'
 	git checkout master
 	${MAKE} release target=${target}
@@ -81,6 +84,6 @@ help:		## show this help.
 
 
 .PHONY: 
-	init run watch package clean check style test restart command dependencies logs destroy release-github release analyze build-gcp-image gcp-init gcp-deploy gcp-destroy help
+	init run watch package clean check style test restart command dependencies logs destroy ssl release-github release analyze build-gcp-image gcp-init gcp-deploy gcp-destroy help
 .SILENT: 
-	init run watch package clean check style test restart command dependencies logs destroy release-github release analyze build-gcp-image gcp-init gcp-deploy gcp-destroy help
+	init run watch package clean check style test restart command dependencies logs destroy ssl release-github release analyze build-gcp-image gcp-init gcp-deploy gcp-destroy help

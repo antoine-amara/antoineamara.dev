@@ -19,6 +19,7 @@ module.exports = merge(common, {
       './src/css/',
       './src/js/'
     ],
-    watchContentBase: true
+    watchContentBase: true,
+    disableHostCheck: true
   }
 })

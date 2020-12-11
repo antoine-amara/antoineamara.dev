@@ -1,6 +1,34 @@
 version: "3"
 
 services:
+  reverse-proxy:
+    image: traefik:v2.3
+    command:
+      - --api.insecure=true
+      - --entrypoints.web.address=:80
+      - --entrypoints.web.http.redirections.entryPoint.to=webs
+      - --entrypoints.web.http.redirections.entryPoint.scheme=https
+      - --entrypoints.webs.address=:443 #Declares the web-secure entrypoint in Traefik
+      - --providers.docker
+      - --providers.file.directory=/configuration/
+      - --providers.file.watch=true
+    ports:
+      - "80:80"
+      - "443:443"
+      - "8080:8080"
+    networks:
+      - public
+      - webservices
+    volumes:
+      - /var/run/docker.sock:/var/run/docker.sock
+      - ./Docker/traefik/ssl:/etc/cert/
+      - ./Docker/traefik/configuration/:/configuration/
+    labels:
+      - "traefik.enable=true"
+      - "traefik.http.routers.proxy.service=proxy"
+      - "traefik.http.routers.proxy.rule=Host(`proxy.localhost`)"
+      - "traefik.http.services.proxy.loadbalancer.server.port=8080"
+      - "traefik.http.routers.proxy.tls=true"
   website:
     image: staticpack-nodejs-yarn
     build:
@@ -9,13 +37,17 @@ services:
       - ./:/workspace/
     working_dir: /workspace/
     networks:
-      - public
-    ports:
-      - "9000:9000"
+      - webservices
     environment:
       - NODE_ENV=development
+    labels:
+      - "traefik.enable=true"
+      - "traefik.http.routers.website.service=website"
+      - "traefik.http.routers.website.rule=Host(`antoine.dev.localhost`)"
+      - "traefik.http.services.website.loadbalancer.server.port=9000"
+      - "traefik.http.routers.website.tls=true"
     command: yarn serve:dev
               
 networks:
   public:
-                  
+  webservices:
