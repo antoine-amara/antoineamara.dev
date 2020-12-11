@@ -19,6 +19,10 @@
     "test": "jest",
     "analyze-bundle": "yarn --silent build --profile --json > stats.json && webpack-bundle-analyzer stats.json ./dist/ -O -h 0.0.0.0 -p 9042"
   },
+  "workspaces": [
+    "functions",
+    "functions/get-github-profile"
+  ],
   "devDependencies": {
     "@babel/core": "^7.13.15",
     "@babel/preset-env": "^7.13.15",

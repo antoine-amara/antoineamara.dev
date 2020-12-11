@@ -47,7 +47,26 @@ services:
       - "traefik.http.services.website.loadbalancer.server.port=9000"
       - "traefik.http.routers.website.tls=true"
     command: yarn serve:dev
-              
+  faas:
+    image: nodejs-yarn
+    build:
+      context: ./Docker/node
+    volumes:
+      - ./functions/:/workspace/
+    working_dir: /workspace/
+    networks:
+      - webservices
+    environment:
+      - NODE_ENV=development
+      - PORT=3000
+    labels:
+      - "traefik.enable=true"
+      - "traefik.http.routers.faas.service=faas"
+      - "traefik.http.routers.faas.rule=Host(`north-fr-antoinedev.cloudfunction.localhost`)"
+      - "traefik.http.services.faas.loadbalancer.server.port=3000"
+      - "traefik.http.routers.faas.tls=true"
+    command: yarn serve
+
 networks:
   public:
   webservices:

@@ -1,0 +1,22 @@
+{
+  "name": "mock-gcp-faas",
+  "version": "0.0.1",
+  "description": "mock gcp faas service with a nodejs express server",
+  "main": "mock-gcp-service.js",
+  "author": "Antoine AMARA<amara.antoine@gmail.com>",
+  "license": "GPLv3.0",
+  "private": true,
+  "scripts": {
+    "serve": "nodemon --inspect='0.0.0.0:9042' mock-gcp-service.js"
+  },
+  "workspaces": [
+    "get-github-profile"
+  ],
+  "dependencies": {
+    "cors": "^2.8.5",
+    "express": "^4.17.1"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.2"
+  }
+}

@@ -2,6 +2,7 @@ DC = docker-compose
 YN = yarn
 WEBSITE = website
 DEPLOY = docker run -it --env-file ${PWD}/deploy/gcp/configs.env -v ${PWD}/deploy/gcp/:/deploy/ -v ${PWD}/dist/:/dist/ -w /deploy/ --rm staticpack-gcp-terraform:332.0.0-alpine
+FAAS = faas
 
 default: help;
 
@@ -45,9 +46,10 @@ command:	## run a command inside the development environment, pass your command 
 
 dependencies: ## run the package manager to install all dependencies.
 	${DC} run --rm ${WEBSITE} ${YN} install
+	${DC} run --rm ${FAAS} ${YN} install
 
 logs:	## display logs from the development server. This command can be used only on watch mode.
-	${DC} logs -f ${WEBSITE}
+	${DC} logs -f ${WEBS
 
 destroy:	## switch off and destroy the development server instance. This command can be used only on watch mode.
 	${DC} down
