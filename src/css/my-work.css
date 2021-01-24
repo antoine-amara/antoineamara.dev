@@ -20,9 +20,10 @@ all rules are documented by Block.
   projects: block containing all project cards with scroll snap on x axis.
 */
 .projects {
-  display: flex;
   overflow-x: auto;
   scroll-snap-type: x mandatory;
+  max-width: 90%;
+  display: none;
 }
 
 /* /projects */
@@ -45,6 +46,26 @@ all rules are documented by Block.
   margin-bottom: var(--colorspace-block-margin);
 }
 
+.project-card img {
+  max-width: 70%;
+}
+
+.project-card__img {
+  width: 200px;
+  height: 220px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.project-card__name {
+  color: var(--colorspace-indigo-color);
+}
+
+.project-card__name::first-letter {
+  text-transform: uppercase;
+}
+
 .project-card__description {
   max-height: 200px;
   overflow-y: auto;
@@ -52,6 +73,7 @@ all rules are documented by Block.
 
 .project-card__badges {
   align-self: flex-start;
+  margin-top: auto;
 }
 
 /* /project-card */
@@ -79,6 +101,7 @@ all rules are documented by Block.
   font-size: 14px;
   font-weight: var(--colorspace-md-weight);
   color: var(--colorspace-light-color);
+  margin-right: 3px;
 }
 
 .badge--green {
@@ -87,6 +110,22 @@ all rules are documented by Block.
 
 .badge--yellow {
   background-color: var(--colorspace-green-yellow);
+}
+
+.bagde--light-green {
+  background-color: #00979c;
+}
+
+.badge--dark-grey {
+  background-color: #3a405a;
+}
+
+.badge--dark-blue {
+  background-color: #275dad;
+}
+
+.badge--red {
+  background-color: #ef3e36;
 }
 
 /* /badges */
@@ -116,4 +155,11 @@ all rules are documented by Block.
   }
 
   /* /projects */
+
+  /* project-card: reusable project card with a shadow. */
+  .project-card__img {
+    width: 300px;
+  }
+
+  /* /project-card */
 }

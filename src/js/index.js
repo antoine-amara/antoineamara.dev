@@ -1,11 +1,16 @@
 import '../css/main.css'
 import Menu from './menu'
 import FullscreenPanel from './fullscreen-panel'
+import { iconLoader, fetcher } from './utils'
+import { renderMyWorkElements } from './renderer/my-work.render'
 
 // Scripts for index.html page
 
 let menu = null
 let panels = null
+
+const GET_GITHUB_PROFILE_URL = 'https://north-fr-antoinedev.cloudfunction.localhost/github-profile'
+const MY_GITHUB_PROFILE_URL = 'https://github.com/antoine-amara'
 
 console.info('**********************************************')
 console.info('* Welcome to ColorSpace Developer Portfolio  *')
@@ -53,3 +58,18 @@ function _initDesktopScripts () {
 const desktopMediaQuery = window.matchMedia('(min-width: 992px)')
 _onMediaChange(desktopMediaQuery)
 desktopMediaQuery.addListener(_onMediaChange)
+
+// manage my work loader
+iconLoader(
+  'my-work',
+  {
+    render: renderMyWorkElements,
+    message: 'loading content from github.',
+    errorMessage: 'Cannot retrieve the content, click on the logo to see my projects on github.',
+    errorOnClick: () => { window.open(MY_GITHUB_PROFILE_URL, '_black') }
+  },
+  {
+    fetcher,
+    apiUrl: GET_GITHUB_PROFILE_URL
+  }
+)
