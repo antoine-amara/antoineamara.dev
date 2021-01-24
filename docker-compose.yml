@@ -55,10 +55,14 @@ services:
       - ./functions/:/workspace/
     working_dir: /workspace/
     networks:
+      - public
       - webservices
+    ports:
+      - "9042:9042"
     environment:
       - NODE_ENV=development
       - PORT=3000
+      - GITHUB_TOKEN=4242424242442
     labels:
       - "traefik.enable=true"
       - "traefik.http.routers.faas.service=faas"

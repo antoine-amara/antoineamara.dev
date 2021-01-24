@@ -20,6 +20,7 @@ module.exports = merge(common, {
       './src/js/'
     ],
     watchContentBase: true,
-    disableHostCheck: true
+    disableHostCheck: true,
+    public: 'antoine.dev.localhost'
   }
 })
