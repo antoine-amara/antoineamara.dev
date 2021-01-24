@@ -1,3 +1,5 @@
+import FetchError from './FetchError'
+
 const HTMLElement = window.HTMLElement
 
 export function getCurrentScrollPosition () {
@@ -63,6 +65,49 @@ export function throttle (func, wait, leading, trailing, context) {
 
     return result
   }
+}
+
+export async function fetcher (url, requestBody) {
+  const validUrlPattern = new RegExp('^(https:\\/\\/)' + // protocol
+    '((([a-z\\d]([a-z\\d-]*[a-z\\d])*)\\.)+[a-z]{2,}|' + // domain name
+    '((\\d{1,3}\\.){3}\\d{1,3}))' + // OR ip (v4) address
+    '(\\:\\d+)?(\\/[-a-z\\d%_.~+]*)*' + // port and path
+    '(\\?[;&a-z\\d%_.~+=-]*)?' + // query string
+    '(\\#[-a-z\\d_]*)?$', 'i') // fragment locator
+
+  if (!url) throw new Error('[fetcher] you have to provide an URL to be able to fetch a network endpoint')
+  if (!(validUrlPattern.test(url))) throw new Error(`[fetcher] the url you provide is not a valid https url, got "${url}"`)
+
+  const requestOptions = Object.assign(
+    {},
+    {
+      method: requestBody ? 'POST' : 'GET',
+      headers: {
+        Accept: 'application/json',
+        'Content-Type': 'application/json'
+      },
+      mode: 'cors'
+    },
+    { body: JSON.stringify(requestBody) }
+  )
+
+  /* eslint-disable-next-line no-undef */
+  const response = await fetch(url, requestOptions)
+
+  if (!response.ok) {
+    let parsedResponse = null
+    try {
+      parsedResponse = await response.json()
+    } catch (err) {
+      // If an unexpected error or a malformed response is returned,
+      // throw an error without any parsed json response.
+      throw new FetchError(`[fetcher] receive error code ${response.status} from HTTP request`, response)
+    }
+
+    throw new FetchError(`[fetcher] receive error code ${response.status} from HTTP request`, response, parsedResponse)
+  }
+
+  return response.json()
 }
 
 export function iconLoader (selector, loaderOptions, fetchOptions) {

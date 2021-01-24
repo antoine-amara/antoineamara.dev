@@ -1,6 +1,7 @@
 /* eslint-disable */
 
-import { getCurrentScrollPosition, extractTargetIdFromElementHref, throttle, iconLoader } from '../utils'
+import { getCurrentScrollPosition, extractTargetIdFromElementHref, throttle, iconLoader, fetcher } from '../utils'
+import FetchError from '../FetchError'
 
 describe('Utils module: reusable and generic function for javascript modules', () => {
   describe('getCurrentScrollPosition', () => {
@@ -190,6 +191,96 @@ describe('Utils module: reusable and generic function for javascript modules', (
           expect(fakeErrorFetcher).toHaveBeenCalledTimes(1);
           // the second parameter is undefined because we don't pass any fetchBody to our fetcher
           expect(fakeErrorFetcher).toHaveBeenCalledWith('https://antoine.dev', undefined);
+        })
+    })
+  })
+  describe('fetcher: function to fetch an URL and return the response as JSON (without authentication)', () => {
+    let fetchMock = null
+    const fakeJsonResponse = { 
+      successMessage: 'un email a été envoye à notre équipe, nous vous répondrons dans les meilleurs délais.' 
+    };
+
+    beforeEach(() => {
+      fetchMock = jest.fn(
+        () => Promise.resolve({
+          ok: true,
+          status: 200,
+          json: () => Promise.resolve(fakeJsonResponse)
+        })
+      )
+      global.fetch = fetchMock
+    })
+
+    afterEach(() => global.fetch.mockRestore())
+    
+    test('it should be defined', () => expect(fetcher).toBeDefined())
+    test('it should be a function', () => expect(typeof fetcher).toBe('function'))
+    test('it should throw an error if the url is not defined', async () => {
+      const error = new Error('[fetcher] you have to provide an URL to be able to fetch a network endpoint')
+
+      try {
+        await fetcher(undefined)
+      } catch(err) { expect(err).toEqual(error) }
+    })
+    test('it should throw an error if the url is malformed', async () => {
+
+      try {
+        await fetcher('lacuisinedepaulo.com/contact')
+      } catch(err) { expect(err).toEqual(new Error('[fetcher] the url you provide is not a valid https url, got "lacuisinedepaulo.com/contact"')) }
+
+      try {
+        await fetcher('hello there')
+      } catch(err) { expect(err).toEqual(new Error('[fetcher] the url you provide is not a valid https url, got "hello there"')) }
+
+      try {
+        await fetcher('lacuisinedepaulo/contact')
+      } catch(err) { expect(err).toEqual(new Error('[fetcher] the url you provide is not a valid https url, got "lacuisinedepaulo/contact"')) }
+
+      try {
+        await fetcher('http://lacuisinedepaulo')
+      } catch(err) { expect(err).toEqual(new Error('[fetcher] the url you provide is not a valid https url, got "http://lacuisinedepaulo"')) }
+    })
+    test('it should throw a FetchError if server respond with an error code (4XX/5XX)', () => {
+      const fetchErrorMock = jest.fn(
+        () => Promise.resolve({
+          ok: false,
+          status: 500,
+          json: () => Promise.resolve(fakeJsonResponse)
+        })
+      )
+      global.fetch = fetchErrorMock
+
+      const error = new FetchError('[fetcher] receive error code 500 from HTTP request', { ok: false, status: 500 }, fakeJsonResponse)
+
+      return fetcher('https://north-fr-lacuisinedepaulo.cloudfunction.localhost/contact')
+        .catch(err => {
+          expect(err).toEqual(error)
+        })
+    })
+    test('it should make a GET request (because the request have no body) with the fetch API and return the response as a JSON object', () => {
+      return fetcher('https://north-fr-lacuisinedepaulo.cloudfunction.localhost/contact')
+        .then(res => {
+          expect(fetchMock).toHaveBeenCalled()
+          expect(fetchMock.mock.calls[0][0]).toEqual('https://north-fr-lacuisinedepaulo.cloudfunction.localhost/contact')
+          expect(fetchMock.mock.calls[0][1].method).toEqual('GET')
+          expect(fetchMock.mock.calls[0][1].body).not.toBeDefined()
+          expect(fakeJsonResponse).toEqual(res)
+        })
+    })
+    test('it should make a POST request (because the request have a body) with the fetch API and return the response as a JSON object', () => {
+      const fakeRequestBody = {
+        email: 'amara.antoine@lacuisinedepaulo.com',
+        subject: 'test',
+        message: 'I make a test'
+      }
+
+      return fetcher('https://north-fr-lacuisinedepaulo.cloudfunction.localhost/contact', fakeRequestBody)
+        .then(res => {
+          expect(fetchMock).toHaveBeenCalled()
+          expect(fetchMock.mock.calls[0][0]).toEqual('https://north-fr-lacuisinedepaulo.cloudfunction.localhost/contact')
+          expect(fetchMock.mock.calls[0][1].method).toEqual('POST')
+          expect(fetchMock.mock.calls[0][1].body).toBeDefined()
+          expect(fakeJsonResponse).toEqual(res)
         })
     })
   })
