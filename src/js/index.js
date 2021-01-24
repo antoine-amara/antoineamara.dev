@@ -3,6 +3,7 @@ import Menu from './menu'
 import FullscreenPanel from './fullscreen-panel'
 import { iconLoader, fetcher } from './utils'
 import { renderMyWorkElements } from './renderer/my-work.render'
+import { manageFakeShell } from './fake-console'
 
 // Scripts for index.html page
 
@@ -58,6 +59,9 @@ function _initDesktopScripts () {
 const desktopMediaQuery = window.matchMedia('(min-width: 992px)')
 _onMediaChange(desktopMediaQuery)
 desktopMediaQuery.addListener(_onMediaChange)
+
+// manage the fake shell for about-me section
+manageFakeShell('fake-terminal__commands')
 
 // manage my work loader
 iconLoader(
