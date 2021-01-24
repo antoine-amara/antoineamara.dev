@@ -12,5 +12,8 @@
     "github-api"
   ],
   "author": "Antoine AMARA <amara.antoine@gmail.com>",
-  "license": "GPL-3.0"
+  "license": "GPL-3.0",
+  "dependencies": {
+    "@octokit/graphql": "^4.5.8"
+  }
 }

@@ -14,9 +14,12 @@
     "package": "rm -f website.zip && yarn build && cd dist/ && bestzip ../website.zip *",
     "build": "webpack --config webpack.prod.js",
     "lint": "yarn lint:js && yarn lint:css",
-    "lint:js": "eslint --fix ./src/js/*.js",
+    "lint:js": "eslint --fix ./src/js/ ./functions/get-github-profile/**/*.js",
     "lint:css": "stylelint --fix 'src/css/*.css'",
-    "test": "jest",
+    "test": "yarn test:frontend && yarn test:gcp-functions",
+    "test:frontend": "jest --config=./jest.config.js src/",
+    "test:gcp-functions": "jest --config=functions/jest.config.js functions/",
+    "test:gcp-functions:dev": "jest  --watch --config=functions/jest.config.js functions/",
     "analyze-bundle": "yarn --silent build --profile --json > stats.json && webpack-bundle-analyzer stats.json ./dist/ -O -h 0.0.0.0 -p 9042"
   },
   "workspaces": [
