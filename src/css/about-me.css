@@ -27,8 +27,65 @@ all rules are documented by Block.
 }
 
 .about-me__illustration {
-  max-width: 100%;
+  width: 100%;
   margin-bottom: var(--colorspace-block-margin);
+  height: 400px;
+}
+
+.fake-terminal {
+  height: 100%;
+  font-family: 'Ubuntu Mono', monospace;
+  display: flex;
+  flex-direction: column;
+}
+
+.fake-terminal__top-bar {
+  height: 20px;
+  background-color: var(--colorspace-light-color);
+  border-radius: 5px 5px 0 0;
+  display: flex;
+  align-items: center;
+}
+
+.fake-terminal__top-bar__buttons {
+  display: flex;
+}
+
+.fake-terminal__top-bar__button {
+  border-radius: 50%;
+  width: 15px;
+  height: 15px;
+  margin-left: 5px;
+}
+
+.fake-terminal__top-bar__title {
+  color: var(--colorspace-black-color);
+  margin-right: auto;
+  margin-left: auto;
+}
+
+.fake-terminal__commands {
+  background-color: #222;
+  flex-grow: 1;
+  border-radius: 0 0 5px 5px;
+  overflow-y: auto;
+  padding: var(--colorspace-block-spacing-md);
+}
+
+.fake-terminal__top-bar__button--green {
+  background-color: var(--colorspace-green-color);
+}
+
+.fake-terminal__top-bar__button--yellow {
+  background-color: var(--colorspace-green-yellow);
+}
+
+.fake-terminal__top-bar__button--red {
+  background-color: var(--colorspace-red-color);
+}
+
+.fake-terminal__commands > p {
+  padding: 0;
 }
 
 /* /about-me */
@@ -58,7 +115,7 @@ all rules are documented by Block.
   }
 
   .about-me__illustration {
-    flex-basis: 50%;
+    flex-basis: 60%;
     flex-grow: 1;
     flex-shrink: 0;
     margin-right: var(--colorspace-desktop-menu-margin);

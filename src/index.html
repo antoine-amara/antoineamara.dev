@@ -114,7 +114,20 @@
       <section name="About Me" class="about-me section--desktop-panel" id="aboutme">
         <h2>About Me</h2>
         <div class="about-me__content">
-          <img class="about-me__illustration" src="<%= require('./img/about-me-placeholder.png') %>">
+          <div class="about-me__illustration">
+            <div class="fake-terminal">
+              <div class="fake-terminal__top-bar">
+                <div class="fake-terminal__top-bar__buttons">
+                  <div class="fake-terminal__top-bar__button fake-terminal__top-bar__button--red"></div>
+                  <div class="fake-terminal__top-bar__button fake-terminal__top-bar__button--yellow"></div>
+                  <div class="fake-terminal__top-bar__button fake-terminal__top-bar__button--green"></div>
+                </div>
+                <div class="fake-terminal__top-bar__title">Guest@antoineamara.dev: ~</div>
+              </div>
+              <div class="fake-terminal__commands" tabindex="0">
+              </div>
+            </div>
+          </div>
           <p class="about-me__text">
             Lorem, ipsum dolor sit amet consectetur adipisicing elit. Ut beatae officia rem exercitationem eveniet nesciunt doloremque, delectus itaque velit, consequatur praesentium, iure maxime ipsum ipsam sed possimus earum dignissimos minima.
 
