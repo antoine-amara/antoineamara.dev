@@ -359,6 +359,14 @@ a:hover {
   margin-bottom: var(--colorspace-block-margin);
 }
 
+.info-headband__actions {
+  display: flex;
+}
+
+.info-headband__actions > button {
+  margin-right: var(--colorspace-block-margin)
+}
+
 /* /info-headband */
 
 /*
