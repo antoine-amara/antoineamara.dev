@@ -57,6 +57,11 @@ all rules are documented by Block.
 
   /* DESKTOP MODE BOX MAX WIDTH (ABOUTME, CONTACT FORM...) */
   --colorspace-desktop-maxwidth: 800px;
+
+  /* website loader properties */
+  /* WEBSITE LOADER PROPERTIES */
+  --colorspace-loader-size: 64px;
+  --colorspace-button-loader-size: 20px;
 }
 
 @import "https://fonts.googleapis.com/css2?family=Open+Sans&family=Roboto+Slab&Ubuntu+Mono&display=swap";
@@ -102,6 +107,74 @@ a:hover {
 }
 
 /* /globals */
+
+/*
+  loader: reusable simple loader ring for an element or a button
+*/
+
+@keyframes loader-ring {
+  0% {
+    transform: rotate(0deg);
+  }
+
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+.loader {
+  width: var(--colorspace-loader-size);
+  min-height: var(--colorspace-loader-size);
+  display: inline-block;
+  position: relative;
+}
+
+.loader--button {
+  width: var(--colorspace-button-loader-size);
+  min-height: var(--colorspace-button-loader-size);
+  background: transparent;
+  display: none;
+}
+
+.loader__ring {
+  display: block;
+  position: absolute;
+  width: var(--colorspace-loader-size);
+  height: var(--colorspace-loader-size);
+  margin: 8px;
+  border: 8px solid var(--colorspace-black-color);
+  border-radius: 50%;
+  animation: loader-ring 1.2s cubic-bezier(0.5, 0, 0.5, 1) infinite;
+  border-color: var(--colorspace-black-color) transparent transparent transparent;
+}
+
+.loader__ring--button {
+  width: var(--colorspace-button-loader-size);
+  height: var(--colorspace-button-loader-size);
+  margin: auto;
+  border: 2px solid #fff;
+  border-color: #fff transparent transparent transparent;
+}
+
+.loader .loader__ring:nth-child(1) {
+  animation-delay: -0.45s;
+}
+
+.loader .loader__ring:nth-child(2) {
+  animation-delay: -0.3s;
+}
+
+.loader .loader__ring:nth-child(3) {
+  animation-delay: -0.15s;
+}
+
+.button--loading > .loader--button {
+  display: inline-block;
+}
+
+/*
+  /loader
+*/
 
 /*
   icon-loader: reusable classes to transform
@@ -172,6 +245,9 @@ a:hover {
   some styling for websites buttons.
 */
 .button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
   position: relative;
   background: currentColor;
   border: 1px solid currentColor;
@@ -226,6 +302,7 @@ a:hover {
 .button__content {
   color: var(--colorspace-light-color);
   z-index: 1;
+  margin-right: var(--colorspace-block-margin);
 }
 
 .button--blue {
