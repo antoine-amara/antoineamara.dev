@@ -439,6 +439,55 @@ a:hover {
 
 /* /footer */
 
+/*
+  snackbar: little bar to display messages for the user (action confirmation).
+*/
+
+@keyframes fadein {
+  from {bottom: 0; opacity: 0;}
+  to {bottom: 30px; opacity: 1;}
+}
+
+@keyframes fadeout {
+  from {bottom: 30px; opacity: 1;}
+  to {bottom: 0; opacity: 0;}
+}
+
+.snackbar {
+  visibility: hidden;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 300px;
+  margin-left: -150px;
+  background-color: var(--colorspace-light-green-color);
+  text-align: center;
+  border-radius: 5px;
+  padding: 16px;
+  position: fixed;
+  left: 50%;
+  z-index: 1;
+  bottom: 30px;
+  font-size: 0.8rem;
+}
+
+.snackbar__action {
+  margin-left: var(--colorspace-block-margin);
+  text-transform: uppercase;
+  color: var(--colorspace-indigo-color);
+  letter-spacing: 0.5px;
+  font-family: 'Roboto Slab', serif;
+}
+
+.snackbar__show {
+  visibility: visible;
+  /* Add animation: Take 0.5 seconds to fade in and out the snackbar.
+  However, delay the fade out process for 2.5 seconds */
+  animation: fadein 0.5s, fadeout 0.5s 2.5s;
+}
+
+/* /snackbar */
+
 /* Large devices (desktops, 992px and up) */
 @media (min-width: 992px) {
   /*
@@ -462,6 +511,22 @@ a:hover {
   }
 
   /* /panels */
+
+  /*
+    snackbar: little bar to display messages for the user (action confirmation).
+  */
+
+  .snackbar {
+    width: 500px;
+    margin-left: -250px;
+  }
+
+  .snackbar__action:hover {
+    cursor: pointer;
+    text-decoration: underline;
+  }
+
+  /* /snackbar */
 
   /*
     footer: website footer block.

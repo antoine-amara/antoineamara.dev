@@ -77,3 +77,10 @@ iconLoader(
     apiUrl: GET_GITHUB_PROFILE_URL
   }
 )
+
+// test snackbar
+const snackbar = document.getElementsByClassName('snackbar')[0]
+
+snackbar.classList.toggle('snackbar__show')
+
+setTimeout(() => snackbar.classList.toggle('snackbar__show'), 3000)
