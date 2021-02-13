@@ -1,6 +1,6 @@
 /* eslint-disable */
 
-import { getCurrentScrollPosition, extractTargetIdFromElementHref, throttle, iconLoader, fetcher } from '../utils'
+import { getCurrentScrollPosition, extractTargetIdFromElementHref, throttle, iconLoader, fetcher, timeout } from '../utils'
 import FetchError from '../FetchError'
 
 describe('Utils module: reusable and generic function for javascript modules', () => {
@@ -282,6 +282,36 @@ describe('Utils module: reusable and generic function for javascript modules', (
           expect(fetchMock.mock.calls[0][1].body).toBeDefined()
           expect(fakeJsonResponse).toEqual(res)
         })
+    })
+  })
+  describe('timeout: function  who wait N milliseconds (waitingTime) and resolve', () => {
+    test('it should be defined', () => expect(timeout).toBeDefined())
+    test('it should be a function', () => expect(typeof timeout).toBe('function'))
+    test('it should throw an error if waitingTime parameter is undefined or is not a number', () => {
+      expect(() => timeout(undefined)).toThrow()
+      expect(() => timeout('Hello There !! ... General Kenobi')).toThrow()
+      expect(() => timeout('42')).not.toThrow()
+      expect(() => timeout(42)).not.toThrow()
+    })
+    test('it should return a Promise', () => expect(timeout(42).then).toBeDefined())
+    test('it should wait N millisecons (defined by waitingTime)', async () => {
+      // for more explaination about jest timer: https://stackoverflow.com/questions/52673682/how-do-i-test-promise-delays-with-jest
+      jest.useFakeTimers()
+
+      const fakeResolveCallback = jest.fn()
+      timeout(100).then(fakeResolveCallback)
+
+      jest.advanceTimersByTime(50);
+      // let any pending callbacks in PromiseJobs run
+      await Promise.resolve()
+      expect(fakeResolveCallback).not.toHaveBeenCalled()
+
+      jest.advanceTimersByTime(50);
+      // let any pending callbacks in PromiseJobs run
+      await Promise.resolve()
+      expect(fakeResolveCallback).toHaveBeenCalled()
+
+      jest.useRealTimers()
     })
   })
 })

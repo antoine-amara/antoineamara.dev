@@ -4,6 +4,7 @@ import FullscreenPanel from './fullscreen-panel'
 import { iconLoader, fetcher } from './utils'
 import { renderMyWorkElements } from './renderer/my-work.render'
 import { manageFakeShell } from './fake-console'
+import NotificationCenter from './NotificationCenter'
 
 // Scripts for index.html page
 
@@ -78,9 +79,12 @@ iconLoader(
   }
 )
 
-// test snackbar
-const snackbar = document.getElementsByClassName('snackbar')[0]
+// test snackbar as notification center
+const notificationCenter = new NotificationCenter('snackbar', 3000)
 
-snackbar.classList.toggle('snackbar__show')
-
-setTimeout(() => snackbar.classList.toggle('snackbar__show'), 3000)
+const contactSubmitButton = document.getElementsByClassName('submit-contact')[0]
+const notificationCenterButton = document.getElementsByClassName('snackbar__action')[0]
+notificationCenterButton.addEventListener('click', () => notificationCenter.dismiss())
+contactSubmitButton.addEventListener('click', () => {
+  notificationCenter.info('Antoine MESSAGE')
+})
