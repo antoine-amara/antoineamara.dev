@@ -1,0 +1,12 @@
+{
+  "name": "faas-contact-form",
+  "version": "0.0.1",
+  "description": "contact form submission to send the content of a contact form with gcp function.",
+  "main": "index.js",
+  "author": "Antoine AMARA<amara.antoine@gmail.com>",
+  "license": "GPLv3.0",
+  "private": true,
+  "dependencies": {
+    "nodemailer": "^6.4.2"
+  }
+}

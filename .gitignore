@@ -129,3 +129,6 @@ configs.env
 deploy/gcp/*.json
 
 # End of https://www.toptal.com/developers/gitignore/api/terraform
+
+# ignore saved email by mailhog
+Docker/mailbox

@@ -10,7 +10,8 @@
     "serve": "nodemon --inspect='0.0.0.0:9042' mock-gcp-service.js"
   },
   "workspaces": [
-    "get-github-profile"
+    "get-github-profile",
+    "contact-form"
   ],
   "dependencies": {
     "cors": "^2.8.5",

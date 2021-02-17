@@ -63,6 +63,13 @@ services:
       - NODE_ENV=development
       - PORT=3000
       - GITHUB_TOKEN=4242424242442
+      - SMTP_USERNAME=antoine.dev.localhost
+      - SMTP_PASSWORD=paulo2019
+      - SMTP_HOST=mailhog
+      - SMTP_PORT=1025
+      - SMTP_MAIL_SENDER=no-reply@antoineamara.dev
+      - SMTP_DEST_MAIL=contact@antoineamara.dev
+      - AUTHORIZED_ORIGINS=https://antoine.dev.localhost,https://www.antoine.dev.localhost
     labels:
       - "traefik.enable=true"
       - "traefik.http.routers.faas.service=faas"
@@ -70,6 +77,24 @@ services:
       - "traefik.http.services.faas.loadbalancer.server.port=3000"
       - "traefik.http.routers.faas.tls=true"
     command: yarn serve
+  mailhog:
+    image: mailhog/mailhog:v1.0.0
+    volumes: 
+      - ./Docker/mailbox/:/maildir/
+    networks: 
+      - webservices
+    expose:
+      - 1025
+      - 8025
+    environment:
+      - MH_STORAGE=maildir
+      - MH_MAILDIR_PATH=/maildir/
+    labels:
+      - "traefik.enable=true"
+      - "traefik.http.routers.mailbox.service=mailbox"
+      - "traefik.http.routers.mailbox.rule=Host(`mailbox.antoinedev.localhost`)"
+      - "traefik.http.services.mailbox.loadbalancer.server.port=8025"
+      - "traefik.http.routers.mailbox.tls=true"
 
 networks:
   public:

@@ -14,7 +14,7 @@
     "package": "rm -f website.zip && yarn build && cd dist/ && bestzip ../website.zip *",
     "build": "webpack --config webpack.prod.js",
     "lint": "yarn lint:js && yarn lint:css",
-    "lint:js": "eslint --fix ./src/js/ ./functions/get-github-profile/**/*.js",
+    "lint:js": "eslint --fix ./src/js/ ./functions/get-github-profile/**/*.js ./functions/contact-form/**/*.js",
     "lint:css": "stylelint --fix 'src/css/*.css'",
     "test": "yarn test:frontend && yarn test:gcp-functions",
     "test:frontend": "jest --config=./jest.config.js src/",
@@ -24,7 +24,8 @@
   },
   "workspaces": [
     "functions",
-    "functions/get-github-profile"
+    "functions/get-github-profile",
+    "functions/contact-form"
   ],
   "devDependencies": {
     "@babel/core": "^7.13.15",

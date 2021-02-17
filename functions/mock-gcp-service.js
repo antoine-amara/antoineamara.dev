@@ -2,6 +2,7 @@ const express = require('express')
 const bodyParser = require('body-parser')
 const cors = require('cors')
 const { getGithubProfileMiddleware } = require('./get-github-profile')
+const { submitContactForm } = require('./contact-form')
 const { timeout } = require('./utils')
 
 const app = express()
@@ -21,6 +22,12 @@ app.get(
   '/github-profile',
   async (_req, _res, next) => { await timeout(5000); next() },
   getGithubProfileMiddleware
+)
+
+app.post(
+  '/contact',
+  async (_req, _res, next) => { await timeout(5000); next() },
+  submitContactForm
 )
 
 app.listen(PORT, () => console.info('[☁️  faas service] available on "http://north-fr-antoinedev.cloudfunction.localhost/"'))

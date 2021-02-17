@@ -799,6 +799,11 @@ node-fetch@^2.6.1:
   resolved "https://registry.yarnpkg.com/node-fetch/-/node-fetch-2.6.1.tgz#045bd323631f76ed2e2b55573394416b639a0052"
   integrity sha512-V4aYg89jEoVRxRb2fJdAg8FHvI7cEyYdVAh94HH0UIK8oJxUfkjlDQN9RbMx+bEjP7+ggMiFRprSti032Oipxw==
 
+nodemailer@^6.4.2:
+  version "6.4.18"
+  resolved "https://registry.yarnpkg.com/nodemailer/-/nodemailer-6.4.18.tgz#2788c85792844fc17befda019031609017f4b9a1"
+  integrity sha512-ht9cXxQ+lTC+t00vkSIpKHIyM4aXIsQ1tcbQCn5IOnxYHi81W2XOaU66EQBFFpbtzLEBTC94gmkbD4mGZQzVpA==
+
 nodemon@^2.0.2:
   version "2.0.6"
   resolved "https://registry.yarnpkg.com/nodemon/-/nodemon-2.0.6.tgz#1abe1937b463aaf62f0d52e2b7eaadf28cc2240d"
