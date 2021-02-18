@@ -26,7 +26,7 @@ describe('FetchError Exception: custom exception to use when fetch api get a 4XX
     expect(error.status).toEqual(500)
     expect(error.serverResponse).toEqual({
       errorType: 'Unknow error',
-      errorMessage: 'une erreur s\'est produite, impossible d\'effectuer l\'action demandée. Veuillez rééssayer ulterieurement'
+      errorMessage: 'an error occured, cannot perform this request. please retry later.'
     })
   })
   test('it should construct an error object with a message, the HTTP error code and the serverResponse as json object', async () => {

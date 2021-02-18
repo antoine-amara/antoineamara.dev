@@ -1,6 +1,6 @@
 const DEFAULT_RESPONSE = {
   errorType: 'Unknow error',
-  errorMessage: 'une erreur s\'est produite, impossible d\'effectuer l\'action demandée. Veuillez rééssayer ulterieurement'
+  errorMessage: 'an error occured, cannot perform this request. please retry later.'
 }
 
 class FetchError extends Error {

@@ -71,6 +71,13 @@ button:focus {
   height: 2em;
 }
 
+.form__input:invalid,
+.form__input:required,
+.form__textarea:invalid,
+.form__textarea:required {
+  box-shadow: none;
+}
+
 /* /form */
 
 /*

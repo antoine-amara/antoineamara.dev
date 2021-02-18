@@ -4,7 +4,7 @@ import FullscreenPanel from './fullscreen-panel'
 import { iconLoader, fetcher } from './utils'
 import { renderMyWorkElements } from './renderer/my-work.render'
 import { manageFakeShell } from './fake-console'
-import NotificationCenter from './NotificationCenter'
+import { submitContactForm } from './contact-form'
 
 // Scripts for index.html page
 
@@ -35,8 +35,8 @@ function _initMobileScripts () {
   menu.setEventListener(true)
 
   /* manage contact form submission */
-  const contactSubmitButton = document.getElementsByClassName('button')[0]
-  contactSubmitButton.addEventListener('click', e => e.preventDefault())
+  const contactSubmitButton = document.getElementsByClassName('submit-contact')[0]
+  contactSubmitButton.addEventListener('click', submitContactForm)
 }
 
 function _initDesktopScripts () {
@@ -53,8 +53,8 @@ function _initDesktopScripts () {
   panels.createAndInsertMenu('desktop-menu')
 
   /* manage contact form submission */
-  const contactSubmitButton = document.getElementsByClassName('button')[0]
-  contactSubmitButton.addEventListener('click', e => e.preventDefault())
+  const contactSubmitButton = document.getElementsByClassName('submit-contact')[0]
+  contactSubmitButton.addEventListener('click', submitContactForm)
 }
 
 const desktopMediaQuery = window.matchMedia('(min-width: 992px)')
@@ -78,13 +78,3 @@ iconLoader(
     apiUrl: GET_GITHUB_PROFILE_URL
   }
 )
-
-// test snackbar as notification center
-const notificationCenter = new NotificationCenter('snackbar', 3000)
-
-const contactSubmitButton = document.getElementsByClassName('submit-contact')[0]
-const notificationCenterButton = document.getElementsByClassName('snackbar__action')[0]
-notificationCenterButton.addEventListener('click', () => notificationCenter.dismiss())
-contactSubmitButton.addEventListener('click', () => {
-  notificationCenter.info('Antoine MESSAGE')
-})

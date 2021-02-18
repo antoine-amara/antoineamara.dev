@@ -245,7 +245,7 @@ a:hover {
   button: a custom button element.
   some styling for websites buttons.
 */
-.button {
+.btn {
   display: flex;
   align-items: center;
   justify-content: center;
@@ -268,7 +268,7 @@ a:hover {
     0 1px 5px 0 rgba(0, 0, 0, 0.12);
 }
 
-.button::before {
+.btn::before {
   content: '';
   position: absolute;
   background: var(--colorspace-white-transparent-color);
@@ -284,7 +284,7 @@ a:hover {
   transform: translate(-50%, -50%) scale(0);
 }
 
-.button:hover {
+.btn:hover {
   color: var(--colorspace-white-transparent-md-color);
   box-shadow:
     0 6px 10px 0 rgba(0, 0, 0, 0.14),
@@ -292,25 +292,25 @@ a:hover {
     0 3px 5px -1px rgba(0, 0, 0, 0.2);
 }
 
-.button:active::before,
-.button:focus::before {
+.btn:active::before,
+.btn:focus::before {
   transition: opacity 0.28s ease 0.364s, transform 1.12s ease;
   transition: transform 1.12s ease, opacity 0.28s ease 0.364s;
   transform: translate(-50%, -50%) scale(1);
   opacity: 0;
 }
 
-.button__content {
+.btn__content {
   color: var(--colorspace-light-color);
   z-index: 1;
   margin-right: var(--colorspace-block-margin);
 }
 
-.button--blue {
+.btn--blue {
   background-color: var(--colorspace-indigo-color);
 }
 
-.button--xs {
+.btn--xs {
   padding: var(--colorspace-block-margin) var(--colorspace-block-spacing-md);
 }
 
@@ -500,7 +500,7 @@ a:hover {
 
   /* Add animation: Take 0.5 seconds to fade in and out the snackbar.
   However, delay the fade out process for 2.5 seconds */
-  animation: fadein 0.5s, fadeout 0.5s 2.5s;
+  animation: fadein 0.5s, fadeout 0.5s 4.5s;
 }
 
 .snackbar--success {

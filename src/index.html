@@ -26,8 +26,8 @@
     <!-- <div class="info-headband">
       <div class="info-headband__message">We use cookies to ensure that we give you the best experience on our website. If you continue to use this site we will assume that you are happy with it.</div>
       <div class="info-headband__actions">
-        <button class="button button--blue button--xs"><span class="button__content">customize</span></button>
-        <button class="button button--blue button--xs"><span class="button__content">ok</span></button>
+        <button class="button button--blue button--xs"><span class="btn__content">customize</span></button>
+        <button class="button button--blue button--xs"><span class="btn__content">ok</span></button>
       </div>
     </div> -->
     <!-- ## /info-headband ## -->
@@ -166,20 +166,28 @@
       <!-- ## Contact: section with the contact form. see css/contact.css for more. ## -->
       <section name="Contact" class="contact section--desktop-panel" id="contact">
         <h2>Contact Me</h2>
-        <form class="form">
-          <input class="form__input" type="text" placeholder="Name" />
-          <input class="form__input" type="email" placeholder="Email" />
+        <form class="form" id="contact-form">
+          <input id="name" name="name" class="form__input" type="text" placeholder="Name" required />
+          <input id="email" name="email" class="form__input" type="email" placeholder="Email" required />
           <div class="select">
             <div class="select__container">
-              <select>
+              <select id="subject" name="subject">
                 <option class="select--option" value="question">Ask me a question</option>
                 <option value="job">Job proposal</option>
-                <option value="open-source">Question about my open source contribution</option>
+                <option value="opensource">Question about my open source contribution</option>
               </select>
             </div>
           </div>
-          <textarea class="form__textarea" placeholder="Enter your message" cols="30" rows="8"></textarea>
-          <button class="button submit-contact"><span class="button__content">Send</span></button>
+          <textarea id="message" name="message" class="form__textarea" placeholder="Enter your message" cols="30" rows="8" required ></textarea>
+          <button class="btn submit-contact">
+            <span class="btn__content">Send</span>
+            <div class="loader loader--button">
+              <div class="loader__ring loader__ring--button"></div>
+              <div class="loader__ring loader__ring--button"></div>
+              <div class="loader__ring loader__ring--button"></div>
+              <div class="loader__ring loader__ring--button"></div>
+            </div>
+          </button>
         </form>
 
         <!-- ## Snackbar: little bar to display messages for the user inspired by material design, see main.css for styles ## -->
