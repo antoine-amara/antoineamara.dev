@@ -40,7 +40,7 @@ button:focus {
 }
 
 .contact h2 {
-  margin-top: auto;
+  margin-top: var(--colorspace-block-margin);
 }
 
 /* /contact */
@@ -130,6 +130,17 @@ button:focus {
 
 /* Large devices (desktops, 992px and up) */
 @media (min-width: 992px) {
+  /*
+    contact: global section rules.
+    contact section contains a title and a form.
+  */
+
+  .contact h2 {
+    margin-top: auto;
+  }
+
+  /* /contact */
+
   /*
     form: rules for the form element and inputs.
   */

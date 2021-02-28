@@ -575,6 +575,7 @@ a:hover {
 @import './menu.css';
 @import './about-me.css';
 @import './my-work.css';
+@import './blog-post.css';
 @import './contact.css';
 @import './404.css';
 @import './legal-notice.css';

@@ -104,6 +104,10 @@ all rules are documented by Block.
   margin-right: 3px;
 }
 
+.badge--small {
+  font-size: 11px;
+}
+
 .badge--green {
   background-color: var(--colorspace-green-color);
 }
@@ -126,6 +130,11 @@ all rules are documented by Block.
 
 .badge--red {
   background-color: #ef3e36;
+}
+
+.badge--grey-opacity {
+  background-color: rgba(252, 255, 253, 0.2);
+  border: 0.1px solid var(--colorspace-accent-grey);
 }
 
 /* /badges */

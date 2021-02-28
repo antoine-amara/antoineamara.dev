@@ -1,0 +1,52 @@
+/* *******************************************************
+name:        blog-post.css
+description: css rules for blog section in index.html.
+--
+this project uses the BEM method, see http://getbem.com/.
+all rules are documented by Block.
+******************************************************* */
+
+.blog-post {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  background-color: var(--colorspace-white-transparent-color);
+  color: var(--colorspace-light-color);
+  padding: var(--colorspace-block-spacing-md);
+  align-items: center;
+}
+
+.blog-post__separator {
+  width: 100%;
+  height: 1px;
+  background-color: var(--colorspace-light-green-color);
+  border: none;
+  margin: auto;
+}
+
+.post {
+  margin-top: var(--colorspace-block-margin);
+  margin-bottom: var(--colorspace-block-margin);
+}
+
+.post__title {
+  font-family: 'Roboto Slab', serif;
+  color: var(--colorspace-light-green-color);
+  font-weight: var(--colorspace-xl-weight);
+  margin: 0;
+  font-size: 20px;
+}
+
+.post__date {
+  font-size: 10px;
+  font-weight: var(--colorspace-xl-weight);
+  margin-bottom: var(--colorspace-block-spacing-md);
+}
+
+/* Large devices (desktops, 992px and up) */
+@media (min-width: 992px) {
+  .blog-post__container {
+    max-width: var(--colorspace-desktop-maxwidth);
+    width: 50%;
+  }
+}
