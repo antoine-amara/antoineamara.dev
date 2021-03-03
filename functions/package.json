@@ -11,7 +11,8 @@
   },
   "workspaces": [
     "get-github-profile",
-    "contact-form"
+    "contact-form",
+    "get-blog-posts"
   ],
   "dependencies": {
     "cors": "^2.8.5",

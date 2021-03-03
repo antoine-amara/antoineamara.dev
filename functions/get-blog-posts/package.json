@@ -1,0 +1,16 @@
+{
+  "name": "get-blog-posts",
+  "version": "0.0.1",
+  "description": "get my last blog posts from dev.to",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "api",
+    "webservice",
+    "github-api"
+  ],
+  "author": "Antoine AMARA <amara.antoine@gmail.com>",
+  "license": "GPL-3.0"
+}
