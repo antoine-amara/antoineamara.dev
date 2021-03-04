@@ -149,7 +149,8 @@ export function iconLoader (selector, loaderOptions, fetchOptions) {
       element.style.display = 'none'
       element.children[1].innerHTML = ''
       document.querySelector(`.${selector}`).appendChild(elementsToRender)
-    }).catch(() => {
+    }).catch((err) => {
+      console.error(err)
       element.children[1].innerHTML = errorMessage || DEFAULT_ERROR_MESSAGE
       element.classList.toggle('icon-loader__container--error')
 

@@ -3,6 +3,7 @@ import Menu from './menu'
 import FullscreenPanel from './fullscreen-panel'
 import { iconLoader, fetcher } from './utils'
 import { renderMyWorkElements } from './renderer/my-work.render'
+import { renderBlogPostElements } from './renderer/blog-post.render'
 import { manageFakeShell } from './fake-console'
 import { submitContactForm } from './contact-form'
 
@@ -13,6 +14,8 @@ let panels = null
 
 const GET_GITHUB_PROFILE_URL = 'https://north-fr-antoinedev.cloudfunction.localhost/github-profile'
 const MY_GITHUB_PROFILE_URL = 'https://github.com/antoine-amara'
+const GET_BLOG_POST_URL = 'https://north-fr-antoinedev.cloudfunction.localhost/blog-posts'
+const MY_DEVTO_PROFILE_URL = 'https://dev.to/antoineamara'
 
 console.info('**********************************************')
 console.info('* Welcome to ColorSpace Developer Portfolio  *')
@@ -55,6 +58,10 @@ function _initDesktopScripts () {
   /* manage contact form submission */
   const contactSubmitButton = document.getElementsByClassName('submit-contact')[0]
   contactSubmitButton.addEventListener('click', submitContactForm)
+
+  // elements scrolling management
+  const blogPostContainer = document.getElementsByClassName('blog-post__container')[0]
+  blogPostContainer.addEventListener('wheel', (e) => { e.stopPropagation() })
 }
 
 const desktopMediaQuery = window.matchMedia('(min-width: 992px)')
@@ -71,10 +78,25 @@ iconLoader(
     render: renderMyWorkElements,
     message: 'loading content from github.',
     errorMessage: 'Cannot retrieve the content, click on the logo to see my projects on github.',
-    errorOnClick: () => { window.open(MY_GITHUB_PROFILE_URL, '_black') }
+    errorOnClick: () => { window.open(MY_GITHUB_PROFILE_URL, '_blank') }
   },
   {
     fetcher,
     apiUrl: GET_GITHUB_PROFILE_URL
+  }
+)
+
+// manage blog posts loader
+iconLoader(
+  'blog-post',
+  {
+    render: renderBlogPostElements,
+    message: 'loading content from dev.to.',
+    errorMessage: 'Cannot retrieve the blog posts, click on the logo to see my posts on dev.to.',
+    errorOnClick: () => { window.open(MY_DEVTO_PROFILE_URL, '_blank') }
+  },
+  {
+    fetcher,
+    apiUrl: GET_BLOG_POST_URL
   }
 )
