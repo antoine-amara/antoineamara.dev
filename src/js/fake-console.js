@@ -1,14 +1,13 @@
 import rawShellConf from './config/fake-shell-command'
 const HTMLElement = window.HTMLElement
 
-const EXCLUDE_KEYS = ['Alt', 'Shift', 'Control', 'Tab']
+const EXCLUDE_KEYS = ['Alt', 'Shift', 'Control', 'Tab', 'CapsLock', 'ArrowLeft', 'ArrowRight', 'ArrowUp', 'ArrowDown', 'PageUp', 'PageDown', 'End']
 
 // Module to manage a fake console
 
 export function manageFakeShell (selector) {
   let isWriting = false
   const fakeShellElement = document.getElementsByClassName(selector)[0]
-  fakeShellElement.focus()
   const shellCommands = _readShellConf(rawShellConf)
   isWriting = true
   _executeShellCommand(fakeShellElement, shellCommands, 'main').then(() => { isWriting = false })

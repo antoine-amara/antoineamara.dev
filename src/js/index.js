@@ -62,6 +62,10 @@ function _initDesktopScripts () {
   // elements scrolling management
   const blogPostContainer = document.getElementsByClassName('blog-post__container')[0]
   blogPostContainer.addEventListener('wheel', (e) => { e.stopPropagation() })
+
+  // auto focus on fake console
+  const fakeShellElement = document.getElementsByClassName('fake-terminal__commands')[0]
+  fakeShellElement.focus()
 }
 
 const desktopMediaQuery = window.matchMedia('(min-width: 992px)')

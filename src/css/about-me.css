@@ -109,7 +109,7 @@ all rules are documented by Block.
 
   .about-me__content {
     flex-direction: row;
-    max-width: 90%;
+    width: 90%;
     margin: auto;
     margin-top: 0;
   }
