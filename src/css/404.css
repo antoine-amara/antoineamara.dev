@@ -28,11 +28,15 @@ all rules are documented by Block.
   border-radius: 5px;
   min-height: 300px;
   font-family: 'Ubuntu Mono', monospace;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
 }
 
 .fake-console__line {
-  padding: var(--colorspace-block-margin);
   color: var(--colorspace-white-color);
+  line-height: normal;
 }
 
 .fake-console--no-margin {

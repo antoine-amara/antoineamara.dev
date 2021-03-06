@@ -9,14 +9,19 @@ console.info('* ColorSpace Developer Portfolio / 404  *')
 console.info('*****************************************')
 
 const textFor404Page = [
-  'John Doe Subsystem --- Linux Kernel 4.x --- GNU GPL v3 Licence',
-  'Searching...',
-  '404 - Page Not Found',
-  'Kernel Panic',
-  'Don t panic and go to the home page'
+  '\t\t\t_\t\t_\t\t\t\t___\t\t_\t\t_\t\t\t',
+  '\t\t|\t||\t|\t\t/\t_\t\\|\t||\t|\t\t',
+  '\t\t|\t||\t|_|\t|\t|\t|\t||\t|_\t',
+  '\t\t|__\t\t\t_|\t|\t|\t|__\t\t\t_|',
+  '\t\t\t\t\t|\t|\t|\t|_|\t|\t\t|\t|\t\t',
+  '\t\t\t\t|_|\t\t\\___/\t\t\t|_|\t',
+  '\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t_\t\t\t\t\t\t\t\t\t\t\t\t',
+  '._\t\t_.\t_\t\t_\t\t._\t\t__|_\t_|__\t\t\t\t._\t\t_|\t',
+  '|_)(_|(_|(/_\t|\t|(_)|_\t\t|(_)|_||\t|(_|\t',
+  '\t|\t\t\t\t\t\t_|\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t'
 ]
 
-write404ErrorToFakeConsole('fake-console', textFor404Page)
+write404ErrorToFakeConsole('fake-console', textFor404Page, 1)
 
 const header = document.getElementsByClassName('header')[0]
 header.addEventListener('click', () => { window.location.href = './index.html' })
