@@ -19,6 +19,7 @@ all rules are documented by Block.
   padding: var(--colorspace-block-spacing-md);
   background-color: var(--colorspace-white-transparent-color);
   margin-bottom: var(--colorspace-block-spacing-md);
+  min-height: auto;
 }
 
 /* Large devices (desktops, 992px and up) */

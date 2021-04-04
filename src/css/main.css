@@ -107,6 +107,10 @@ a:hover {
   color: var(--colorspace-light-green-color);
 }
 
+section {
+  min-height: 500px;
+}
+
 /* /globals */
 
 /*
