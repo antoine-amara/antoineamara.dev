@@ -10,8 +10,8 @@ all rules are documented by Block.
   useful inputs global rules for the contact form.
 */
 option {
-  background-color: var(--colorspace-white-transparent-color);
-  color: var(--colorspace-light-green-color);
+  background-color: var(--colorspace-light-color);
+  color: var(--colorspace-indigo-color);
   width: 100%;
 }
 
@@ -65,6 +65,7 @@ button:focus {
   border: none;
   background-color: var(--colorspace-white-transparent-color);
   text-indent: var(--colorspace-block-margin);
+  color: var(--colorspace-light-color);
 }
 
 .form__input {
