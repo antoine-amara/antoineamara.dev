@@ -7,6 +7,8 @@ import { renderBlogPostElements } from './renderer/blog-post.render'
 import { manageFakeShell } from './fake-console'
 import { submitContactForm } from './contact-form'
 
+const { history } = window
+
 // Scripts for index.html page
 
 let menu = null
@@ -66,6 +68,9 @@ function _initDesktopScripts () {
   // auto focus on fake console
   const fakeShellElement = document.getElementsByClassName('fake-terminal__commands')[0]
   fakeShellElement.focus()
+
+  // avoid browser auto scroll on refresh
+  history.scrollRestoration = 'manual'
 }
 
 const desktopMediaQuery = window.matchMedia('(min-width: 992px)')

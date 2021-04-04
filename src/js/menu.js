@@ -38,7 +38,7 @@ class Menu {
     this.menu.addEventListener('click', this._toogleMenu)
     if (scrollUpdate) document.addEventListener('scroll', this._throttledScrollChangeActiveElement)
     // click event to change the active element from the menu.
-    this.menuItems.map(element => {
+    this.menuItems.forEach(element => {
       const onCLickCallback = this._determineMenuElementClickEvent(element)
       element.addEventListener('click', onCLickCallback)
     })
@@ -47,7 +47,7 @@ class Menu {
   destroyListeners () {
     document.removeEventListener('scroll', this._throttledScrollChangeActiveElement)
     this.menu.removeEventListener('click', this._toogleMenu)
-    this.menuItems.map(item => {
+    this.menuItems.forEach(item => {
       item.removeEventListener('click', this._onMobileMenuElementAnchorClickEvent)
       item.removeEventListener('click', this._onMobileMenuElementPageClickEvent)
     })
