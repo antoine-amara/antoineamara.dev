@@ -27,6 +27,7 @@ all rules are documented by Block.
   --colorspace-green-color: #7bd389;
   --colorspace-green-yellow: #ffc857;
   --colorspace-red-color: #ff715b;
+  --colorspace-purple-color: #716e81;
   --colorspace-gradient-color: linear-gradient(to right bottom, #2b4162, #244161, #1c4160, #13415e, #08415c);
   --colorspace-white-transparent-color: rgba(243, 249, 255, 0.3);
   --colorspace-white-transparent-md-color: rgba(243, 249, 255, 0.6);

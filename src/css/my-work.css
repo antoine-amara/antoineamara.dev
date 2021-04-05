@@ -50,6 +50,10 @@ all rules are documented by Block.
   max-width: 70%;
 }
 
+.project-card__repo-link:hover > h3 {
+  text-decoration: underline;
+}
+
 .project-card__img {
   width: 200px;
   height: 220px;
@@ -82,7 +86,7 @@ all rules are documented by Block.
   margin-right: var(--colorspace-block-margin);
   flex-grow: 1;
   flex-shrink: 0;
-  flex-basis: 300px;
+  flex-basis: 270px;
   scroll-snap-align: start;
 }
 
@@ -130,6 +134,10 @@ all rules are documented by Block.
 
 .badge--red {
   background-color: #ef3e36;
+}
+
+.badge--purple {
+  background-color: var(--colorspace-purple-color);
 }
 
 .badge--grey-opacity {

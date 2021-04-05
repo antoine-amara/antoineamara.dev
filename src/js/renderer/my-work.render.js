@@ -10,7 +10,7 @@ export function renderMyWorkElements ({ data: dataFromAPI }) {
   projectsRootElement.style.display = 'flex'
 
   dataFromAPI.forEach(project => {
-    const { openGraphImageUrl, name, descriptionHTML, primaryLanguage } = project
+    const { openGraphImageUrl, url, name, descriptionHTML, primaryLanguage } = project
 
     const projectCard = document.createElement('DIV')
     projectCard.classList.toggle('project-card')
@@ -23,11 +23,15 @@ export function renderMyWorkElements ({ data: dataFromAPI }) {
 
     projectCard.append(imgContainer)
 
+    const repoLink = document.createElement('A')
+    repoLink.classList.toggle('project-card__repo-link')
+    repoLink.href = url
     const projectName = document.createElement('H3')
     projectName.classList.toggle('project-card__name')
     projectName.innerHTML = name
 
-    projectCard.appendChild(projectName)
+    repoLink.appendChild(projectName)
+    projectCard.appendChild(repoLink)
 
     const projectDescription = document.createElement('P')
     projectDescription.classList.toggle('project-card__description')

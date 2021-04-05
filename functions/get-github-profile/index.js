@@ -12,6 +12,7 @@ const GITHUB_GRAPHQL_REQUEST = `query getProfileItemShowcase {
                           name
                       }
                       openGraphImageUrl
+                      url
                   }
               }
               pageInfo {
