@@ -15,8 +15,8 @@ export default {
   \t\t* antoine stack --web: see the list of web frameworks I used.
   \t\t* antoine stack --ops: see the list of knowledge about ops (system, deployment framework, CI).
   \t\t* antoine stack --tools: see the development tools I used (for web development).
-  \t\t* antoine stack languages: see the languages I used when I develop.
-  \t\t* antoine stack manage: see principle I know to construct good software (project management, project structuration).
+  \t\t* antoine languages: see the languages I used when I develop.
+  \t\t* antoine manage: see principle I know to construct good software (project management, project structuration).
   `,
   'antoine stack --web': `1:basic -- 3: good knowledge -- 5: mastering it
   ------------------
@@ -57,9 +57,9 @@ export default {
   PHP:\t\t\t\t\t\t\t\t[###\t\t]
   Python:\t\t\t\t\t[###\t\t]
   Java:\t\t\t\t\t\t\t[###\t\t]
-  C:\t\t\t\t\t\t\t\t\t\t[###\t\t]
-  C++:\t\t\t\t\t\t\t\t[###\t\t]
-  Go:\t\t\t\t\t\t\t\t\t[#\t\t\t\t]
+  Rust:\t\t\t\t\t\t\t[##\t\t\t]
+  C:\t\t\t\t\t\t\t\t\t\t[#\t\t\t\t]
+  C++:\t\t\t\t\t\t\t\t[#\t\t\t\t]
   ---------------------
   `,
   'antoine manage': `1:basic -- 3: good knowledge -- 5: mastering it
@@ -68,7 +68,7 @@ export default {
   Good Practices:\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t[####\t]
   Lead/Architect React Project:\t\t[###\t\t]
   Lead/Architect NodeJS Project:\t[###\t\t]
-  Kaban:\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t[##\t\t\t]
+  Kanban:\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t[##\t\t\t]
   ----------------------------------------
   `
 }
