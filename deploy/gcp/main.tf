@@ -191,3 +191,173 @@ resource "google_compute_url_map" "http_to_https_url_map" {
   }
 }
 ##########
+
+##########
+# create the bucket to store GCP functions
+resource "google_storage_bucket" "backend_functions_bucket" {
+  name     = "backend_functions"
+  location = "EU"
+
+  force_destroy = true
+}
+##########
+
+##########
+# create the submitContactForm gcp function
+
+# zip the code
+data "archive_file" "submit_contact_form_source" {
+  type        = "zip"
+  source_dir  = "${var.dist_functions_path}/contact-form"
+  output_path = "/tmp/submit-contact-form.zip"
+}
+
+# upload the code to the backend bucket
+resource "google_storage_bucket_object" "submit_contact_form_zip" {
+  # Append file MD5 to force bucket to be recreated
+  name   = "submit_contact_form.zip#${data.archive_file.submit_contact_form_source.output_md5}"
+  bucket = google_storage_bucket.backend_functions_bucket.name
+  source = data.archive_file.submit_contact_form_source.output_path
+}
+
+# create submit contact form function 
+resource "google_cloudfunctions_function" "submit_contact_form_function" {
+  name    = "submit_contact_form"
+  runtime = "nodejs14"
+
+  project = var.gcp_project_id
+
+  available_memory_mb   = 128
+  timeout               = 61
+  source_archive_bucket = google_storage_bucket.backend_functions_bucket.name
+  source_archive_object = google_storage_bucket_object.submit_contact_form_zip.name
+  trigger_http          = true
+  entry_point           = "submitContactForm"
+  environment_variables = {
+    AUTHORIZED_ORIGINS = var.authorized_origins
+    SMTP_HOST          = var.smtp_host
+    SMTP_PORT          = var.smtp_port
+    SMTP_USERNAME      = var.smtp_username
+    SMTP_PASSWORD      = var.smtp_password
+    SMTP_MAIL_SENDER   = var.mail_sender
+    SMTP_DEST_MAIL     = var.dest_mail
+  }
+}
+
+# IAM entry for all users to invoke the function
+resource "google_cloudfunctions_function_iam_member" "submit_contact_form_invoker" {
+  project        = google_cloudfunctions_function.submit_contact_form_function.project
+  region         = google_cloudfunctions_function.submit_contact_form_function.region
+  cloud_function = google_cloudfunctions_function.submit_contact_form_function.name
+
+  role   = "roles/cloudfunctions.invoker"
+  member = "allUsers"
+  depends_on = [
+    google_cloudfunctions_function.submit_contact_form_function,
+  ]
+}
+##########
+
+##########
+# create the getGithubProfile gcp function
+
+# zip the code
+data "archive_file" "get_github_profile_source" {
+  type        = "zip"
+  source_dir  = "${var.dist_functions_path}/get-github-profile"
+  output_path = "/tmp/get-github-profile.zip"
+}
+
+# upload the code to the backend bucket
+resource "google_storage_bucket_object" "get_github_profile_zip" {
+  # Append file MD5 to force bucket to be recreated
+  name   = "get_github_profile.zip#${data.archive_file.get_github_profile_source.output_md5}"
+  bucket = google_storage_bucket.backend_functions_bucket.name
+  source = data.archive_file.get_github_profile_source.output_path
+}
+
+# create submit contact form function 
+resource "google_cloudfunctions_function" "get_github_profile_function" {
+  name    = "get_github_profile"
+  runtime = "nodejs14"
+
+  project = var.gcp_project_id
+
+  available_memory_mb   = 128
+  timeout               = 61
+  source_archive_bucket = google_storage_bucket.backend_functions_bucket.name
+  source_archive_object = google_storage_bucket_object.get_github_profile_zip.name
+  trigger_http          = true
+  entry_point           = "getGithubProfileMiddleware"
+  environment_variables = {
+    AUTHORIZED_ORIGINS = var.authorized_origins
+    GITHUB_TOKEN       = var.github_token
+  }
+
+}
+
+# IAM entry for all users to invoke the function
+resource "google_cloudfunctions_function_iam_member" "get_github_profile_invoker" {
+  project        = google_cloudfunctions_function.get_github_profile_function.project
+  region         = google_cloudfunctions_function.get_github_profile_function.region
+  cloud_function = google_cloudfunctions_function.get_github_profile_function.name
+
+  role   = "roles/cloudfunctions.invoker"
+  member = "allUsers"
+  depends_on = [
+    google_cloudfunctions_function.get_github_profile_function,
+  ]
+}
+##########
+
+##########
+# create the getBlogPosts gcp function
+
+# zip the code
+data "archive_file" "get_blog_posts_source" {
+  type        = "zip"
+  source_dir  = "${var.dist_functions_path}/get-blog-posts"
+  output_path = "/tmp/get-blog-posts.zip"
+}
+
+# upload the code to the backend bucket
+resource "google_storage_bucket_object" "get_blog_posts_zip" {
+  # Append file MD5 to force bucket to be recreated
+  name   = "get_blog_posts.zip#${data.archive_file.get_blog_posts_source.output_md5}"
+  bucket = google_storage_bucket.backend_functions_bucket.name
+  source = data.archive_file.get_blog_posts_source.output_path
+}
+
+# create submit contact form function 
+resource "google_cloudfunctions_function" "get_blog_posts_function" {
+  name    = "get_blog_posts"
+  runtime = "nodejs14"
+
+  project = var.gcp_project_id
+
+  available_memory_mb   = 128
+  timeout               = 61
+  source_archive_bucket = google_storage_bucket.backend_functions_bucket.name
+  source_archive_object = google_storage_bucket_object.get_blog_posts_zip.name
+  trigger_http          = true
+  entry_point           = "getBlogPost"
+  environment_variables = {
+    AUTHORIZED_ORIGINS = var.authorized_origins
+    DEVTO_API_KEY      = var.dev_api_key
+  }
+
+}
+
+# IAM entry for all users to invoke the function
+resource "google_cloudfunctions_function_iam_member" "get_blog_posts_invoker" {
+  project        = google_cloudfunctions_function.get_blog_posts_function.project
+  region         = google_cloudfunctions_function.get_blog_posts_function.region
+  cloud_function = google_cloudfunctions_function.get_blog_posts_function.name
+
+  role   = "roles/cloudfunctions.invoker"
+  member = "allUsers"
+  depends_on = [
+    google_cloudfunctions_function.get_blog_posts_function,
+  ]
+}
+##########

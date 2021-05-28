@@ -1,7 +1,7 @@
 DC = docker-compose
 YN = yarn
 WEBSITE = website
-DEPLOY = docker run -it --env-file ${PWD}/deploy/gcp/configs.env -v ${PWD}/deploy/gcp/:/deploy/ -v ${PWD}/dist/:/dist/ -w /deploy/ --rm staticpack-gcp-terraform:332.0.0-alpine
+DEPLOY = docker run -it --env-file ${PWD}/deploy/gcp/configs.env -v ${PWD}/deploy/gcp/:/deploy/ -v ${PWD}/dist/:/dist/ -v ${PWD}/functions:/functions/ -w /deploy/ --rm staticpack-gcp-terraform:332.0.0-alpine
 FAAS = faas
 
 default: help;
@@ -77,6 +77,9 @@ gcp-init:	## download terraform dependencies and init the module.
 
 gcp-deploy: build build-gcp-image gcp-init	## command to deploy the website to gcp cloud.
 	${DEPLOY} terraform apply
+
+gcp:
+	${DEPLOY} 
 
 gcp-destroy:	## command to delete the website from gcp cloud.
 	${DEPLOY} terraform destroy

@@ -26,8 +26,10 @@ You need to [create a dedicated service account](https://cloud.google.com/iam/do
   * Compute Load Balancer Admin
   * DNS Administrator
   * Storage Admin
+  * Cloud Function Admin
+  * Service Account User
   
-Be sure to enable `Cloud DNS API` and `Compute Engine API` for your project, terraform will use these APIs.
+Be sure to enable `Cloud DNS API`, `Compute Engine API`, `Cloud Build API` and `Cloud Function API` for your project, terraform will use these APIs.
 Next, you have to generate a credentials key associated to this service account.
 
 ## Step 3: create the credentials key
@@ -57,10 +59,26 @@ cp configs.env.dist configs.env
 
 Now open the `configs.env` file and you can see the inputs:
 
+First the website deployment variables:
+
 * `TF_VAR_authkey`: the name of the json credentials key.
 * `TF_VAR_domain`: the domain name you use for the website.
 * `TF_VAR_gcp_project_id`: the identifier of the GCP project, go to the project dashboard to have it.
 * `TF_VAR_dist`: the dist path containing the production assets to deploy. There is no need to update this one.
+* `TF_VAR_authorized_origins`: the origins URL authorized to call the backend services.
+
+The SMTP service configurations for the gcp contact function:
+
+* `TF_VAR_smtp_host`: SMTP service address.
+* `TF_VAR_smtp_port`: SMTP service port.
+* `TF_VAR_smtp_username`: SMTP service username for authentication.
+* `TF_VAR_smtp_password`: SMTP service password for authentication.
+* `TF_VAR_mail_sender`: a name or email to represent the sender.
+
+The tokens for github.com and dev.to APIs:
+
+* `TF_VAR_github_token`: github.com authorization token
+* `TF_VAR_dev_api_key`: dev.to authorization token
 
 Copy / paste the credentials JSON file in `deploy/gcp/` folder and update the config.env file.
 
