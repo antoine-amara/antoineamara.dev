@@ -166,3 +166,16 @@ export function timeout (waitingTime) {
 
   return new Promise(resolve => setTimeout(() => resolve(), waitingTime))
 }
+
+// due to webpack json management we have to parse imported json files
+// webpack will return a file, just fetch the content of the imported json file and return a json object
+export async function loadConfigFile (filepath) {
+  if (!filepath || filepath === '') {
+    throw new Error(`[loadConfigFile] you should pass a filepath to be able to pase config file content, got ${filepath}`)
+  }
+
+  /* eslint-disable-next-line no-undef */
+  const rawFileContent = await fetch(filepath)
+
+  return rawFileContent.json()
+}

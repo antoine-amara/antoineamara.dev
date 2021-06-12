@@ -1,5 +1,6 @@
 import NotificationCenter from './NotificationCenter'
-import { fetcher } from './utils'
+import { fetcher, loadConfigFile } from './utils'
+import apiUrlsConfig from './config/api-urls.json'
 
 const BUTTON_LOADING_LABEL = 'Sending'
 const BUTTON_LABEL = 'Send'
@@ -12,8 +13,6 @@ export function adjustTextAreaByContent (element) {
   element.style.height = '20px'
   element.style.height = (element.scrollHeight) + 'px'
 }
-
-const CONTACT_API_URL = 'https://north-fr-antoinedev.cloudfunction.localhost/contact'
 
 const CONTACT_SUBJECT = {
   question: 'Ask a question ',
@@ -38,7 +37,9 @@ export async function submitContactForm (event) {
     submitButton.classList.toggle('button--loading')
     submitButtonLabel.innerHTML = BUTTON_LOADING_LABEL
 
-    return fetcher(CONTACT_API_URL, { name, email, subject: CONTACT_SUBJECT[subject], message })
+    const apiUrls = await loadConfigFile(apiUrlsConfig)
+
+    return fetcher(apiUrls.submit_contact_form_https_url, { name, email, subject: CONTACT_SUBJECT[subject], message })
       .then(res => {
         submitButton.classList.toggle('button--loading')
         submitButtonLabel.innerHTML = BUTTON_LABEL

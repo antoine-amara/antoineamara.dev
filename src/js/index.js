@@ -1,11 +1,12 @@
 import '../css/main.css'
 import Menu from './menu'
 import FullscreenPanel from './fullscreen-panel'
-import { iconLoader, fetcher } from './utils'
+import { iconLoader, fetcher, loadConfigFile } from './utils'
 import { renderMyWorkElements } from './renderer/my-work.render'
 import { renderBlogPostElements } from './renderer/blog-post.render'
 import { manageFakeShell } from './fake-console'
 import { submitContactForm } from './contact-form'
+import apiUrlsConfig from './config/api-urls.json'
 
 const { history } = window
 
@@ -14,9 +15,7 @@ const { history } = window
 let menu = null
 let panels = null
 
-const GET_GITHUB_PROFILE_URL = 'https://north-fr-antoinedev.cloudfunction.localhost/github-profile'
 const MY_GITHUB_PROFILE_URL = 'https://github.com/antoine-amara'
-const GET_BLOG_POST_URL = 'https://north-fr-antoinedev.cloudfunction.localhost/blog-posts'
 const MY_DEVTO_PROFILE_URL = 'https://dev.to/antoineamara'
 
 console.info('**********************************************')
@@ -80,32 +79,38 @@ desktopMediaQuery.addListener(_onMediaChange)
 // manage the fake shell for about-me section
 manageFakeShell('fake-terminal__commands')
 
-// manage my work loader
-iconLoader(
-  'my-work',
-  {
-    render: renderMyWorkElements,
-    message: 'loading content from github.',
-    errorMessage: 'Cannot retrieve the content, click on the logo to see my projects on github.',
-    errorOnClick: () => { window.open(MY_GITHUB_PROFILE_URL, '_blank') }
-  },
-  {
-    fetcher,
-    apiUrl: GET_GITHUB_PROFILE_URL
-  }
-)
+async function loadAsyncContents () {
+  const apiUrls = await loadConfigFile(apiUrlsConfig)
 
-// manage blog posts loader
-iconLoader(
-  'blog-post',
-  {
-    render: renderBlogPostElements,
-    message: 'loading content from dev.to.',
-    errorMessage: 'Cannot retrieve the blog posts, click on the logo to see my posts on dev.to.',
-    errorOnClick: () => { window.open(MY_DEVTO_PROFILE_URL, '_blank') }
-  },
-  {
-    fetcher,
-    apiUrl: GET_BLOG_POST_URL
-  }
-)
+  // manage my work loader
+  iconLoader(
+    'my-work',
+    {
+      render: renderMyWorkElements,
+      message: 'loading content from github.',
+      errorMessage: 'Cannot retrieve the content, click on the logo to see my projects on github.',
+      errorOnClick: () => { window.open(MY_GITHUB_PROFILE_URL, '_blank') }
+    },
+    {
+      fetcher,
+      apiUrl: apiUrls.get_github_profile_https_url
+    }
+  )
+
+  // manage blog posts loader
+  iconLoader(
+    'blog-post',
+    {
+      render: renderBlogPostElements,
+      message: 'loading content from dev.to.',
+      errorMessage: 'Cannot retrieve the blog posts, click on the logo to see my posts on dev.to.',
+      errorOnClick: () => { window.open(MY_DEVTO_PROFILE_URL, '_blank') }
+    },
+    {
+      fetcher,
+      apiUrl: apiUrls.get_blog_posts_https_url
+    }
+  )
+}
+
+loadAsyncContents()

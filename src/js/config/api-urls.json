@@ -1,0 +1,5 @@
+{
+  "submit_contact_form_https_url": "https://north-fr-antoinedev.cloudfunction.localhost/contact",
+  "get_github_profile_https_url": "https://north-fr-antoinedev.cloudfunction.localhost/github-profile",
+  "get_blog_posts_https_url": "https://north-fr-antoinedev.cloudfunction.localhost/blog-posts"
+}

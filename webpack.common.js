@@ -56,6 +56,15 @@ module.exports = {
             loader: 'file-loader'
           }
         ]
+      },
+      {
+        test: /\.json$/,
+        loader: 'file-loader',
+        options: {
+          name: 'configs/[name].[ext]'
+        },
+        type: 'javascript/auto',
+        exclude: /node_modules/
       }
     ]
   },
