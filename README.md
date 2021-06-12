@@ -1,12 +1,16 @@
-# ColorSpace Developer Portfolio
+# Antoine AMARA Portfolio
 
 ![Licence Badge](https://badgen.net/badge/License/GPLv3.0/green)
 ![JS Style](https://badgen.net/badge/JS/Standard/yellow)
 ![CSS Style](https://badgen.net/badge/CSS/BEM/blue)
-![Webpack](https://badgen.net/badge/webpack/v4/blue)
+![Webpack](https://badgen.net/badge/webpack/v5/blue)
 ![Docker](https://badgen.net/badge/icon/docker-compose?icon=docker&label)
 
-An elegant and reusable free template made for my portfolio. It used a mobile-first approach and a rich colorspace style.
+**CI/CD status (on master)**
+
+[![CI/CD Status](https://gitlab.com/Tonypunisher/antoineamara.dev/badges/master/pipeline.svg)](https://gitlab.com/Tonypunisher/antoineamara.dev/-/commits/master)
+
+My personnal portfolio to present myself, my work and my last blog posts.
 
 The website is just pure HTML5/CSS3 and Javascript. The final build is managed and created with Webpack 5.
 This repo gives a complete development environment for developers who want to construct a static website. All this stuff runs with makefiles command inside Docker containers. Moreover, we use webpack to bundle the website and webpack-dev-server to run a development server.
