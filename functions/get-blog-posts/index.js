@@ -40,7 +40,7 @@ function requestBlogArticles () {
 
 function getLastBlogArticles () {
   return service.requestBlogArticles()
-    .then(articles => articles.slice(10).map(({ title, url, published_at: publishDate, tag_list: tagList }) => ({
+    .then(articles => articles.splice(0, 10).map(({ title, url, published_at: publishDate, tag_list: tagList }) => ({
       title,
       url,
       publishDate,

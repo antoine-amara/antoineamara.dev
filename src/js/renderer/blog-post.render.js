@@ -22,6 +22,7 @@ export function renderBlogPostElements (dataFromAPI) {
     const titleElement = document.createElement('A')
     titleElement.classList.toggle('post__title')
     titleElement.href = url
+    titleElement.target = '_blank'
     titleElement.innerHTML = title
     postElement.appendChild(titleElement)
 
