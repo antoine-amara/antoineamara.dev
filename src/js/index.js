@@ -68,6 +68,9 @@ function _initDesktopScripts () {
   const fakeShellElement = document.getElementsByClassName('fake-terminal__commands')[0]
   fakeShellElement.focus()
 
+  // fake shell scrolling management
+  fakeShellElement.addEventListener('wheel', (e) => { e.stopPropagation() })
+
   // avoid browser auto scroll on refresh
   history.scrollRestoration = 'manual'
 }

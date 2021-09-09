@@ -36,7 +36,7 @@ export default {
   -------------------------
   Linux:\t\t\t\t\t\t\t\t\t\t[###\t\t]
   Docker:\t\t\t\t\t\t\t\t\t[####\t]
-  Docker-Compose:\t[###\t\t]
+  Docker-Compose:\t[####\t]
   Kubernetes:\t\t\t\t\t[#\t\t\t\t]
   GitlabCI:\t\t\t\t\t\t\t[##\t\t\t]
   Terraform:\t\t\t\t\t\t[##\t\t\t]
@@ -46,6 +46,7 @@ export default {
   ------------------------
   Webpack:\t\t\t\t\t\t\t[####\t]
   Eslint:\t\t\t\t\t\t\t\t[####\t]
+  Prettier:\t\t\t\t\t\t[####\t]
   Babel:\t\t\t\t\t\t\t\t\t[###\t\t]
   Markdown:\t\t\t\t\t\t[#####]
   Editor Config:\t[###\t\t]
