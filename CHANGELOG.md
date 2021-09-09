@@ -2,6 +2,65 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [1.0.0](https://github.com/antoine-amara/staticpack/compare/v0.6.0...v1.0.0) (2021-09-09)
+
+
+### Features
+
+* 404 page content ([faca095](https://github.com/antoine-amara/staticpack/commit/faca09593e4aed14551ee38182190eb8197e478f))
+* add a CI pipeline ([3f8da42](https://github.com/antoine-amara/staticpack/commit/3f8da42dd01b9f73a21d28543d58803da5316546))
+* add a fetcher function ([a5b1659](https://github.com/antoine-amara/staticpack/commit/a5b1659c51be025a0c633204edbfe779bb3e1f80))
+* add a new color palette ([186f289](https://github.com/antoine-amara/staticpack/commit/186f289a4a8d9fa9a2b65bae1dff610229e44cb2)), closes [#AEB9](https://github.com/antoine-amara/staticpack/issues/AEB9) [#FFC857](https://github.com/antoine-amara/staticpack/issues/FFC857) [#2B4162](https://github.com/antoine-amara/staticpack/issues/2B4162) [#08415](https://github.com/antoine-amara/staticpack/issues/08415)
+* add a remote terraform backend ([df1d4e2](https://github.com/antoine-amara/staticpack/commit/df1d4e27c8eb578cc813ec74447b71c3b8f28c68))
+* add about me description ([801a045](https://github.com/antoine-amara/staticpack/commit/801a045c9a7be3f4d33e3cef648415e8bf013812))
+* add comon loader for element and button ([a580a25](https://github.com/antoine-amara/staticpack/commit/a580a25934ca8ca446aa4f35bef543e3fbc3f632))
+* add fonts ([c4de8d5](https://github.com/antoine-amara/staticpack/commit/c4de8d506601c206e68734eb100cddcc3a764f82))
+* add home content ([6632fe0](https://github.com/antoine-amara/staticpack/commit/6632fe03b1a0a807247813f56f8b42d1db6e764a))
+* add my profile picture ([7be9bd2](https://github.com/antoine-amara/staticpack/commit/7be9bd2e8247f97c4fcecd629e4a07c2e2644da6))
+* add notification center ([8467e2f](https://github.com/antoine-amara/staticpack/commit/8467e2fa3f15d8113eed3b843c04438b9bf38926))
+* add page descriptions ([fef2395](https://github.com/antoine-amara/staticpack/commit/fef2395f4470fa6dcb1a87fcf76814957a5e8f96))
+* add the configuration for fake terminal ([1a58a76](https://github.com/antoine-amara/staticpack/commit/1a58a76c301148c76f593c17d79c042db95b07cb))
+* adjust design rules for desktop ([8d0df94](https://github.com/antoine-amara/staticpack/commit/8d0df94dbcd795d1eab248ad1b56975e4f676715))
+* adjust fake-shell content and event management ([2c8db53](https://github.com/antoine-amara/staticpack/commit/2c8db53ac3fcbd1b2621b85d2b60cca33d654ce3))
+* adjust the home design for landscape phones ([3ab9b82](https://github.com/antoine-amara/staticpack/commit/3ab9b82dcc131550db96dac8d74fad2774a59b35))
+* create 404 page ([f84d9a9](https://github.com/antoine-amara/staticpack/commit/f84d9a98fdb25f87ea110e3b0a093743ec48272a))
+* create a fake console module ([e75b8dd](https://github.com/antoine-amara/staticpack/commit/e75b8dd03183520aec9bdbd1e238cead8eb9208d))
+* create a legal notice page ([02d09c5](https://github.com/antoine-amara/staticpack/commit/02d09c50aba80dc04429e4fb8fc1e3a867dbe932))
+* create a serverless function to submit contact form ([c1a4172](https://github.com/antoine-amara/staticpack/commit/c1a41726dbd5a63aa9d508e23965f8993810e809))
+* create get-github-profile gcp function ([b701128](https://github.com/antoine-amara/staticpack/commit/b701128fd52d2f76324486ffab93732fd87af287))
+* create icon-loader styles to add loader with an icon ([721787d](https://github.com/antoine-amara/staticpack/commit/721787d5de89cf4edd46972401b6e0fc6aa1cbb9))
+* create iconLoader function ([eca50fe](https://github.com/antoine-amara/staticpack/commit/eca50fe7b5a7f1d3ceac137c105b04cd5790bc12))
+* create menu interactions ([9baaf13](https://github.com/antoine-amara/staticpack/commit/9baaf130b1af1ed020d19d580cdbf2657ea8a098))
+* create smoothscroll module ([393486f](https://github.com/antoine-amara/staticpack/commit/393486fa6041fc16d079e44f88a0032542f1a0f8))
+* create website icons ([fd45050](https://github.com/antoine-amara/staticpack/commit/fd45050603c97a3a0d4a84169d081241f2210851))
+* define basic html5 structure ([daed9c1](https://github.com/antoine-amara/staticpack/commit/daed9c141790409a8b7a77e03b9653ee604dec86))
+* deploy gcp backend functions with terraform ([f97edff](https://github.com/antoine-amara/staticpack/commit/f97edffaf8881b9af37ec7f34aa0fa343c9f03c7))
+* design a fake terminal ([5d66b23](https://github.com/antoine-amara/staticpack/commit/5d66b23135076e60c4fb5fe65b88fa1abe7f37a7))
+* design an info headband to display cookies policy ([de36572](https://github.com/antoine-amara/staticpack/commit/de365727b2cab41ffdeaa6fd37506992ba925aff))
+* design blog post section ([89bdf1e](https://github.com/antoine-amara/staticpack/commit/89bdf1e925dd3e5ef4f5aed4d42322d221bb6ac5))
+* design my-work section ([5a160c8](https://github.com/antoine-amara/staticpack/commit/5a160c87a1ac612adb79e5f50129519cb6d4e425))
+* design outdated browser headband ([27c3964](https://github.com/antoine-amara/staticpack/commit/27c3964c2d983409fd64e67f8130420b8da2fcd1))
+* design snackbar ([3a5cc0c](https://github.com/antoine-amara/staticpack/commit/3a5cc0c6593e4278b6fba17d378b431d0bdace46))
+* design the about-me section ([03009fe](https://github.com/antoine-amara/staticpack/commit/03009fe200c8940da238ae5b903429fd8c484996))
+* design the contact section ([64ec9b4](https://github.com/antoine-amara/staticpack/commit/64ec9b4b8ce70554860fd91bdf399decdc709cc3))
+* design the footer ([ef0999e](https://github.com/antoine-amara/staticpack/commit/ef0999e094470c1290651d088b7c5c3059c40c24))
+* design the home section ([36b0e7f](https://github.com/antoine-amara/staticpack/commit/36b0e7f9c1555b612296e7a1d67155f4484de775))
+* design the mobile menu ([bcc7afd](https://github.com/antoine-amara/staticpack/commit/bcc7afd4ccc38982dd7043f6c856d56a9d84ccf0))
+* fullscreen panels with scroll ([6a8d530](https://github.com/antoine-amara/staticpack/commit/6a8d530ae656b61639539fbbff5cc2bd805a00f9))
+* get blog posts gcp function ([76a0999](https://github.com/antoine-amara/staticpack/commit/76a0999ab80b1db1335988351a007514d4fce2d2))
+* manage api urls as a json configuration ([39fa020](https://github.com/antoine-amara/staticpack/commit/39fa020525ca8bc6963f03aa3c827f49e0761daf))
+* manage the blog post request ([fc6363a](https://github.com/antoine-amara/staticpack/commit/fc6363a3c328bdc08c841e6cb25de6f2ae303398))
+* manage the fake terminal with js ([d8da99f](https://github.com/antoine-amara/staticpack/commit/d8da99fb1238349335327af9e70960f33a126c4b))
+* panels scroll responsive rules ([847247e](https://github.com/antoine-amara/staticpack/commit/847247e3c9796d84f68a51d4a6806bf30934fe7a))
+* restyle my work section ([eabd33c](https://github.com/antoine-amara/staticpack/commit/eabd33c758c036e699ffc5ee73653f2c742f16d6))
+* retrieve my work data from api and render projects cards ([9de0d36](https://github.com/antoine-amara/staticpack/commit/9de0d36f92d5cbf57148d980f6bcc2dee9aec135))
+* submit the contact form ([76f0879](https://github.com/antoine-amara/staticpack/commit/76f0879dc2c8d19dd010d88361bfb147058d5496))
+* update legal notice page content ([92d5b62](https://github.com/antoine-amara/staticpack/commit/92d5b627a3d323d500ab13230157dda42c32d46b))
+
+# Changelog from [StaticPack](https://github.com/antoine-amara/staticpack) project.
+
+The template is base on StaticPack. All notable changes from the StaticPack development environment are listed below.
+
 ## [0.6.0](https://github.com/antoine-amara/staticpack/compare/v0.5.0...v0.6.0) (2021-04-13)
 
 

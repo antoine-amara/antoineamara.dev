@@ -1,8 +1,8 @@
 {
-  "name": "colorspace-developer-portfolio",
-  "description": "An elegant and reusable free template made for my portfolio. It used a mobile-first approach, a rich colorspace style and is powered by staticpack.",
-  "repository": "https://github.com/antoine-amara/staticpack",
-  "version": "0.6.0",
+  "name": "antoineamara.dev",
+  "description": "My personnal portfolio to present myself, my work and my last blog posts.",
+  "repository": "https://gitlab.com/Tonypunisher/antoineamara.dev",
+  "version": "1.0.0",
   "author": "Antoine Amara <amara.antoine@gmail.com>",
   "license": "GPLv3.0",
   "private": true,
