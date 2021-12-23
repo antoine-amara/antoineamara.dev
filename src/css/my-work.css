@@ -124,6 +124,10 @@ all rules are documented by Block.
   background-color: #00979c;
 }
 
+.bagde--dark-green {
+  background-color: #026e00;
+}
+
 .badge--dark-grey {
   background-color: #3a405a;
 }

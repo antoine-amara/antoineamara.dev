@@ -1,6 +1,6 @@
 export default {
   main: `Name: Antoine AMARA.
-  Job: Javascript Fullstack Developper.
+  Job: Javascript Fullstack Engineer.
   Stack:
   \t\t* React / Redux
   \t\t* NodeJS
@@ -20,16 +20,18 @@ export default {
   `,
   'antoine stack --web': `1:basic -- 3: good knowledge -- 5: mastering it
   ------------------
-  React:\t\t\t[#####]
-  Redux:\t\t\t[#####]
-  NodeJS:\t\t[#####]
-  GraphQL:\t[####\t]
-  Express:\t[#####]
-  Angular:\t[##\t\t\t]
-  Symfony:\t[##\t\t\t]
-  Jest:\t\t\t\t[###\t\t]
-  SQL:\t\t\t\t\t[####\t]
-  MongoDB:\t[####\t]
+  React:\t\t\t\t\t\t[#####]
+  Redux:\t\t\t\t\t\t[#####]
+  NodeJS:\t\t\t\t\t[#####]
+  GraphQL:\t\t\t\t[####\t]
+  Express:\t\t\t\t[#####]
+  Typescript:\t[###\t\t]
+  Angular:\t\t\t\t[##\t\t\t]
+  Symfony:\t\t\t\t[##\t\t\t]
+  Jest:\t\t\t\t\t\t\t[###\t\t]
+  Cucumber:\t\t\t[###\t\t]
+  SQL:\t\t\t\t\t\t\t\t[####\t]
+  MongoDB:\t\t\t\t[####\t]
   ------------------
   `,
   'antoine stack --ops': `1:basic -- 3: good knowledge -- 5: mastering it
@@ -39,6 +41,7 @@ export default {
   Docker-Compose:\t[####\t]
   Kubernetes:\t\t\t\t\t[#\t\t\t\t]
   GitlabCI:\t\t\t\t\t\t\t[##\t\t\t]
+  Github Action:\t\t[##\t\t\t]
   Terraform:\t\t\t\t\t\t[##\t\t\t]
   -------------------------
   `,
@@ -55,6 +58,7 @@ export default {
   'antoine languages': `1:basic -- 3: good knowledge -- 5: mastering it
   ---------------------
   Javascript:\t[#####]
+  Typescript:\t[###\t\t]
   PHP:\t\t\t\t\t\t\t\t[###\t\t]
   Python:\t\t\t\t\t[###\t\t]
   Java:\t\t\t\t\t\t\t[###\t\t]
