@@ -47,10 +47,6 @@ function _initDesktopScripts () {
     menu = null
   }
 
-  // stop wheel event when scrolling the project card content.
-  const cards = document.getElementsByClassName('project-card__description')
-  Array.from(cards).forEach(card => card.addEventListener('wheel', event => event.stopPropagation()))
-
   panels = new FullscreenPanel('website-content')
   panels.createAndInsertMenu('desktop-menu')
 
@@ -61,6 +57,9 @@ function _initDesktopScripts () {
   // elements scrolling management
   const blogPostContainer = document.getElementsByClassName('blog-post__container')[0]
   blogPostContainer.addEventListener('wheel', (e) => { e.stopPropagation() })
+
+  const projectsContainer = document.getElementsByClassName('projects')[0]
+  projectsContainer.addEventListener('wheel', (e) => { e.stopPropagation() })
 
   // auto focus on fake console
   const fakeShellElement = document.getElementsByClassName('fake-terminal__commands')[0]
