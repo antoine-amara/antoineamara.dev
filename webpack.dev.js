@@ -2,6 +2,7 @@
 // specific rules to build development bundle.
 
 const { merge } = require('webpack-merge')
+const path = require('path')
 const common = require('./webpack.common')
 
 
@@ -13,14 +14,13 @@ module.exports = merge(common, {
     host: '0.0.0.0',
     port: 9000,
     hot: true,
-    overlay: true,
-    contentBase: [
-      './src/',
-      './src/css/',
-      './src/js/'
+    watchFiles: [
+      path.resolve(__dirname, 'src'),
+      path.resolve(__dirname, 'src/css'),
+      path.resolve(__dirname, 'src/js')
     ],
-    watchContentBase: true,
-    disableHostCheck: true,
-    public: 'antoine.dev.localhost'
+    allowedHosts: [
+      'antoine.dev.localhost'
+    ]
   }
 })

@@ -9,6 +9,7 @@ services:
       - --entrypoints.web.http.redirections.entryPoint.to=webs
       - --entrypoints.web.http.redirections.entryPoint.scheme=https
       - --entrypoints.webs.address=:443 #Declares the web-secure entrypoint in Traefik
+      - --entrypoints.wss.address=:9000 #Declares the wss entrypoint in Traefik
       - --providers.docker
       - --providers.file.directory=/configuration/
       - --providers.file.watch=true
@@ -16,6 +17,7 @@ services:
       - "80:80"
       - "443:443"
       - "8080:8080"
+      - "9000:9000"
     networks:
       - public
       - webservices
