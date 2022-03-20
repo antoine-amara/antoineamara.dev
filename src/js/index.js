@@ -3,7 +3,6 @@ import Menu from './menu'
 import FullscreenPanel from './fullscreen-panel'
 import { iconLoader, fetcher, loadConfigFile } from './utils'
 import { renderMyWorkElements } from './renderer/my-work.render'
-import { renderBlogPostElements } from './renderer/blog-post.render'
 import { manageFakeShell } from './fake-console'
 import { submitContactForm } from './contact-form'
 import apiUrlsConfig from './config/api-urls.json'
@@ -16,7 +15,6 @@ let menu = null
 let panels = null
 
 const MY_GITHUB_PROFILE_URL = 'https://github.com/antoine-amara'
-const MY_DEVTO_PROFILE_URL = 'https://dev.to/antoineamara'
 
 console.info('**********************************************')
 console.info('* Welcome to ColorSpace Developer Portfolio  *')
@@ -97,21 +95,6 @@ async function loadAsyncContents () {
     {
       fetcher,
       apiUrl: apiUrls.get_github_profile_https_url
-    }
-  )
-
-  // manage blog posts loader
-  iconLoader(
-    'blog-post',
-    {
-      render: renderBlogPostElements,
-      message: 'loading content from dev.to.',
-      errorMessage: 'Cannot retrieve the blog posts, click on the logo to see my posts on dev.to.',
-      errorOnClick: () => { window.open(MY_DEVTO_PROFILE_URL, '_blank') }
-    },
-    {
-      fetcher,
-      apiUrl: apiUrls.get_blog_posts_https_url
     }
   )
 }

@@ -72,7 +72,6 @@ services:
       - SMTP_MAIL_SENDER=no-reply@antoineamara.dev
       - SMTP_DEST_MAIL=contact@antoineamara.dev
       - AUTHORIZED_ORIGINS=https://antoine.dev.localhost,https://www.antoine.dev.localhost
-      - DEVTO_API_KEY=devapikey
     labels:
       - "traefik.enable=true"
       - "traefik.http.routers.faas.service=faas"

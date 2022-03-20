@@ -89,7 +89,6 @@ terraform_apply:
     - echo $GCP_KEY | base64 -d > ./antoineamaradev.json
     - terraform init -input=false
     - zip -r -j /tmp/submit-contact-form.zip ../../functions/contact-form/
-    - zip -r -j /tmp/get-blog-posts.zip ../../functions/get-blog-posts/
     - zip -r -j /tmp/get-github-profile.zip ../../functions/get-github-profile/
   script:
     - terraform apply -input=false ../../deployment_plan

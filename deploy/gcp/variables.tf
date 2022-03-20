@@ -74,9 +74,3 @@ variable "github_token" {
   type        = string
   description = "the authorization token for github.com to retrieve the user profile projects"
 }
-
-# get blog posts function
-variable "dev_api_key" {
-  type        = string
-  description = "the authorization token for dev.to to retrieve the blog posts"
-}

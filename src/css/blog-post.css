@@ -16,10 +16,6 @@ all rules are documented by Block.
   align-items: center;
 }
 
-.blog-post__container {
-  display: none;
-}
-
 .blog-post__empty {
   min-height: 500px;
   display: none;
