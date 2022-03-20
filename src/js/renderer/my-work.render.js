@@ -5,7 +5,9 @@ export function renderMyWorkElements ({ data: dataFromAPI }) {
     arduino: 'bagde--light-green',
     shell: 'badge--dark-grey',
     typescript: 'badge--dark-blue',
-    node: 'badge-dark-green'
+    markdown: 'badge--dark-blue',
+    node: 'badge--dark-green',
+    rust: 'badge--light-orange'
   }
   const projectsRootElement = document.getElementsByClassName('projects')[0]
   projectsRootElement.style.display = 'flex'

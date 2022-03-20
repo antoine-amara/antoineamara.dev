@@ -144,6 +144,10 @@ all rules are documented by Block.
   background-color: var(--colorspace-purple-color);
 }
 
+.badge--light-orange {
+  background-color: #dea584;
+}
+
 .badge--grey-opacity {
   background-color: rgba(252, 255, 253, 0.2);
   border: 0.1px solid var(--colorspace-accent-grey);
