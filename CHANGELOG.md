@@ -2,6 +2,20 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [1.1.0](https://gitlab.com/Tonypunisher/antoineamara.dev/compare/v1.0.1...v1.1.0) (2022-03-27)
+
+
+### Features
+
+* **website:** add more badges ([6256f88](https://gitlab.com/Tonypunisher/antoineamara.dev/commit/6256f882b3018636dfee02138cb3970fb4a02b01))
+* **website:** delete blog posts request ([ab53111](https://gitlab.com/Tonypunisher/antoineamara.dev/commit/ab5311141aefcc72871c0a6e798c285fbf1926e0))
+* **website:** update content ([2e59cf2](https://gitlab.com/Tonypunisher/antoineamara.dev/commit/2e59cf2c4e03e23f0bd1cbc065b17e072ebc2711))
+
+
+### Bug Fixes
+
+* **website:** bad scroll events on project cards ([90746ee](https://gitlab.com/Tonypunisher/antoineamara.dev/commit/90746ee2829a92b9432e52d15e2df8cc4e32c069))
+
 ### [1.0.1](https://gitlab.com/Tonypunisher/antoineamara.dev/compare/v1.0.0...v1.0.1) (2021-09-09)
 
 
