@@ -189,7 +189,7 @@ nav {
     height: 10px;
     background: var(--colorspace-light-color);
     border-radius: 50%;
-    content: '';
+    content: "";
   }
 
   .desktop-menu__item:hover {

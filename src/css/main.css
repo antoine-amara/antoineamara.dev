@@ -10,6 +10,20 @@ this project uses the BEM method, see http://getbem.com/.
 all rules are documented by Block.
 ****************************************************************** */
 
+/* Imports */
+
+@import "https://fonts.googleapis.com/css2?family=Open+Sans&family=Roboto+Slab&Ubuntu+Mono&display=swap";
+
+@import "./bootstrap-reboot.css";
+@import "./home.css";
+@import "./menu.css";
+@import "./about-me.css";
+@import "./my-work.css";
+@import "./blog-post.css";
+@import "./contact.css";
+@import "./404.css";
+@import "./legal-notice.css";
+
 /* Variables */
 
 :root {
@@ -28,9 +42,16 @@ all rules are documented by Block.
   --colorspace-green-yellow: #ffc857;
   --colorspace-red-color: #ff715b;
   --colorspace-purple-color: #716e81;
-  --colorspace-gradient-color: linear-gradient(to right bottom, #2b4162, #244161, #1c4160, #13415e, #08415c);
-  --colorspace-white-transparent-color: rgba(243, 249, 255, 0.3);
-  --colorspace-white-transparent-md-color: rgba(243, 249, 255, 0.6);
+  --colorspace-gradient-color: linear-gradient(
+    to right bottom,
+    #2b4162,
+    #244161,
+    #1c4160,
+    #13415e,
+    #08415c
+  );
+  --colorspace-white-transparent-color: rgb(243 249 255 / 30%);
+  --colorspace-white-transparent-md-color: rgb(243 249 255 / 60%);
 
   /* FONT VARIABLES */
   --colorspace-md-weight: 500;
@@ -66,14 +87,12 @@ all rules are documented by Block.
   --colorspace-button-loader-size: 20px;
 }
 
-@import "https://fonts.googleapis.com/css2?family=Open+Sans&family=Roboto+Slab&Ubuntu+Mono&display=swap";
-
 /*
   global html elements and title rules.
 */
 body {
   background: var(--colorspace-gradient-color);
-  font-family: 'Open Sans', sans-serif;
+  font-family: "Open Sans", sans-serif;
 }
 
 .body--no-scroll {
@@ -84,7 +103,7 @@ h1,
 h2,
 h3,
 h4 {
-  font-family: 'Roboto Slab', serif;
+  font-family: "Roboto Slab", serif;
 }
 
 h2 {
@@ -151,7 +170,8 @@ section {
   border: 8px solid var(--colorspace-black-color);
   border-radius: 50%;
   animation: loader-ring 1.2s cubic-bezier(0.5, 0, 0.5, 1) infinite;
-  border-color: var(--colorspace-black-color) transparent transparent transparent;
+  border-color: var(--colorspace-black-color) transparent transparent
+    transparent;
 }
 
 .loader__ring--button {
@@ -159,7 +179,7 @@ section {
   height: var(--colorspace-button-loader-size);
   margin: auto;
   border: 2px solid #fff;
-  border-color: #fff transparent transparent transparent;
+  border-color: #fff transparent transparent;
 }
 
 .loader .loader__ring:nth-child(1) {
@@ -255,26 +275,22 @@ section {
   align-items: center;
   justify-content: center;
   position: relative;
-  background: currentColor;
-  border: 1px solid currentColor;
+  background: currentcolor;
+  border: 1px solid currentcolor;
   font-size: 1.1rem;
   border-radius: 30px;
   color: var(--colorspace-white-transparent-color);
   padding: 0.75rem 3rem;
   cursor: pointer;
-  transition:
-    background-color 0.28s ease,
-    color 0.28s ease,
+  transition: background-color 0.28s ease, color 0.28s ease,
     box-shadow 0.28s ease;
   overflow: hidden;
-  box-shadow:
-    0 2px 2px 0 rgba(0, 0, 0, 0.14),
-    0 3px 1px -2px rgba(0, 0, 0, 0.2),
-    0 1px 5px 0 rgba(0, 0, 0, 0.12);
+  box-shadow: 0 2px 2px 0 rgb(0 0 0 / 14%), 0 3px 1px -2px rgb(0 0 0 / 20%),
+    0 1px 5px 0 rgb(0 0 0 / 12%);
 }
 
 .btn::before {
-  content: '';
+  content: "";
   position: absolute;
   background: var(--colorspace-white-transparent-color);
   border: 50vh solid var(--colorspace-white-transparent-md-color);
@@ -291,10 +307,8 @@ section {
 
 .btn:hover {
   color: var(--colorspace-white-transparent-md-color);
-  box-shadow:
-    0 6px 10px 0 rgba(0, 0, 0, 0.14),
-    0 1px 18px 0 rgba(0, 0, 0, 0.12),
-    0 3px 5px -1px rgba(0, 0, 0, 0.2);
+  box-shadow: 0 6px 10px 0 rgb(0 0 0 / 14%), 0 1px 18px 0 rgb(0 0 0 / 12%),
+    0 3px 5px -1px rgb(0 0 0 / 20%);
 }
 
 .btn:active::before,
@@ -403,7 +417,7 @@ section {
 }
 
 .website-content::before {
-  content: '';
+  content: "";
   position: fixed;
   top: 0;
   left: 0;
@@ -497,7 +511,7 @@ section {
   text-transform: uppercase;
   color: var(--colorspace-light-color);
   letter-spacing: 0.5px;
-  font-family: 'Roboto Slab', serif;
+  font-family: "Roboto Slab", serif;
 }
 
 .snackbar__show {
@@ -574,13 +588,3 @@ section {
 
   /* /footer */
 }
-
-@import './bootstrap-reboot.css';
-@import './home.css';
-@import './menu.css';
-@import './about-me.css';
-@import './my-work.css';
-@import './blog-post.css';
-@import './contact.css';
-@import './404.css';
-@import './legal-notice.css';

@@ -99,7 +99,7 @@ button:focus {
 }
 
 .select__container::after {
-  content: '';
+  content: "";
   position: absolute;
   top: 50%;
   margin-top: -3px;

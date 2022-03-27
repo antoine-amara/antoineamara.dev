@@ -1,22 +1,33 @@
-<!doctype html>
+<!DOCTYPE html>
 <html class="no-js" lang="en">
-
   <head>
-    <meta charset="utf-8">
-    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <meta charset="utf-8" />
+    <meta http-equiv="x-ua-compatible" content="ie=edge" />
     <title>Antoine AMARA | Portfolio</title>
-    <meta name="description" content="Hi, I'm Antoine. I'm a Javascript developer. I like to build all kinds of applications for the web.">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    
-    <link rel="manifest" href="site.webmanifest">
-    <link rel="apple-touch-icon" href="icon.png">
+    <meta
+      name="description"
+      content="Hi, I'm Antoine. I'm a Javascript developer. I like to build all kinds of applications for the web."
+    />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, shrink-to-fit=no"
+    />
+
+    <link rel="manifest" href="site.webmanifest" />
+    <link rel="apple-touch-icon" href="icon.png" />
     <!-- Place favicon.ico in the root directory -->
   </head>
 
   <body>
     <!-- ## browserupgrade: headband to inform the user his browser is deprecated. ## -->
     <!--[if lte IE 9]>
-    <div class="browserupgrade">You are using an <div class="browserupgrade--strong">outdated</div> browser. Please <a href="https://browsehappy.com/">upgrade your browser</a> to improve your experience and security.</div>
+      <div class="browserupgrade">
+        You are using an
+        <div class="browserupgrade--strong">outdated</div>
+        browser. Please
+        <a href="https://browsehappy.com/">upgrade your browser</a> to improve
+        your experience and security.
+      </div>
     <![endif]-->
     <!-- ## /browserupgrade ## -->
 
@@ -36,9 +47,15 @@
     <nav>
       <div class="mobile-menu">
         <div class="mobile-menu__bars">
-          <span class="mobile-menu__bar mobile-menu__bar--open-transition"></span>
-          <span class="mobile-menu__bar mobile-menu__bar--open-transition"></span>
-          <span class="mobile-menu__bar mobile-menu__bar--open-transition"></span>
+          <span
+            class="mobile-menu__bar mobile-menu__bar--open-transition"
+          ></span>
+          <span
+            class="mobile-menu__bar mobile-menu__bar--open-transition"
+          ></span>
+          <span
+            class="mobile-menu__bar mobile-menu__bar--open-transition"
+          ></span>
         </div>
       </div>
       <div class="desktop-menu"></div>
@@ -46,23 +63,50 @@
 
     <div class="mobile-menu-overlay">
       <div class="mobile-menu-overlay__content">
-        <a class="mobile-menu-overlay__element mobile-menu-overlay__element--active" href="#home">Home</a>
-        <a class="mobile-menu-overlay__element mobile-menu-overlay__element--blur" href="#aboutme">About Me</a>
-        <a class="mobile-menu-overlay__element mobile-menu-overlay__element--blur" href="#mywork">My Work</a>
-        <a class="mobile-menu-overlay__element mobile-menu-overlay__element--blur" href="#blogpost">Blog Posts</a>
-        <a class="mobile-menu-overlay__element mobile-menu-overlay__element--blur" href="#contact">Contact</a>
-        <a class="mobile-menu-overlay__element mobile-menu-overlay__element--blur" href="./legal-notice.html">Legal Notice</a>
+        <a
+          class="mobile-menu-overlay__element mobile-menu-overlay__element--active"
+          href="#home"
+          >Home</a
+        >
+        <a
+          class="mobile-menu-overlay__element mobile-menu-overlay__element--blur"
+          href="#aboutme"
+          >About Me</a
+        >
+        <a
+          class="mobile-menu-overlay__element mobile-menu-overlay__element--blur"
+          href="#mywork"
+          >My Work</a
+        >
+        <a
+          class="mobile-menu-overlay__element mobile-menu-overlay__element--blur"
+          href="#blogpost"
+          >Blog Posts</a
+        >
+        <a
+          class="mobile-menu-overlay__element mobile-menu-overlay__element--blur"
+          href="#contact"
+          >Contact</a
+        >
+        <a
+          class="mobile-menu-overlay__element mobile-menu-overlay__element--blur"
+          href="./legal-notice.html"
+          >Legal Notice</a
+        >
       </div>
     </div>
     <!-- ## /Menu ## -->
 
     <!-- ## Website content: main website container. ## -->
     <div class="website-content website-content--panel-transition">
-
       <!-- ## Home: home section, contain portrait, title, stack tech and socials. see css/home.css for more. ## -->
       <section name="Home" class="home section--desktop-panel" id="home">
         <div class="rounded-box">
-          <img class="rounded-box__image" src="<%= require('./img/antoine.png') %>" alt="Antoine AMARA Javascript fullstack developper" />
+          <img
+            class="rounded-box__image"
+            src="<%= require('./img/antoine.png') %>"
+            alt="Antoine AMARA Javascript fullstack developper"
+          />
           <div class="rounded-box__filter"></div>
         </div>
         <h1>Antoine AMARA</h1>
@@ -70,28 +114,28 @@
         <div class="fullstack">
           <div class="fullstack__tech rounded-box">
             <div class="rounded-box__image">
-              <img inline src="src/img/react-brands.svg">
+              <img inline src="src/img/react-brands.svg" />
               <div class="fullstack-tech__name">React</div>
             </div>
             <div class="rounded-box__filter"></div>
           </div>
           <div class="fullstack__tech rounded-box">
             <div class="rounded-box__image">
-              <img inline src="src/img/node-js-brands.svg">
+              <img inline src="src/img/node-js-brands.svg" />
               <div class="fullstack-tech__name">NodeJS</div>
             </div>
             <div class="rounded-box__filter"></div>
           </div>
           <div class="fullstack__tech rounded-box">
             <div class="rounded-box__image">
-              <img inline src="src/img/graphql.svg">
+              <img inline src="src/img/graphql.svg" />
               <div class="fullstack-tech__name">GraphQL</div>
             </div>
             <div class="rounded-box__filter"></div>
           </div>
           <div class="fullstack__tech rounded-box">
             <div class="rounded-box__image">
-              <img inline src="src/img/database-solid.svg">
+              <img inline src="src/img/database-solid.svg" />
               <div class="fullstack-tech__name">SQL</div>
             </div>
             <div class="rounded-box__filter"></div>
@@ -99,61 +143,106 @@
         </div>
         <!--## social-icons: reusable container to display social networks ## -->
         <div class="social-icons">
-          <a href="https://github.com/antoine-amara"><img inline src="src/img/github-alt.svg"></a>
-          <a href="https://stackoverflow.com/users/7729726/antoine-amara?tab=profile"><img inline src="src/img/stack-overflow.svg"></a>
-          <a href="https://dev.to/antoineamara"><img inline src="src/img/dev-brands.svg"></a>
-          <a href="https://twitter.com/antoine_amara"><img inline src="src/img/twitter-brands.svg"></a>
+          <a href="https://github.com/antoine-amara"
+            ><img inline src="src/img/github-alt.svg"
+          /></a>
+          <a
+            href="https://stackoverflow.com/users/7729726/antoine-amara?tab=profile"
+            ><img inline src="src/img/stack-overflow.svg"
+          /></a>
+          <a href="https://dev.to/antoineamara"
+            ><img inline src="src/img/dev-brands.svg"
+          /></a>
+          <a href="https://twitter.com/antoine_amara"
+            ><img inline src="src/img/twitter-brands.svg"
+          /></a>
         </div>
         <!--## /social-icons ## -->
         <div class="home__scroll-icon home__scroll-icon--bounce-animation">
-          <img inline src="src/img/chevron-circle-down.svg">
+          <img inline src="src/img/chevron-circle-down.svg" />
         </div>
       </section>
       <!-- ## /Home ## -->
 
       <!-- ## About me: about-me section, contain illustration and text. see css/about-me.css. ## -->
-      <section name="About Me" class="about-me section--desktop-panel" id="aboutme">
+      <section
+        name="About Me"
+        class="about-me section--desktop-panel"
+        id="aboutme"
+      >
         <h2>About Me</h2>
         <div class="about-me__content">
           <div class="about-me__illustration">
             <div class="fake-terminal">
               <div class="fake-terminal__top-bar">
                 <div class="fake-terminal__top-bar__buttons">
-                  <div class="fake-terminal__top-bar__button fake-terminal__top-bar__button--red"></div>
-                  <div class="fake-terminal__top-bar__button fake-terminal__top-bar__button--yellow"></div>
-                  <div class="fake-terminal__top-bar__button fake-terminal__top-bar__button--green"></div>
+                  <div
+                    class="fake-terminal__top-bar__button fake-terminal__top-bar__button--red"
+                  ></div>
+                  <div
+                    class="fake-terminal__top-bar__button fake-terminal__top-bar__button--yellow"
+                  ></div>
+                  <div
+                    class="fake-terminal__top-bar__button fake-terminal__top-bar__button--green"
+                  ></div>
                 </div>
-                <div class="fake-terminal__top-bar__title">Guest@antoineamara.dev: ~</div>
+                <div class="fake-terminal__top-bar__title">
+                  Guest@antoineamara.dev: ~
+                </div>
               </div>
-              <div class="fake-terminal__commands" tabindex="0">
-              </div>
+              <div class="fake-terminal__commands" tabindex="0"></div>
             </div>
           </div>
           <div class="about-me__text">
-            <p>Hi, I'm Antoine. I like to build all kinds of applications for the web. I am currently doing so as a js consultant developer <a href="https://eleven-labs.com/">@ElevenLabs</a>.</p>
-            <p>I'm currently in a mission as a fullstack js engineer <a href="https://www.thefork.fr">@TheFork</a>.</p>
-            <p>I also love open source and I make contributions to some software I use.</p>
-            <p>Sometimes, I like to explore other domains of IT like electronics or deployment for example.</p>
-            <p>When I'm not coding, I practice action sport like skateboarding, kiteboarding, or surfing.</p>
+            <p>
+              Hi, I'm Antoine. I like to build all kinds of applications for the
+              web. I am currently doing so as a js consultant developer
+              <a href="https://eleven-labs.com/">@ElevenLabs</a>.
+            </p>
+            <p>
+              I'm currently in a mission as a fullstack js engineer
+              <a href="https://www.thefork.fr">@TheFork</a>.
+            </p>
+            <p>
+              I also love open source and I make contributions to some software
+              I use.
+            </p>
+            <p>
+              Sometimes, I like to explore other domains of IT like electronics
+              or deployment for example.
+            </p>
+            <p>
+              When I'm not coding, I practice action sport like skateboarding,
+              kiteboarding, or surfing.
+            </p>
           </div>
         </div>
       </section>
       <!-- ## /About me ## -->
 
       <!-- ## My work: contain projects into some cards. see css/my-work.css for more. ## -->
-      <section name="My Work" class="my-work section--desktop-panel icon-loader" id="mywork">
+      <section
+        name="My Work"
+        class="my-work section--desktop-panel icon-loader"
+        id="mywork"
+      >
         <h2>My Work</h2>
         <div class="icon-loader__container">
-          <img inline src="src/img/github-alt.svg">
+          <img inline src="src/img/github-alt.svg" />
           <div class="icon-loader__message"></div>
         </div>
         <div class="projects">
           <!-- ## project-card: reusable card to describe a project ## -->
           <div class="project-card">
-            <div class="project-card__img"><img src="<%= require('./img/brain-logo.png') %>"></div>
-            <a href="https://dreamquark.com/" class="project-card__repo-link"><h3 class="project-card__name">Brain</h3></a>
+            <div class="project-card__img">
+              <img src="<%= require('./img/brain-logo.png') %>" />
+            </div>
+            <a href="https://dreamquark.com/" class="project-card__repo-link"
+              ><h3 class="project-card__name">Brain</h3></a
+            >
             <p class="project-card__description">
-              Auto ML platform to construct and easily deploy some explainable AI models for wealth managers.
+              Auto ML platform to construct and easily deploy some explainable
+              AI models for wealth managers.
             </p>
             <div class="project-card__badges">
               <div class="badge badge--purple">dreamquark</div>
@@ -167,46 +256,92 @@
       <!-- ## /My work ##-->
 
       <!-- ## Blog posts: blog posts section, contain my last blog post from dev.to. ## -->
-      <section name="Blog posts" class="blog-post section--desktop-panel" id="blogpost">
+      <section
+        name="Blog posts"
+        class="blog-post section--desktop-panel"
+        id="blogpost"
+      >
         <h2>Blog posts</h2>
         <div class="blog-post__container">
           <div class="post">
-            <a class="post__title" href="https://dev.to/antoineamara/how-to-integrate-svg-for-website-and-react-app-with-webpack-3bfb" target="_blank">How To Integrate SVG For Website And React App With Webpack</a>
+            <a
+              class="post__title"
+              href="https://dev.to/antoineamara/how-to-integrate-svg-for-website-and-react-app-with-webpack-3bfb"
+              target="_blank"
+              >How To Integrate SVG For Website And React App With Webpack</a
+            >
             <div class="post__date">publised on Sept 08 2021</div>
             <div class="post__categorie-container">
               <div class="badge badge--grey-opacity">#webpack</div>
               <div class="badge badge--grey-opacity">#javascript</div>
               <div class="badge badge--grey-opacity">#react</div>
-              <div class="badge badge--grey-opacity">#webdev</div></div>
+              <div class="badge badge--grey-opacity">#webdev</div>
+            </div>
           </div>
           <div class="blog-post__separator"></div>
           <div class="post">
-            <a class="post__title" href="https://dev.to/antoineamara/how-i-prepare-the-hacktoberfest-4lol" target="_blank">How I Prepare The Hacktoberfest</a>
+            <a
+              class="post__title"
+              href="https://dev.to/antoineamara/how-i-prepare-the-hacktoberfest-4lol"
+              target="_blank"
+              >How I Prepare The Hacktoberfest</a
+            >
             <div class="post__date">publised on Sept 22 2021</div>
             <div class="post__categorie-container">
               <div class="badge badge--grey-opacity">#hacktoberfest</div>
               <div class="badge badge--grey-opacity">#opensource</div>
+            </div>
           </div>
         </div>
       </section>
       <!-- ## /Blog posts ## -->
 
       <!-- ## Contact: section with the contact form. see css/contact.css for more. ## -->
-      <section name="Contact" class="contact section--desktop-panel" id="contact">
+      <section
+        name="Contact"
+        class="contact section--desktop-panel"
+        id="contact"
+      >
         <h2>Contact Me</h2>
         <form class="form" id="contact-form">
-          <input id="name" name="name" class="form__input" type="text" placeholder="Name" required />
-          <input id="email" name="email" class="form__input" type="email" placeholder="Email" required />
+          <input
+            id="name"
+            name="name"
+            class="form__input"
+            type="text"
+            placeholder="Name"
+            required
+          />
+          <input
+            id="email"
+            name="email"
+            class="form__input"
+            type="email"
+            placeholder="Email"
+            required
+          />
           <div class="select">
             <div class="select__container">
               <select id="subject" name="subject">
-                <option class="select--option" value="question">Ask me a question</option>
+                <option class="select--option" value="question">
+                  Ask me a question
+                </option>
                 <option value="job">Job proposal</option>
-                <option value="opensource">Question about my open source contribution</option>
+                <option value="opensource">
+                  Question about my open source contribution
+                </option>
               </select>
             </div>
           </div>
-          <textarea id="message" name="message" class="form__textarea" placeholder="Enter your message" cols="30" rows="8" required ></textarea>
+          <textarea
+            id="message"
+            name="message"
+            class="form__textarea"
+            placeholder="Enter your message"
+            cols="30"
+            rows="8"
+            required
+          ></textarea>
           <button class="btn submit-contact">
             <span class="btn__content">Send</span>
             <div class="loader loader--button">
@@ -219,20 +354,23 @@
         </form>
 
         <!-- ## Snackbar: little bar to display messages for the user inspired by material design, see main.css for styles ## -->
-          <div class="snackbar">
-            <div class="snackbar__message">Some text some message..</div>
-            <div class="snackbar__action">dismiss</div>
-          </div>
+        <div class="snackbar">
+          <div class="snackbar__message">Some text some message..</div>
+          <div class="snackbar__action">dismiss</div>
+        </div>
         <!-- ## /Snackbar ## -->
 
         <footer class="footer">
-          <div>This template is <img inline src="src/img/code.svg"> with <img inline src="src/img/heart.svg"> by <img inline src="src/img/github.svg"></div>
+          <div>
+            This template is <img inline src="src/img/code.svg" /> with
+            <img inline src="src/img/heart.svg" /> by
+            <img inline src="src/img/github.svg" />
+          </div>
           <a href="./legal-notice.html">Legal Notice</a>
         </footer>
       </section>
       <!-- ## /Contact ## -->
     </div>
     <!-- ## /Website content ## -->
-
   </body>
 </html>

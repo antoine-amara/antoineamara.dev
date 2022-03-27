@@ -84,9 +84,7 @@ all rules are documented by Block.
 
 .projects .project-card {
   margin-right: var(--colorspace-block-margin);
-  flex-grow: 1;
-  flex-shrink: 0;
-  flex-basis: 270px;
+  flex: 1 0 270px;
   scroll-snap-align: start;
 }
 
@@ -149,7 +147,7 @@ all rules are documented by Block.
 }
 
 .badge--grey-opacity {
-  background-color: rgba(252, 255, 253, 0.2);
+  background-color: rgb(252 255 253 / 20%);
   border: 0.1px solid var(--colorspace-accent-grey);
 }
 

@@ -6,8 +6,6 @@ this project uses the BEM method, see http://getbem.com/.
 all rules are documented by Block.
 ****************************************************** */
 
-
-
 /*
   fake-console: the container for the fake terminal.
   note fake-console js module manages the content and the css classes.
@@ -17,9 +15,17 @@ all rules are documented by Block.
   blink: animation for the fake-console cursor.
 */
 @keyframes blink {
-  0% { opacity: 0; }
-  49% { opacity: 0; }
-  50% { opacity: 1; }
+  0% {
+    opacity: 0;
+  }
+
+  49% {
+    opacity: 0;
+  }
+
+  50% {
+    opacity: 1;
+  }
 }
 
 .fake-console {
@@ -27,7 +33,7 @@ all rules are documented by Block.
   background: var(--colorspace-white-transparent-color);
   border-radius: 5px;
   min-height: 300px;
-  font-family: 'Ubuntu Mono', monospace;
+  font-family: "Ubuntu Mono", monospace;
   display: flex;
   flex-direction: column;
   align-items: center;

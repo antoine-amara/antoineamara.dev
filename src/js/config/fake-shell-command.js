@@ -11,14 +11,14 @@ export default {
   \t\t* Docker for dev
   type 'antoine --help' for more information about technologies I know.
   `,
-  'antoine --help': `See my competences by theme:
+  "antoine --help": `See my competences by theme:
   \t\t* antoine stack --web: see the list of web frameworks I used.
   \t\t* antoine stack --ops: see the list of knowledge about ops (system, deployment framework, CI).
   \t\t* antoine stack --tools: see the development tools I used (for web development).
   \t\t* antoine languages: see the languages I used when I develop.
   \t\t* antoine manage: see principle I know to construct good software (project management, project structuration).
   `,
-  'antoine stack --web': `1:basic -- 3: good knowledge -- 5: mastering it
+  "antoine stack --web": `1:basic -- 3: good knowledge -- 5: mastering it
   ------------------
   React:\t\t\t\t\t\t[#####]
   Redux:\t\t\t\t\t\t[#####]
@@ -34,7 +34,7 @@ export default {
   MongoDB:\t\t\t\t[####\t]
   ------------------
   `,
-  'antoine stack --ops': `1:basic -- 3: good knowledge -- 5: mastering it
+  "antoine stack --ops": `1:basic -- 3: good knowledge -- 5: mastering it
   -------------------------
   Linux:\t\t\t\t\t\t\t\t\t\t[###\t\t]
   Docker:\t\t\t\t\t\t\t\t\t[####\t]
@@ -45,7 +45,7 @@ export default {
   Terraform:\t\t\t\t\t\t[##\t\t\t]
   -------------------------
   `,
-  'antoine stack --tools': `1:basic -- 3: good knowledge -- 5: mastering it
+  "antoine stack --tools": `1:basic -- 3: good knowledge -- 5: mastering it
   ------------------------
   Webpack:\t\t\t\t\t\t\t[####\t]
   Eslint:\t\t\t\t\t\t\t\t[####\t]
@@ -55,7 +55,7 @@ export default {
   Editor Config:\t[###\t\t]
   ------------------------
   `,
-  'antoine languages': `1:basic -- 3: good knowledge -- 5: mastering it
+  "antoine languages": `1:basic -- 3: good knowledge -- 5: mastering it
   ---------------------
   Javascript:\t[#####]
   Typescript:\t[###\t\t]
@@ -67,7 +67,7 @@ export default {
   C++:\t\t\t\t\t\t\t\t[#\t\t\t\t]
   ---------------------
   `,
-  'antoine manage': `1:basic -- 3: good knowledge -- 5: mastering it
+  "antoine manage": `1:basic -- 3: good knowledge -- 5: mastering it
   ----------------------------------------
   Scrum:\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t[###\t\t]
   Good Practices:\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t[####\t]
@@ -75,5 +75,5 @@ export default {
   Lead/Architect NodeJS Project:\t[###\t\t]
   Kanban:\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t[##\t\t\t]
   ----------------------------------------
-  `
-}
+  `,
+};

@@ -35,12 +35,7 @@ check: style test	## run the linter to check code formating and unit tests to ch
 
 style:	## run the linter to check code formating.
 	${DC} run --rm -T ${WEBSITE} ${YN} lint
-	${DC} run --rm -T ${WEBSITE} ${YN} format
 	${DEPLOY} terraform validate
-
-stylefix:	## run the linter and prettier to enforce code formating.
-	${DC} run --rm ${WEBSITE} ${YN} format
-	${DC} run --rm ${WEBSITE} ${YN} lint:fix
 	${DEPLOY} terraform fmt -write=true -recursive .
 	${DEPLOY} terraform validate
 

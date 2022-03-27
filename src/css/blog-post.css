@@ -43,7 +43,7 @@ all rules are documented by Block.
 }
 
 .post__title {
-  font-family: 'Roboto Slab', serif;
+  font-family: "Roboto Slab", serif;
   color: var(--colorspace-light-green-color);
   font-weight: var(--colorspace-xl-weight);
   margin: 0;

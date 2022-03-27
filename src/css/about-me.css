@@ -34,7 +34,7 @@ all rules are documented by Block.
 
 .fake-terminal {
   height: 100%;
-  font-family: 'Ubuntu Mono', monospace;
+  font-family: "Ubuntu Mono", monospace;
   display: flex;
   flex-direction: column;
 }
@@ -115,9 +115,7 @@ all rules are documented by Block.
   }
 
   .about-me__illustration {
-    flex-basis: 60%;
-    flex-grow: 1;
-    flex-shrink: 0;
+    flex: 1 0 60%;
     margin-right: var(--colorspace-desktop-menu-margin);
   }
 
